@@ -1,0 +1,6 @@
+--initialcapital  "100000" 
+--maxopenpos  "0" 
+--possizetype  "3" 
+--possize  "5" 
+--possizelimittype  "0" 
+--possizelimit  "0" 

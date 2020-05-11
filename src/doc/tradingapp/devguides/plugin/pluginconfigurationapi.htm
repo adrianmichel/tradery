@@ -1,0 +1,131 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Plug</title>
+<style>
+<!--
+span.code    { font-family: Courier New; font-size: 10pt }
+-->
+</style>
+</head>
+
+<body>
+
+<h3>Plug-in configurations</h3>
+<p>The <span class="code">PluginConfiguration</span> class is a base for all  plug-in 
+configuration types : 
+<span class="code">DataSource</span>,
+<span class="code">SymbolsSource</span>, <span class="code">Runnable</span> etc.&nbsp;</p>
+<p>Here is the outline of the
+<span class="code">PluginConfiguration</span> class:</p>
+
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+<code>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <span class="code">
+  <font COLOR="#0000ff">class</font> PluginConfiguration 
+  : <font COLOR="#0000ff">public</font> Info, <font COLOR="#0000ff">public</font> 
+  SessionEventHandler<br>
+  {<font COLOR="#0000ff"><br>
+  </font>
+  <font COLOR="#008000">/**<br>
+  * constructors<br>
+  */</font><font COLOR="#0000ff"><br>
+  </font>
+  PluginConfiguration( <font COLOR="#0000ff">const</font> 
+  UniqueId&amp; id, <font COLOR="#0000ff">const</font> 
+  t_string&amp; name, <font COLOR="#0000ff">const</font> 
+  t_string&amp; description );<br>
+  PluginConfiguration( <font COLOR="#0000ff">const</font> 
+  Info&amp; info )<font COLOR="#008000"><br>
+  </font>PluginConfiguration(<font COLOR="#0000ff">)<br>
+  <br>
+  virtual</font>
+  <font COLOR="#0000ff">bool</font> hasWindow()
+  <font COLOR="#0000ff">const</font> {
+  <font COLOR="#0000ff">return</font>
+  <font COLOR="#0000ff">false</font>; }<font COLOR="#008000"><br>
+  </font><font COLOR="#0000ff">virtual</font> 
+  std::auto_ptr&lt; WindowInfo &gt; getWindowInfo() {
+  <font COLOR="#0000ff">return</font> std::auto_ptr&lt; 
+  WindowInfo &gt; ( 0 ); }<font COLOR="#008000"><br>
+  <br>
+  </font>
+  <font COLOR="#008000">/**<br>
+  * accessor methods<br>
+  */</font><font COLOR="#0000ff"><br>
+  </font>
+  <font COLOR="#0000ff">virtual</font>
+  <font COLOR="#0000ff">void</font> sessionStarted();<font COLOR="#008000"><br>
+  </font><font COLOR="#0000ff">const</font> 
+  SessionInfo&amp; sessionInfo() <font COLOR="#0000ff">const;</font><br>
+  OutputSink&amp; outputSink() <font COLOR="#0000ff">const;</font><br>
+  <font COLOR="#0000ff">const</font> t_string&amp; 
+  sessionName() <font COLOR="#0000ff">const<br>
+  </font>DataManagedPtr getData( <font COLOR="#0000ff">const</font> 
+  t_string&amp; symbol ) <font COLOR="#0000ff">const<br>
+  </font>SymbolsIterator* symbolsIterator() <font COLOR="#0000ff">const</font></span><p> 
+  <span class="code"> <font COLOR="#0000ff"><br>
+  <br>
+  </font><font COLOR="#008000">/**<br>
+  * run and session events received by all plug-in configurations<br>
+  */</font><font COLOR="#0000ff"><br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> sessionStarted( 
+  SessionInfo&amp; si )<font COLOR="#0000ff">;<br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> sessionEnded( 
+  PositionsContainer&amp; positions );<font COLOR="#0000ff"><br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> sessionCanceled();<font COLOR="#0000ff"><br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> 
+  sessionStartedWaitingForNextRun()<font COLOR="#0000ff">;<br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> runStarted();<font COLOR="#0000ff"><br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> runEnded();<font COLOR="#0000ff"><br>
+  virtual</font>
+  <font COLOR="#0000ff">void</font> runCanceled();<font COLOR="#008000"><br>
+  </font>};</span></td>
+	</code>
+ </tr>
+</table>
+
+<p>As this class is derived from <span class="code">Info</span>, the
+constructors must initialize the base class or default values will be set in the
+case of the default constructor.&nbsp;</p>
+<p>This class is also a <span class="code">SessionEventHandler</span>, so it 
+will receive various session events during a session run.</p>
+<p><span class="code">PluginConfiguration</span> handles the
+<span class="code">SessoionEventHandler::sessionStarted</span> event by storing 
+a pointer to the SessionInfo instance associated with the current configuration, 
+which gives the plug-in configuration access to various session parameters (see 
+the section on the session event API for more details). All the other event methods have the default behavior which is to ignore the
+notification. If a plug-in configuration needs to process any of these events,
+it will need to override the appropriate method(s).</p>
+<p>Finally, the UI related methods indicate
+whether a plug-in configuration has its own UI, and if it has, to provide
+information about this UI such as the window handle and the tab name, which will
+be used by the TradingApp Integrated Environement to display the plug-in
+configuration UI.</p>
+<p>Since all classes that constitute plug-in
+types (<span class="code">Runnable</span>, <span class="code">DataSource</span>, 
+<span class="code">SymbolsSource</span>, <span class="code">SignalHandler</span>, 
+<span class="code">Slippage</span>, <span class="code">Commission</span>)
+are derived from <span class="code">PluginConfiguration</span>, they all can take advantage of its
+functionality - session event handling, sending formatted strings to the output
+window, processing generated simulated trades, providing their own UI.</p>
+<p>Refer to the API documentation and samples
+for more
+details on the various classes presented in this document.</p>
+
+</body>
+
+</html>

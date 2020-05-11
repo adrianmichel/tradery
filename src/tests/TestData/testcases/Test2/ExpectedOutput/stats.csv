@@ -1,0 +1,63 @@
+,Total stats,Long stats,Short stats,Buy & Hold stats
+Date Range,2016-Jan-12,2017-Jan-12
+
+Overall performance
+Tradery score,0.88,3.65,-4.39,2.87,
+
+Performance
+Total % gain/loss,1.21%,4.82 %,-3.61 %,22.54 %,
+Total gain/loss,1208.59,4818.17,-3609.57,22538.79,
+Annualized pct gain,1.21%,4.80 %,-3.60 %,22.47 %,
+Starting capital,100000.00,100000.00,100000.00,100000.00,
+Ending capital,101208.59,104818.17,96390.43,122538.79,
+Closed pos gain/loss,1150.56,4760.13,-3609.57,22538.79,
+Open pos gain/loss,58.04,58.04,0.00,0.00,
+Max gain per pos,1441.80,1441.80,682.38,4233.23,
+Max loss per pos,-2048.32,-2048.32,-1796.18,-820.48,
+Average gain/loss per pos,11.09,52.95,-200.53,1408.67,
+Average % gain/loss per pos,0.11%,0.53 %,-2.00 %,26.87 %,
+Max % gain per pos,14.39%,14.39 %,6.83 %,80.46 %,
+Max % loss per pos,-20.48%,-20.48 %,-17.96 %,-15.73 %,
+
+Risk etc...
+Exposure,9.73%,7.99 %,1.74 %,85.39 %,
+Expectancy,11.09,52.95,-200.53,1408.67,
+Ulcer index,3.87,3.50,3.95,2.49,
+
+Drawdown
+Max drawdown,-7564.58,-6668.73,-4985.54,-8342.65,
+Max drawdown date,2016-Oct-31,2016-Nov-08,2017-Jan-10,2016-Jun-27,
+Max drawdown %,-7.02%,-6.05 %,-4.92 %,-7.20 %,
+Max drawdown % date,2016-Oct-31,2016-Nov-08,2017-Jan-10,2016-Jun-27,
+Max drawdown duration,258,258,337,77,
+
+All Trades
+Total Trades,109,91,18,16,
+Closed trades,108,90,18,16,
+Open trades,1,1,0,0,
+
+Winning Trades
+Winning closed trades,56,48,8,15,
+Winning open trades,1,1,0,0,
+% winning closed trades,51.38%,52.75 %,44.44 %,93.75 %,
+% winning open trades,0.92%,1.10 %,0.00 %,0.00 %,
+Average gain per winning pos,423.47,409.81,507.15,1557.28,
+
+Losing Trades
+Losing closed trades,52,42,10,1,
+Losing open trades,0,0,0,0,
+% losing closed trades,47.71%,46.15 %,55.56 %,6.25 %,
+% losing open trades,0.00%,0.00 %,0.00 %,0.00 %,
+Average loss per losing pos,-440.95,-363.40,-766.68,-820.48,
+
+Neutral Trades
+Neutral closed trades,0,0,0,0,
+Neutral open trades,0,0,0,0,
+% neutral closed trades,0.00%,0.00 %,0.00 %,0.00 %,
+% neutral open trades,0.00%,0.00 %,0.00 %,0.00 %,
+
+Slippage
+Average slippage per pos,0.06,0.06,0.04,0.00,
+
+Commission
+Average commission per pos,9.95,9.95,10.00,0.00,

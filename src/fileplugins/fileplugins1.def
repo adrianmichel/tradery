@@ -1,0 +1,6 @@
+; fileplugins1.def : Declares the module parameters for the DLL.
+
+LIBRARY      "fileplugins1.tpl"
+
+EXPORTS
+    ; Explicit exports can go here

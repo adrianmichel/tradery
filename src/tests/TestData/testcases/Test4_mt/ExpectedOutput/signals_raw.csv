@@ -1,0 +1,5 @@
+Symbol,Signal date/time,Shares,Side,Type,Price,Name,System id, System name, Position id
+FAST,2017-Jan-12 00:00:00,1000,Buy,Market,0,buy,CD778640-AD46-42B2-B180-3C30F2FA0F33,Improved Price Breakup (ema = 70),0
+GPC,2017-Jan-12 00:00:00,1000,Buy,Market,0,buy,CD778640-AD46-42B2-B180-3C30F2FA0F33,Improved Price Breakup (ema = 70),0
+GT,2017-Jan-12 00:00:00,1000,Sell,Market,0,exiting at market,CD778640-AD46-42B2-B180-3C30F2FA0F33,Improved Price Breakup (ema = 70),2956
+STJ,2017-Jan-04 00:00:00,1000,Buy,Market,0,buy,CD778640-AD46-42B2-B180-3C30F2FA0F33,Improved Price Breakup (ema = 70),0

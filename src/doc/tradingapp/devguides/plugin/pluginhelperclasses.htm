@@ -1,0 +1,362 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Plug</title>
+<style>
+<!--
+span.code    { font-family: Courier New; font-size: 10pt }
+-->
+</style>
+</head>
+
+<body>
+
+<p>Plug-in helper classes are located in the
+<span class="code">pluginhelper.h</span> and <span class="code">pluginhelper1.h</span> header files.</p>
+<p><span class="code">pluginhelper.h</span> contains the classes that enable
+plug-ins to manage and persist multiple configurations which are shared among
+among all requesters. <span class="code">FileDataSource</span>, 
+<span class="code">FileSymbolsSource</span> and <span class="code">FileSignalHandler</span> utilize
+these classes.</p>
+<p><span class="code">pluginhelper1.h</span> contains the classes the enable a
+plug-in to create and manage one off configurations created on the fly. The two
+trading systems plug-ins and the slippage and commission plug-ins use this
+approach.</p>
+<h3>Plugin helper</h3>
+<p>As presented above, some plug-ins  provide
+the ability to create, edit and delete configurations. It makes sense then to be
+able to persist these configurations as well, that is to save the existing configurations
+and their parameters when the application closes and to reload them when the
+application starts again.</p>
+<p>The plug-in helper API provides this functionality
+implemented within several template classes: <span class="code">Constants</span>,
+<span class="code">PluginImpl</span> and
+<span class="code">RegKeyBase</span>.</p>
+<h4>Constants Class</h4>
+<p>This class contains the declarations of several
+static data members: the plugin id, the plugin name and the plugin description:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">template</font>&lt; <font COLOR="#0000ff">class</font>
+  T &gt; <font COLOR="#0000ff">class</font> Constants<br>
+  {<font COLOR="#0000ff"><br>
+  public</font>:<br>
+  &nbsp; <font COLOR="#008000">/**<br>
+  &nbsp; * The plugin id<br>
+  &nbsp; */<br>
+  &nbsp; </font><font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  UniqueId id;<br>
+  &nbsp; <font COLOR="#008000">/**<br>
+  &nbsp; * The plugin name<br>
+  &nbsp; */<br>
+  &nbsp; </font><font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  t_string name;<br>
+  &nbsp; <font COLOR="#008000">/**<br>
+  &nbsp; * The plugin description<br>
+  &nbsp; */<br>
+  &nbsp; </font><font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  t_string description;<br>
+  };</font>
+  </td>
+ </tr>
+</table>
+
+<p>These static members must be defined for each
+plugin using the specializations for the specific plug-in type. For example, the
+file data source plugin implemented in the fileplugins project defines these
+constants as follows:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">template</font>&lt;&gt;
+  <font COLOR="#0000ff">const</font> UniqueId Constants&lt; FileDataSource
+  &gt;::id( &quot;f0132479-90a0-11d9-b3a2-000c6e067d35&quot; );<font COLOR="#0000ff"><br>
+  template</font>&lt;&gt; <font COLOR="#0000ff">const</font> t_string
+  Constants&lt; FileDataSource &gt;::name( _TT( &quot;File Data Source Plugin&quot;
+  ) );<font COLOR="#0000ff"><br>
+  template</font>&lt;&gt; <font COLOR="#0000ff">const</font> t_string
+  Constants&lt; FileDataSource &gt;::description( _TT( &quot;Adrian's
+  implementation of a file based datasource plugin\ndata in several formats
+  retrieved from files stored on the local computer&quot; ) );</font>
+  </td>
+ </tr>
+</table>
+
+<p>Whenever the Constants template class is
+instantiated with the FileDataSource type, it will use the definitions above</p>
+<p>As for any other template class, these definitions must
+be available at compile type, so they will have be provided as part of one or
+more header files.</p>
+<p>For more details, see the fileplugins project.</p>
+<h4>PluginImpl class</h4>
+
+<p>PersistentPlugin is derived from Plugin and implements
+all its methods. In addition, it has 4 other methods: init, createDlg,
+editDlg and load.</p>
+
+<p>This is the outline of the PluginImpl class:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">template</font>&lt; <font COLOR="#0000ff">class</font>
+  Key, <font COLOR="#0000ff">class</font> Config, <font COLOR="#0000ff">class</font>
+  ConfigBase &gt; <font COLOR="#0000ff">class</font>
+  PersistentPlugin : <font COLOR="#0000ff">public</font> Plugin&lt; ConfigBase
+  &gt;<br>
+  {<br>
+  ...<font COLOR="#0000ff"><br>
+  &nbsp; virtual</font>  U* init( T* key ) = 0;<font face="Courier New" COLOR="#0000ff"><br>
+  </font>&nbsp; <font COLOR="#0000ff" face="Courier New">virtual</font> U*
+  createDlg() = 0;<font face="Courier New" size="2" COLOR="#008000"><br>
+  &nbsp;
+  </font><font COLOR="#0000ff">virtual</font>
+  U* editDlg( <font COLOR="#0000ff">const</font>  U&amp; u ) = 0;<br>
+  <font face="Courier New" COLOR="#0000ff">
+  &nbsp; void<
+  }</font>
+  </td>
+ </tr>
+</table>
+
+<p>The 3 template arguments are:</p>
+
+<ul>
+  <li>Key - a registry key, implemented as a class
+    derived from RegistryKey (see below).</li>
+  <li>Config - the configuration type, such as
+    FileDataSource.</li>
+  <li>ConfigBase - the configuration type base class,
+    such as DataSource.</li>
+</ul>
+
+<p>For example, this is how the file data source
+plug-in class is defined in the fileplugins project:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">class</font>
+  FileDataSourcePlugin : <font COLOR="#0000ff">public</font>  PersistentPlugin &lt;
+  FileDSConfigRegKey, FileDataSource, DataSource &gt;</font>
+  </td>
+ </tr>
+</table>
+
+<p>A plug-in class must implement the 3 virtual
+methods: init, createDlg and editDlg.</p>
+<p>init creates an instance of the plug-in
+configuration class based on the parameters passed in the key method argument,
+and returns a pointer to it (in the case of the file data source plugin, a
+FileDataSource).</p>
+<p>createDlg can show a
+dialog box where the user can enter the parameters for the new configuration.
+This method has to return a pointer to the newly created configuration object.
+In fact it is not required that a dialog box be shown - the configuration
+parameters can be retrieved using any method, from a file for example or other.
+A 0 return means a configuration hasn't been created.</p>
+<p>editDlg can show a
+dialog box where the user can edit the parameters of the configuration. This
+method has to return a pointer to the edited configuration object. As for
+createDlg, is
+not required that a dialog box be shown - the configuration parameters can be
+retrieved using any method, from a file for example or other.</p>
+<p>The load method must be called by the user code at
+plugin startup which will load all available configuration instances from the
+values stored in the registry. </p>
+<h4>RegKey class</h4>
+<p>Each plug-in configuration has a number of
+parameters or properties that it needs to persist and the class RegKey is be
+used for this purpose.</p>
+<p>To enable the persisting of their parameters, a
+plug-in should define a class derived from RegKey. RegKey itself does knows how to
+persist and load the parameters that are common to all plug-in configurations:
+the id, the name and the description. The derived classes must be able to
+persist and load all their specific parameters.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">class</font>
+  RegKeyBase : <font COLOR="#0000ff">public</font> CRegistry<br>
+  {<font COLOR="#0000ff"><br>
+  &nbsp; const</font> UniqueId&amp; id() <font COLOR="#0000ff">const</font>;<font COLOR="#0000ff"><br>
+  &nbsp; const</font> t_string name()<font COLOR="#0000ff">;<br>
+  &nbsp; const</font> t_string description();<br>
+  &nbsp; <font COLOR="#0000ff">virtual</font> <font COLOR="#0000ff">void</font>
+  init( <font COLOR="#0000ff">const</font> t_string&amp; name, <font COLOR="#0000ff">const</font>
+  t_string&amp; description );<br>
+  }</font>
+  </td>
+ </tr>
+</table>
+
+<p>The methods id, name and description retrieve the
+values associated with these parameters from the registry, while init stores all
+these parameters to the registry.</p>
+<p>The user must define the names for the registry
+values corresponding to various parameters. Although most registry operations
+are completely transparent to the user code, the CRegistry::operator[] must be
+used for both reading and writing to the registry, with the name of the
+parameter as argument:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font size="2">
+  <font face="Courier New" COLOR="#008000">// to retrieve the data</font><font face="Courier New" COLOR="#0000ff" size="2"><br>
+  </font><font size="2" face="Courier New"><font COLOR="#0000ff">name = operator</font>[](
+  NAME );<font COLOR="#0000ff"><br>
+  <br>
+  </font></font><font face="Courier New" size="2" COLOR="#008000">// to store
+  data to registry</font><font face="Courier New" COLOR="#0000ff" size="2"><br>
+  </font><font size="2" face="Courier New"><font COLOR="#0000ff">operator</font>[](
+  NAME ) = name;</font>
+  </font>
+  </td>
+ </tr>
+</table>
+
+<p><font face="Trebuchet MS" size="2">Here is the class FileDSConfigRegKey, which is the
+registry key for a file data source plug-in configuration</font></p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">class</font>
+  FileDSConfigRegKey : <font COLOR="#0000ff">public</font> RegKeyBase<br>
+  {<font COLOR="#0000ff"><br>
+  private</font>:<br>
+  &nbsp;
+  <font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  t_string DATA_PATH;<br>
+  &nbsp;
+  <font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  t_string EXTENSION;<br>
+  &nbsp;
+  <font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  t_string FORMAT;<br>
+  &nbsp;
+  <font COLOR="#0000ff">void</font> openKey();<br>
+  &nbsp;
+  <font COLOR="#0000ff">void</font> init( <font COLOR="#0000ff">const</font>
+  t_string&amp; name, <font COLOR="#0000ff">const</font> t_string&amp;
+  description, <font COLOR="#0000ff">const</font> t_string&amp; dataPath, <font COLOR="#0000ff">const</font>
+  t_string&amp; extension, Format format );<font COLOR="#0000ff"><br>
+  public</font>:<br>
+  <font COLOR="#008000">// builds from an Id</font><br>
+  &nbsp; FileDSConfigRegKey( <font COLOR="#0000ff">const</font> t_string&amp; id );<br>
+  &nbsp;
+  <font COLOR="#0000ff">static</font> <font COLOR="#0000ff">const</font>
+  t_string&amp; key();<br>
+  &nbsp; FileDSConfigRegKey( <font COLOR="#0000ff">const</font> UniqueId&amp; id, <font COLOR="#0000ff">const</font>
+  t_string&amp; name, <font COLOR="#0000ff">const</font> t_string&amp;
+  description, <font COLOR="#0000ff">const</font> t_string&amp; dataPath, <font COLOR="#0000ff">const</font>
+  t_string&amp; extension, Format format );<br>
+  &nbsp; FileDSConfigRegKey( <font COLOR="#0000ff">const</font> FileDataSource&amp; fds
+  );<br>
+  &nbsp;
+  <font COLOR="#0000ff">const</font> t_string dataPath() { <font COLOR="#0000ff">return</font>
+  <font COLOR="#0000ff">operator</font>[]( DATA_PATH.c_str() ); }<br>
+  &nbsp;
+  <font COLOR="#0000ff">const</font> t_string extension() { <font COLOR="#0000ff">return</font>
+  <font COLOR="#0000ff">operator</font>[]( EXTENSION.c_str() ); }<br>
+  &nbsp; Format format();<br>
+  };</font>
+  </td>
+ </tr>
+</table>
+
+<h3>Plugin helper 1</h3>
+<p>A plug-in that doesn't need the more complex
+features provided by the PersistentPlugin class, such as storing configuration
+parameters into the registry, can use the class SimplePlugin to implement
+most of its functionality.&nbsp;</p>
+<p>SimplePlugin implements all the methods
+defined in the class Plugin. In
+addition it defines 2 extra methods, init and insert.</p>
+
+<p>Here is the outline of this class:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2"><font COLOR="#0000ff">template</font>&lt; <font COLOR="#0000ff">class</font>
+  ConfigBase &gt; <font COLOR="#0000ff">class</font> SimplePlugin : <font COLOR="#0000ff">public</font>
+  Plugin&lt; ConfigBase &gt;<br>
+  {<br>
+  &nbsp; <font color="#0000ff">virtual void init() = 0;<br>
+  </font>&nbsp; <font COLOR="#0000ff">template</font> &lt; <font COLOR="#0000ff">class</font>
+  Config &gt; <br>
+  };</font>
+  </td>
+ </tr>
+</table>
+
+<p>The ConfigBase template parameter represents the
+base class for configurations generated by this plugin and is also the type of
+the plugin, such as DataSource, SymbolsSource etc.</p>
+<p>The init method does the plug-in startup
+initialization and it is normally called when the plug-in dll is loaded.</p>
+<p>The insert method must be called from
+within the init
+method, with the template parameter the actual type of the configuration. This
+method will add an instance of the configuration to the list of available
+configurations.</p>
+<p>Here is the definition of the systemsplugin1
+Runnable plugin:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font size="2"><font face="Courier New" COLOR="#0000ff">class</font><font face="Courier New">
+  RunnablePluginImpl : <font COLOR="#0000ff">public</font> SimplePlugin&lt;
+  Runnable &gt;<br>
+  {</font><font face="Courier New" COLOR="#0000ff"><br>
+  public</font><font face="Courier New">:<font COLOR="#0000ff"><br>
+  &nbsp; virtual</font> <font COLOR="#0000ff">void</font> init()<br>
+  &nbsp; {<br>; &nbsp; insert&lt; system1; system2; system3; system4 }<br>
+  </font><font face="Courier New" COLOR="#0000ff">public</font><font face="Courier New">:<br>
+  &nbsp; RunnablePluginImpl()<br>
+  &nbsp;&nbsp;&nbsp; : SimplePlugin&lt; Runnable &gt;( Info( _TT(
+  &quot;cd365c65-91aa-11d9-b3a4-000c6e067d35&quot; ),<br>
+  &nbsp;&nbsp;&nbsp; _TT( &quot;Sample systems plugin&quot; ),<br>
+  &nbsp;&nbsp;&nbsp; _TT( &quot;This plugin illustrates some of the techniques
+  employed in writing plugins, and more specifically system (or Runnable)
+  plugins&quot; ) ))<br>
+  &nbsp; {<br> }<br>
+  };</font></font>
+  </td>
+ </tr>
+</table>
+
+<p>The SimplePlugin class makes some assumptions about
+the actual plugin and configurations it is used for:</p>
+
+<ul>
+  <li>the configuration class is clonable, i.e. it is
+    directly or indirectly derived from Clonable. In the case of Runnable, the
+    intermediate class BarSystem is derived from Clonable, and thus the various
+    Runnable configurations do not need to deal with this directly.</li>
+  <li>the configuration class has only the default
+    constructor</li>
+</ul>
+
+</body>
+
+</html>

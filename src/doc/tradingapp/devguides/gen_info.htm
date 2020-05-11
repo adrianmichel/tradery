@@ -1,0 +1,145 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Developer's Guide - general info</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<h1>Developer's Guide</h1>
+
+<hr color="#C4DDD7">
+
+<p>The TradingApp platform provides a large number of
+trading related services whose complexity is hidden behind high level
+object oriented APIs. </p>
+
+<p>There are 2 high level categories of APIs: trading and plug-in, implemented 
+by the trading framework and the plug-in framework respectively. Out of these, 
+only the trading API is absolutely necessary for developing, testing and 
+executing trading systems. But the plug-in API along with the Integrated Visual 
+Trading Evnironment makes the tasks of using the trading API much easier by 
+providing the &quot;glue&quot; that binds various components of a trading system or other 
+trading applications together. So in order to take advantage of the many 
+capabilities of the TradingApp Platform, various components must be
+implemented as plug-ins. This includes data sources, symbols sources, runnables
+(trading systems) etc.</p>
+
+<p>Writing code for the TradingApp plug-ins involves two main steps:</p>
+
+<ol>
+  <li>implementation of the generic plug-in
+    API - described in the Plug-in dev guide. This API will enable the dialog
+    between the platform and the plug-in.</li>
+  <li>implementing the plug-in type
+    specific functionality, described for each type of plug-in in the various
+    other dev guides (Data Source, Symbols Source etc).</li>
+</ol>
+
+<p>There are several
+plug-in and plug-in configuration helper APIs and classes that make these tasks
+considerably easier.</p>
+<h2>Prerequisites</h2>
+
+<h3>Development environment</h3>
+
+<p>Visual Studio 2003 is
+currently the development tool needed to write code for the TradingApp Platform.&nbsp;</p>
+
+<h3>Language </h3>
+
+<p>All APIs are currently exposed as C++ classes. All
+development can be accomplished using a basic
+level of C++. Several APIs make use of templates.&nbsp; </p>
+
+<p>In some cases template specialization is used.
+A
+specialization of a template class is a specific implementation of that class used for template parameters of a certain type. The typical example is the
+vector class (used as vector&lt; T &gt;, where T is the type of vector), which
+may provide different implementations if the type of vector is a pointer, or a
+bit or other type with special requirements. </p>
+
+<p>To make their task
+easier, a developer can can use any of the the provided projects as a starting point
+for their own plug-ins. </p>
+
+<h2><a name="_Toc95139565">APIs</a></h2>
+
+<p>The SimLib framework is composed of
+several important groups of APIs</p>
+
+<ol start=1 type=1>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'>Runnable</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'>Trading System specific (series, positions, indicators etc)</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'>Data
+  acquisition (DataSource, SymbolsSource)</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'>Plugin and plug-in helper</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l3 level1 lfo1;tab-stops:list .5in'>Miscellaneous utilities (String, Error handling, time/date,
+  various
+  Pointers, OutputSink etc)</li>
+</ol>
+
+<p>Developers who simply want to implement
+trading systems will only need to look into Runnable, Trading
+System and some of the utilities APIs. A basic understanding of the plug-in API
+may be useful. The two trading system projects (systemsplugin1 and
+systemsplugin2) can be used as starting point to develop other trading
+systems.</p>
+
+<p>Developers of other
+types of plug-ins (data sources, symbols sources etc) can use all the other projects to jump-start their work.&nbsp;</p>
+
+<p>All the APIs are
+declared in various header files
+(*.h) located in the <i>
+include</i> directory. All the APIs are in the
+simlib namespace, therefore the user code must either use the fully qualified name
+such as simlib::xyz or add
+the line &quot;using namespace simlib&quot; before
+referring to any of the SimLib names.</p>
+
+<p>Please note that at this stage the APIs
+and functionality are still work in progress and it is possible that they may change in
+future releases. Although effort will be made to try to minimize the impact of such changes,
+the extent of these changes cannot be guaranteed.</p>
+
+</body>
+
+</html>

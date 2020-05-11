@@ -1,0 +1,105 @@
+/*
+   Copyright (C) 2018-2020 Adrian Michel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+/*
+IMPORTANT DISCLAIMER
+
+These sample trading systems are included for illustrative purpose only.
+
+Using them with real money can lead to substantial financial losses.
+
+DO NOT USE FOR REAL MONEY TRADING OR INVESTMENT DECISIONS.
+*/
+
+ #define SYSTEM_NAME "DipBuyer fast with volume filter"
+#define SYSTEM_DESCRIPTION ""
+
+// systemwide per symbol variables
+// these are set once per symbol and available anywhere in the code
+
+  // profit target 5%
+  double profit;
+  // holding period 2 bars
+  int days;
+
+// series of entry limit prices
+  Series kBuy;
+
+  Series smaVol;
+
+bool init()
+{
+  PrintLine( getSymbol() );
+  int volumePeriod = 10;
+  smaVol = volumeSeries().SMA( volumePeriod );
+
+  profit = 5;
+  // holding period 2 bars
+  days = 2;
+
+  // calculate the entry limit prices.
+  double mult[] = { 0.88, 0.88, 0.93, 0.98, 1.03 };
+
+  Series ema3 = closeSeries().EMA( 3 );
+  Series macd = closeSeries().MACDFix( 9 );
+  kBuy = Series( barsCount() );
+
+  for( Index bar = 10; bar < barsCount(); bar++ )
+  {
+    int c1 = 0;
+    if( close( bar - 1 ) < open( bar - 1 ) ) c1++;
+    if( close( bar ) < open( bar ) ) c1++;
+    if( close( bar ) < close( bar - 1 ) ) c1++;
+    if( close( bar - 1 ) < close( bar - 3 ) ) c1++;
+
+    double xUp = ema3[ bar ] * mult[ c1 ];
+    double xDown = ema3[ bar ] * 0.83;
+
+    kBuy[ bar ] = ( ( xUp - xDown )/2 ) *
+         ( max( min( macd[ bar ], 0.5 ), -0.5 ) + 0.5 ) + xDown;
+    //PrintLine( "kbuy: " << kBuy[ bar ] << " close: " << close( bar ) );
+  }
+  // initialization succesful
+  PrintLine( "tend init" );
+  return true;
+}
+
+// trading logic
+void run()
+{
+  PrintLine( "trun start" );
+
+  PrintLine( "run 1" );
+  installProfitTarget( profit );
+  installTimeBasedExit( days );
+  PrintLine( "run 2" );
+
+  int volumePeriod = 10;
+  // traded value threshold
+  double th = 1000000;
+
+  PrintLine( "run 3" );
+  for( Index bar = 10; bar < barsCount(); bar ++ )
+  {
+    applyAutoStops( bar );
+
+    double buyLimitPrice = kBuy[ bar ];
+    if( close( bar-1 ) < close( bar-3 ) AND buyLimitPrice < close( bar ) && buyLimitPrice * smaVol[ bar ] > th &&
+    close(bar) >=0.50 )
+        buyAtLimit( bar + 1, buyLimitPrice, 1000, "buy at limit" );
+  }
+  PrintLine( "trun end" );
+}

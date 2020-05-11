@@ -1,0 +1,73 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Commission developer's guide</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF background="../../images/glabkgnd1.jpg" lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<p>Commission derived classes are used in
+back-testing to simulate the effect of commission on trading systems.&nbsp;</p>
+
+<p>Besides the plug-in API, a commission
+plug-in must implement the Commission interface.</p>
+
+<p>The method getValue is called by the
+platform and it must return the commission value calculated based on the parameters passed
+to it such as shares, price. Other relevant parameters may be added
+in the future. The returned value is the commission absolute value.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font size="2">
+  <font face="Courier New"><font COLOR="#0000ff">class</font>
+  Commission : <font COLOR="#0000ff">public</font> Info<br>
+  {<font COLOR="#0000ff"><br>
+  <br>
+  &nbsp; virtual</font> <font COLOR="#0000ff">double</font> getValue( <font COLOR="#0000ff">unsigned</font>
+  <font COLOR="#0000ff">long</font> shares, <font COLOR="#0000ff">double</font>
+  price ) <font COLOR="#0000ff">const</font> = 0;<br>
+  ...<br>
+  };
+  </font></font>
+  </td>
+ </tr>
+</table>
+
+</body>
+
+</html>

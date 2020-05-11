@@ -1,0 +1,1133 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Name</title>
+</head>
+
+<body>
+
+<ul>
+  <li>Name - can be any string; it will be listed in
+    the plugin tree.</li>
+  <li>Description - optional string that is used to
+    describe the configuration</li>
+  <li>Id - a predefined unique id identifying the
+    configuration, read only</li>
+  <li>Data file path - the path under which the data
+    files are located</li>
+  <li>Extension - the extension of the data
+    files</li>
+  <li>Format - the format in which the data is
+    stored in the data files</li>
+</ul>
+<p>Multiple configurations can be created, each for a
+different set of symbols, data format, extension, path.</p>
+<p>Once created, a configuration's parameters are
+stored in the registry and the configuration will be available every time the TradingApp is run.
+A configuration can also be edited - all parameters except for its Id can be
+changed. If a configuration is no longer needed, it can be removed, which will
+delete it from the registry as well.</p>
+<p>The FD configurations correspond to static data
+sources, although the FD could be easily made dynamic, in which case the data
+files would have to be updated in real-time to contain the new data.</p>
+
+<h3 style='margin-top:0in'>Data file
+formats</h3>
+
+<p style="margin-top: 0in">All data formats allow
+comment lines which start with $, # or //. These lines as well as all empty
+lines are ignored.</p>
+<p style="margin-top: 0in">Each non comment line
+represents a bar of data. There are several data formats currently supported.</p>
+<h4 style="margin-top: 0in">Format 1</h4>
+<p style="margin-top: 0in">There are 7 fields of data,
+and fields are separated by one of the characters: &quot;,&quot; (comma), space
+or tab:&nbsp;</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Date as
+  mm/dd/yyyy</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Time as
+  hh/mm/ss</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;Open</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>High</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Low</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Close</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Volume</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<p style='margin-top:0in'>This format can be used for
+intra-day or end of day data.</p>
+
+<p style='margin-top:0in'>Example (with field
+separator not showing):</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <col width="70" style="mso-width-source:userset;mso-width-alt:2560;width:53pt"><col width="64" span="6" style="width:48pt">
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38293">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:05:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.857799999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.8578</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.3459">
+  <p class=MsoNormal align=center style='text-align:center'>50.3459</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.469299999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.4693</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.688400000000001">
+  <p class=MsoNormal align=center style='text-align:center'>49.6884</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>2806900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38294">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:10:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.804099999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.8041</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.899900000000002">
+  <p class=MsoNormal align=center style='text-align:center'>51.8999</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.744300000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7443</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>5451100</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38295">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:15:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.654699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.6547</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.724400000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7244</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.9773">
+  <p class=MsoNormal align=center style='text-align:center'>49.9773</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.395699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.3957</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4875700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38296">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:20:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.604900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.6049</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.172699999999999">
+  <p class=MsoNormal align=center style='text-align:center'>51.1727</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.2164">
+  <p class=MsoNormal align=center style='text-align:center'>50.2164</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4379900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38299">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:25:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="52.278399999999998">
+  <p class=MsoNormal align=center style='text-align:center'>52.2784</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.863900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.8639</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.87</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4025700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38300">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:30:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.85</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.89</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.6</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.51</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4092700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38301">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:35:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.82</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.45</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.74</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.4</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4082800">
+  <p class=MsoNormal align=center style='text-align:center'>4082800</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38302">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>9:40:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.32</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.3</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4110600">
+  <p class=MsoNormal align=center style='text-align:center'>4110600</p>
+  </td>
+ </tr>
+</table>
+
+<h4 style="margin-top: 0in">&nbsp;</h4>
+<h4 style="margin-top: 0in">Format 2</h4>
+<p style="margin-top: 0in">There are 7 fields of data,
+and fields are separated by one of the characters: &quot;,&quot; (comma), space
+or tab:&nbsp;</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Date as
+  yymmdd</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Time as
+  hhmm</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;Open</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>High</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Low</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Close</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Volume</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<p style='margin-top:0in'>This format can be used for
+intra-day or end of day data.</p>
+
+<p style='margin-top:0in'>The year is implied 20yy,
+and seconds are set to 0.</p>
+
+<p style="margin-top: 0in">Example ( with field
+separator not showing):</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <col width="70" style="mso-width-source:userset;mso-width-alt:2560;width:53pt"><col width="64" span="6" style="width:48pt">
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38293">
+  <p class=MsoNormal align=center style='text-align:center'>041102</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0905</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.857799999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.8578</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.3459">
+  <p class=MsoNormal align=center style='text-align:center'>50.3459</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.469299999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.4693</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.688400000000001">
+  <p class=MsoNormal align=center style='text-align:center'>49.6884</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>2806900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38294">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0910</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.804099999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.8041</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.899900000000002">
+  <p class=MsoNormal align=center style='text-align:center'>51.8999</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.744300000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7443</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>5451100</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38295">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0915</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.654699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.6547</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.724400000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7244</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.9773">
+  <p class=MsoNormal align=center style='text-align:center'>49.9773</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.395699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.3957</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4875700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38296">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0920</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.604900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.6049</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.172699999999999">
+  <p class=MsoNormal align=center style='text-align:center'>51.1727</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.2164">
+  <p class=MsoNormal align=center style='text-align:center'>50.2164</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4379900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38299">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0925</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="52.278399999999998">
+  <p class=MsoNormal align=center style='text-align:center'>52.2784</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.863900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.8639</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.87</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4025700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38300">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0930</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.85</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.89</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.6</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.51</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4092700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38301">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0935</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.82</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.45</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.74</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.4</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4082800">
+  <p class=MsoNormal align=center style='text-align:center'>4082800</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38302">
+  <p class="MsoNormal" align="center">041102
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="0">
+  <p class=MsoNormal align=center style='text-align:center'>0940</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.32</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.3</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4110600">
+  <p class=MsoNormal align=center style='text-align:center'>4110600</p>
+  </td>
+ </tr>
+</table>
+
+<h4 style="margin-top: 0in">&nbsp;</h4>
+<h4 style="margin-top: 0in">Format 3</h4>
+<p style="margin-top: 0in">There are 6 fields of data,
+and fields are separated by one of the characters: &quot;,&quot; (comma), space
+or tab:&nbsp;</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Date as
+  mm/dd/yyyy</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;Open</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>High</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Low</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Close</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Volume</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<p style='margin-top:0in'>This format is used for end
+of day data, as there is no time, just the date. The time is assumed to be
+0:00:00.</p>
+
+<p style="margin-top: 0in">Example ( with field
+separator not showing):</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38293">
+  <p class=MsoNormal align=center style='text-align:center'>11/2/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.857799999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.8578</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.3459">
+  <p class=MsoNormal align=center style='text-align:center'>50.3459</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.469299999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.4693</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.688400000000001">
+  <p class=MsoNormal align=center style='text-align:center'>49.6884</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>2806900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38294">
+  <p class=MsoNormal align=center style='text-align:center'>11/3/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.804099999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.8041</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.899900000000002">
+  <p class=MsoNormal align=center style='text-align:center'>51.8999</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.744300000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7443</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>5451100</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38295">
+  <p class=MsoNormal align=center style='text-align:center'>11/4/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.654699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.6547</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.724400000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7244</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.9773">
+  <p class=MsoNormal align=center style='text-align:center'>49.9773</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.395699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.3957</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4875700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38296">
+  <p class=MsoNormal align=center style='text-align:center'>11/5/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.604900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.6049</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.172699999999999">
+  <p class=MsoNormal align=center style='text-align:center'>51.1727</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.2164">
+  <p class=MsoNormal align=center style='text-align:center'>50.2164</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4379900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38299">
+  <p class=MsoNormal align=center style='text-align:center'>11/8/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="52.278399999999998">
+  <p class=MsoNormal align=center style='text-align:center'>52.2784</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.863900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.8639</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.87</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4025700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38300">
+  <p class=MsoNormal align=center style='text-align:center'>11/9/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.85</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.89</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.6</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.51</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4092700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38301">
+  <p class=MsoNormal align=center style='text-align:center'>11/10/2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.82</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.45</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.74</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.4</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4082800">
+  <p class=MsoNormal align=center style='text-align:center'>4082800</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38302">
+  <p class=MsoNormal align=center style='text-align:center'>11/11
+  /2004</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.32</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.3</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4110600">
+  <p class=MsoNormal align=center style='text-align:center'>4110600</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<h4 style="margin-top: 0in">Format 4</h4>
+<p style="margin-top: 0in">There are 6 fields of data,
+and fields are separated by one of the characters: &quot;,&quot; (comma), space
+or tab:&nbsp;</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Date as
+  yyyymmdd</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;Open</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>High</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Low</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Close</p>
+  </td>
+  <td width="15%" style='width:15.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal align=center style='text-align:center'>Volume</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<p style='margin-top:0in'>This format is used for end
+of day data, as there is no time, just the date. The time is assumed to be
+0:00:00.</p>
+
+<p style="margin-top: 0in">Example ( with field
+separator not showing):</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38293">
+  <p class=MsoNormal align=center style='text-align:center'>20041102</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.857799999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.8578</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.3459">
+  <p class=MsoNormal align=center style='text-align:center'>50.3459</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.469299999999997">
+  <p class=MsoNormal align=center style='text-align:center'>49.4693</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.688400000000001">
+  <p class=MsoNormal align=center style='text-align:center'>49.6884</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>2806900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38294">
+  <p class="MsoNormal" align="center">20041103
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.804099999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.8041</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.899900000000002">
+  <p class=MsoNormal align=center style='text-align:center'>51.8999</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.744300000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7443</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>5451100</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38295">
+  <p class="MsoNormal" align="center">20041104
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.654699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.6547</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.724400000000003">
+  <p class=MsoNormal align=center style='text-align:center'>50.7244</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="49.9773">
+  <p class=MsoNormal align=center style='text-align:center'>49.9773</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.395699999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.3957</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4875700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38296">
+  <p class="MsoNormal" align="center">20041105
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.604900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.6049</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="51.172699999999999">
+  <p class=MsoNormal align=center style='text-align:center'>51.1727</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.2164">
+  <p class=MsoNormal align=center style='text-align:center'>50.2164</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4379900</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38299">
+  <p class="MsoNormal" align="center">20041108
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.953499999999998">
+  <p class=MsoNormal align=center style='text-align:center'>50.9535</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="52.278399999999998">
+  <p class=MsoNormal align=center style='text-align:center'>52.2784</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="50.863900000000001">
+  <p class=MsoNormal align=center style='text-align:center'>50.8639</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.87</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4025700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38300">
+  <p class="MsoNormal" align="center">20041109
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.85</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.89</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>51.6</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.51</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>4092700</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38301">
+  <p class="MsoNormal" align="center">20041110
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.82</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.45</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>52.74</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.4</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4082800">
+  <p class=MsoNormal align=center style='text-align:center'>4082800</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="38302">
+  <p class="MsoNormal" align="center">20041111
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.32</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>53.41</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=center style='text-align:center'>54.3</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num="4110600">
+  <p class=MsoNormal align=center style='text-align:center'>4110600</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+</body>
+
+</html>

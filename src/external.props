@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <ExternalDir>$(SolutionDir)..\external</ExternalDir>
+    <ChartDirectorDir>$(ExternalDir)\ChartDirector</ChartDirectorDir>
+    <ChartDirectorInclude>$(ChartDirectorDir)\include</ChartDirectorInclude>
+    <ChartDirectorLib>$(ChartDirectorDir)\lib</ChartDirectorLib>
+    <TaLibDir>$(ExternalDir)\ta-lib\0.4.0</TaLibDir>
+    <TaLibInclude>$(TaLibDir)\c\include</TaLibInclude>
+    <TaLibLib>$(TaLibDir)\c\ide\vs2019\lib_proj\$(PlatformName)</TaLibLib>
+    <ConfigDir>$(SolutionDir)..\config</ConfigDir>
+    <ConfigFile>$(ConfigDir)\env_$(PlatformTarget).txt</ConfigFile>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="ExternalDir">
+      <Value>$(ExternalDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ChartDirectorDir">
+      <Value>$(ChartDirectorDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ChartDirectorInclude">
+      <Value>$(ChartDirectorInclude)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ChartDirectorLib">
+      <Value>$(ChartDirectorLib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TaLibDir">
+      <Value>$(TaLibDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TaLibInclude">
+      <Value>$(TaLibInclude)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TaLibLib">
+      <Value>$(TaLibLib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ConfigDir">
+      <Value>$(ConfigDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ConfigFile">
+      <Value>$(ConfigFile)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,123 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=iso-8859-1" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Language" content="en" />
+    <link rel="stylesheet" href="../tree/doxygen.css">
+    <title>TreeView</title>
+    <style type="text/css">
+    <!--
+    .directory { font-size: 10pt; font-weight: bold; }
+    .directory h3 { margin: 0px; margin-top: 1em; font-size: 11pt; }
+    .directory p { margin: 0px; white-space: nowrap; }
+    .directory div { display: none; margin: 0px; }
+    .directory img { vertical-align: middle; }
+    -->
+    </style>
+    <script type="text/javascript">
+    <!-- // Hide script from old browsers
+    
+    function toggleFolder(id, imageNode) 
+    {
+      var folder = document.getElementById(id);
+      var l = imageNode.src.length;
+      if (imageNode.src.substring(l-20,l)=="ftv2folderclosed.png" || 
+          imageNode.src.substring(l-18,l)=="ftv2folderopen.png")
+      {
+        imageNode = imageNode.previousSibling;
+        l = imageNode.src.length;
+      }
+      if (folder == null) 
+      {
+      } 
+      else if (folder.style.display == "block") 
+      {
+        if (imageNode != null) 
+        {
+          imageNode.nextSibling.src = "ftv2folderclosed.png";
+          if (imageNode.src.substring(l-13,l) == "ftv2mnode.png")
+          {
+            imageNode.src = "ftv2pnode.png";
+          }
+          else if (imageNode.src.substring(l-17,l) == "ftv2mlastnode.png")
+          {
+            imageNode.src = "ftv2plastnode.png";
+          }
+        }
+        folder.style.display = "none";
+      } 
+      else 
+      {
+        if (imageNode != null) 
+        {
+          imageNode.nextSibling.src = "ftv2folderopen.png";
+          if (imageNode.src.substring(l-13,l) == "ftv2pnode.png")
+          {
+            imageNode.src = "ftv2mnode.png";
+          }
+          else if (imageNode.src.substring(l-17,l) == "ftv2plastnode.png")
+          {
+            imageNode.src = "ftv2mlastnode.png";
+          }
+        }
+        folder.style.display = "block";
+      }
+    }
+
+    // End script hiding -->        
+    </script>
+    <base target="main">
+  </head>
+
+  <body>
+    <div class="directory">
+      <div style="display: block;">
+        <p><font size="2" face="Trebuchet MS">Documentation</font></p>
+        <p><font size="2" face="Trebuchet MS"><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a href="../quickstart.htm">Quick Start</a></font></p>
+        <p><font size="2" face="Trebuchet MS"><img src="ftv2pnode.png" alt="o" width=16 height=22 onclick="toggleFolder('folder', this)"/><img src="ftv2folderclosed.png" alt="+" width=24 height=22 onclick="toggleFolder('folder', this)"/><a class="el" href="../userguide/overview.htm">User's Guide</a></font></p>
+        <div id="folder">
+        <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /></font><img border="0" src="ftv2lastnode.png" width="16" height="22"><font size="2" face="Trebuchet MS"><img src="ftv2plastnode.png" alt="o" width=16 height=22 onclick="toggleFolder('folder0', this)"/><img src="ftv2folderclosed.png" alt="+" width=24 height=22 onclick="toggleFolder('folder1', this)"/><a href="../userguide/plugin.htm">Plugins</a></font></p>
+        <div id="folder0">
+	        <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img border="0" src="ftv2blank.png" width="16" height="22"><img border="0" src="ftv2blank.png" width="16" height="22"><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../userguide/plugins/file_data_source_plugin.htm" target="main">File
+   		     Data Source</a></font></p>
+            <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img border="0" src="ftv2blank.png" width="16" height="22"><img border="0" src="ftv2blank.png" width="16" height="22"><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../userguide/plugins/file_symbols_source_plugin.htm" target="main">File
+	        Symbols Source</a></font></p>
+            <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img border="0" src="ftv2blank.png" width="16" height="22"><img border="0" src="ftv2blank.png" width="16" height="22"></font><img border="0" src="ftv2lastnode.png" width="16" height="22"><font size="2" face="Trebuchet MS"><img src="ftv2doc.png" alt="*" width=24 height=22 /><a href="../userguide/plugins/file_signal_handler_plugin.htm">File 
+            Signal Handler (Statistics Plugin</a>)</font></p>
+        </div>
+        </div>
+        
+        <p><font size="2" face="Trebuchet MS"><img src="ftv2pnode.png" alt="o" width=16 height=22 onclick="toggleFolder('folder1', this)"/><img src="ftv2folderclosed.png" alt="+" width=24 height=22 onclick="toggleFolder('folder1', this)"/><a href="../devguides/gen_info.htm">Developer's Guide</a></font></p>
+        <div id="folder1">
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/plugin_dev_guide.htm" target="main">Plug-in</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/debugging_plugins.htm" target="main">Debugging
+          plug-ins</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/runnable_dev_guide.htm" target="main">Runnable</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/datasource_dev_guide.htm" target="main">Data
+          Source</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/symbol_source_dev_guide.htm" target="main">Symbols
+          Source</a></font></p>
+        <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2plastnode.png" alt="o" width=16 height=22 onclick="toggleFolder('folder5', this)"/><img src="ftv2folderclosed.png" alt="+" width=24 height=22 onclick="toggleFolder('folder1', this)"/><a href="../devguides/trading_system_dev_guide.htm">Trading System</a></font></p>
+        <div id="folder5">
+	        <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img border="0" src="ftv2blank.png" width="16" height="22"><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a href="../devguides/trading_system/symple_trading_system.htm">A
+            </a></font><font face="Trebuchet MS">
+            <a href="../devguides/trading_system/symple_trading_system.htm">
+            Simple Trading System</a></font></p>
+            <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img border="0" src="ftv2blank.png" width="16" height="22"></font><img border="0" src="ftv2lastnode.png" width="16" height="22"><font size="2" face="Trebuchet MS"><img src="ftv2doc.png" alt="*" width=24 height=22 /></font><font face="Trebuchet MS"><a href="../devguides/trading_system/multi_symbol_system.htm">Multi 
+            Symbol Trading System</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/signal_handler.htm" target="main">Signal
+          Handler</a></font></p>
+         </div>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/slippage.htm" target="main">Slippage</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/commission.htm" target="main">Commission</a></font></p>
+          <p><font size="2" face="Trebuchet MS"><img src="ftv2vertline.png" alt="|" width=16 height=22 /></font><img border="0" src="ftv2lastnode.png" width="16" height="22"><font size="2" face="Trebuchet MS"><img src="ftv2doc.png" alt="*" width=24 height=22 /><a class="el" href="../devguides/misc.htm" target="main">Misc</a></font></p>
+        </div>
+        <p><font size="2" face="Trebuchet MS"><img src="ftv2node.png" alt="o" width=16 height=22 /><img src="ftv2doc.png" alt="*" width=24 height=22 /><a href="../license.htm" target="main">
+ License
+    Agreement</a></font></p>
+        <p><img border="0" src="ftv2lastnode.png" width="16" height="22"><font size="2" face="Trebuchet MS"><img src="ftv2doc.png" alt="*" width=24 height=22 /><a href="../acknowledgments.htm">
+        Copyright notices</a></font></p>
+      </div>
+    </div>
+  </body>
+</html>

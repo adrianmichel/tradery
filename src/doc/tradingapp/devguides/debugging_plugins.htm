@@ -1,0 +1,91 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Debugging plug-ins</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF background="../images/glabkgnd1.jpg" lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h1><a name="_Toc95139548"></a>Debugging plug-ins</h1>
+
+<hr color="#C4DDD7">
+
+</div>
+
+<div class=Section1>
+
+<p>Although the Visual Studio .net
+development environment may not be used to debug TradingApp plug-ins, for copy
+protection reasons, it is still possible to debug any plug-ins by sending data
+(strings or numeric values) to the session output window.&nbsp;</p>
+
+<p>Each class derived from
+PluginConfiguration receives an OutputSink, which sends its formatted output to
+the Output Bar component of the Session window. Each session has its own output
+window so configurations components of a session will send their output the
+output window of that session.</p>
+
+<p>To get the desired output in a
+multithreaded environment, the OutputSink class must be used in conjunction with
+the OutputBuffer class. First a local instance of an OutputBuffer is created and
+populated with the formatted data to printed out, using any of the &lt;&lt;
+operators. Next, the OutputSink printLine method is called with the buffer as
+argument. The &lt;&lt; operators can be chained in the same way they would be
+with a std::ostream class.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2">OutputBuffer ob;<br>
+  <br>
+  outputSink().printLine( ob &lt;&lt; red &lt;&lt; name() &lt;&lt; _TT( &quot;
+  in init, on &quot; ) &lt;&lt; getSymbol() );</font>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p>Using these classes, a plug-in can display
+values for internal variables, trace various points in the code etc. To make the
+meaning of various pieces of information displayed in the output window clearer,
+various format characters such as colors, bold, italics and underlined can be
+used.</p>
+
+</body>
+
+</html>

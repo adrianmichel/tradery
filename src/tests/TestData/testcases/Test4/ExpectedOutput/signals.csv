@@ -1,0 +1,4 @@
+Symbol,Signal date/time,Shares,Side,Type,Price,Name,System id, System name, Position id
+FAST,2017-Jan-12 00:00:00,213,Buy,Market,0,buy,85,Improved Price Breakup (ema = 70),0
+GPC,2017-Jan-12 00:00:00,104,Buy,Market,0,buy,85,Improved Price Breakup (ema = 70),0
+STJ,2017-Jan-04 00:00:00,124,Buy,Market,0,buy,85,Improved Price Breakup (ema = 70),0

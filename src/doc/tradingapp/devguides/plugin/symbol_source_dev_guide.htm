@@ -1,0 +1,70 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Symbols source developer guide</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF background="../../images/glabkgnd1.jpg" lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<p>The SymbolsSource API defines
+the interfaces that a SimLib symbols list source must implement as well as a
+number of other helper classes.</p>
+
+<p>A symbols list source is a component
+is capable of delivering symbols from a collection of symbols. From
+an interface standpoint a symbols source is very simple: it must know how to
+retrieve the &quot;next&quot; symbol, and to signal when there are no more
+symbols. This functionality is achieved by means of symbols source iterators. An iterator is class that
+can traverse the
+list of symbols sequentially from the beginning to end, where the meaning of beginning and end
+are defined by the symbols list source and iterator</p>
+
+<p>A symbols list source can be associated with any number of
+independent symbols source iterators. Iterators are thread safe
+and they can be shared between different Runnables at runtime. This leads to
+some interesting applications, such as the ability to run one runnable in
+multiple threads simultaneously, by sharing the same symbols list iterator
+between multiple instances of the same Runnable, which means that globally all instances
+run exactly once on each symbol in the list of symbols.&nbsp;</p>
+
+<p>The symbols can come from a variety of physical sources,
+such as file system, database, online etc. A symbols source can by static (the
+symbols don't change over time) or dynamic (symbols can change over time).</p>
+
+<p>A file based symbols source (which
+retrieves symbols from a text file) is implemented in the project fileplugins.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+/*
+   Copyright (C) 2018-2020 Adrian Michel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+/*
+IMPORTANT DISCLAIMER
+
+These sample trading systems are included for illustrative purpose only.
+
+Using them with real money can lead to substantial financial losses.
+
+DO NOT USE FOR REAL MONEY TRADING OR INVESTMENT DECISIONS.
+*/
+
+#define SYSTEM_NAME "Moving Average 3"
+#define SYSTEM_DESCRIPTION ""
+
+bool init()
+{
+    // do some init here
+        // nowinstall stop loss 5%
+    installStopLoss(10);
+    return true;
+}
+void run()
+{
+int volumePeriod = 50;
+int mfiperiod = 20;
+Series avg = closeSeries().SMA(50);
+Series avg1 = closeSeries().SMA(10);
+Series AvTR = ATR(10);
+double ath = 0;
+double alltime = 0;
+
+// this is the bar loop
+for(Index bar = 51; bar < barsCount(); bar++ )
+{
+	    if(ath < close(bar) 
+	    AND openPositionsCount()!=0)
+	    {
+	    	ath = close(bar);
+	    }
+    //applyAutoStops(bar);
+    //Exit logic
+    for( Position pos = getFirstOpenPosition(); pos; pos = getNextOpenPosition() ) 
+    {
+    	if(pos.isLong())
+    	{
+       //if(avg1[bar]<avg[bar])
+       if(close(bar)<(ath-4*AvTR[bar]))
+       {
+       sellAtMarket(bar+1,pos, "take profit" );
+       ath = 0;
+       }
+       }
+    }
+    // position entry logic
+	    if(avg1[bar]>avg[bar]
+	    AND (avg1[bar]-avg1[bar-3])/(avg[bar]-avg[bar-3])<1
+	    AND (avg1[bar]/avg1[bar-3])-1 > 0.03
+	    AND openPositionsCount()==0)
+	    {
+	    buyAtMarket(bar+1, 50/AvTR[bar], "buy at limit" );
+	    }
+	    
+}	
+// now create a new Pane
+
+}

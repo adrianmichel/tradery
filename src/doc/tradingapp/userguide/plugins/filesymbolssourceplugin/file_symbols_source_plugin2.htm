@@ -1,0 +1,67 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Name</title>
+</head>
+
+<body>
+
+<ul>
+  <li>Name - can be any string; it will be listed in
+    the plugin tree.</li>
+  <li>Id - a UniquId value, generated internally, that can not be changed by
+    the user</li>
+  <li>Description - optional string that is used to
+    describe the configuration</li>
+  <li>Symbols list file name - the name of the file
+    containing the list of symbols</li>
+</ul>
+<p>Multiple configurations can be created, each for a
+different list of symbols.</p>
+<p>Once created, a FSSP configuration's parameters are
+stored in the registry and will be available every time the TradingApp is run. A
+configuration can also be edited - all its parameters except for its Id can be
+changed. If a configuration is no longer needed, it can be removed, which will
+delete it in the registry as well.</p>
+<p>The FSSP configurations correspond to static
+symbols list.</p>
+
+
+<h3 style='margin-top:0in'>Symbols list file format</h3>
+
+<p style='margin-top:0in'>Symbols are stored in text
+files and can
+be separated by white space characters (blanc, tab or end of line) or by comma or
+semicolon. Lines starting with <b> #</b> or <b> //</b> are considered comments and ignored.</p>
+
+<p style='margin-top:0in'>Here is an
+example of a symbols list file contents</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>msft yhoo; GOOG,<br>
+  IBM<br>
+  intc<br>
+  // this is a comment<br>
+  #this is another comment<br>
+  <br>
+  TXN</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<p style='margin-top:0in'>Note -
+currently the symbols cannot contain whitespace characters (blanc, tab, new
+line). This will be fixed in a future release when symbols surrounded by quote
+characters will be accepted.</p>
+
+</body>
+
+</html>

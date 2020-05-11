@@ -1,0 +1,46 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Name</title>
+</head>
+
+<body>
+
+<ul>
+  <li>Name - can be any string; it will be listed in
+    the plug-in tree.</li>
+  <li>Description - optional string that is used to
+    describe the configuration</li>
+  <li>Id - a system generated predefined unique id identifying the
+    configuration, read only</li>
+  <li>Enable saving signals - enables saving
+    signals in real time if checked</li>
+  <li>Signal Files Path - the path under which the signal files will be saved</li>
+  <li>Base File Name - string that will prepended to the current date and time 
+  to create the signal file name</li>
+  <li>Extension - the extension of the signal files</li>
+</ul>
+<p>This dialog only configures parameters related to the trading signal handling 
+functionality. No configuration is needed for the statistics functionality of 
+the FSHP - when the session is complete, statistics will automatically be 
+calculated and displayed.</p>
+<p>Multiple configurations of the FSHP can be created, each for a
+different path, base file name, extension.</p>
+<p>Once created, a configuration's parameters are
+stored in the registry and the configuration will be available every time the TradingApp is run.
+A configuration can also be edited - all parameters except for its Id can be
+changed. If a configuration is no longer needed, it can be removed, which will
+delete it from the registry as well.</p>
+<h3>The File Signal Handler UI</h3>
+<p>As mentioned above, the FSHP has its own
+UI by supporting the simple UI protocol of the plug-in configuration API. When
+added to or loaded into a session, a plug-in configuration will add a new tab to
+the already existing tabs in the session window. Here is the portion showing the
+file signal handler window:</p>
+
+</body>
+
+</html>

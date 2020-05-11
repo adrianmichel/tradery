@@ -1,0 +1,11 @@
+possizingFile=possizing2.txt
+slippage=0.3
+commission=10
+symbolsFile=symbols4.txt
+start=07/01/2016
+end=07/01/2017
+expectedresultsDir=ExpectedOutput
+system=Moving Average 3.txt
+system=DipBuyer fast with volume filter.txt
+threads=1
+

@@ -1,0 +1,63 @@
+,Total stats,Long stats,Short stats,Buy & Hold stats
+Date Range,2016-Jan-12,2017-Jan-12
+
+Overall performance
+Tradery score,1.03,1.03,0.00,3.22,
+
+Performance
+Total % gain/loss,3.63%,3.63 %,0.00 %,24.97 %,
+Total gain/loss,3631.08,3631.08,0.00,24968.36,
+Annualized pct gain,3.62%,3.62 %,0.00 %,24.89 %,
+Starting capital,100000.00,100000.00,100000.00,100000.00,
+Ending capital,103631.08,103631.08,100000.00,124968.36,
+Closed pos gain/loss,-2803.08,-2803.08,0.00,24968.36,
+Open pos gain/loss,6434.15,6434.15,0.00,0.00,
+Max gain per pos,2145.84,2145.84,0.00,1242.78,
+Max loss per pos,-706.68,-706.68,0.00,-93.33,
+Average gain/loss per pos,68.51,68.51,0.00,58.07,
+Average % gain/loss per pos,0.69%,0.69 %,0.00 %,28.41 %,
+Max % gain per pos,21.43%,21.43 %,0.00 %,552.74 %,
+Max % loss per pos,-7.07%,-7.07 %,0.00 %,-47.15 %,
+
+Risk etc...
+Exposure,66.79%,66.79 %,0.00 %,85.67 %,
+Expectancy,68.51,68.51,0.00,58.07,
+Ulcer index,2.93,2.93,0.00,1.96,
+
+Drawdown
+Max drawdown,-6105.48,-6105.48,0.00,-7292.62,
+Max drawdown date,2016-Oct-19,2016-Oct-19,,2016-Jun-27,
+Max drawdown %,-6.04%,-6.04 %,0.00 %,-6.33 %,
+Max drawdown % date,2016-Oct-19,2016-Oct-19,,2016-Jun-27,
+Max drawdown duration,103,103,0,81,
+
+All Trades
+Total Trades,53,53,0,430,
+Closed trades,44,44,0,430,
+Open trades,9,9,0,0,
+
+Winning Trades
+Winning closed trades,12,12,0,368,
+Winning open trades,9,9,0,0,
+% winning closed trades,22.64%,22.64 %,0.00 %,85.58 %,
+% winning open trades,16.98%,16.98 %,0.00 %,0.00 %,
+Average gain per winning pos,748.46,748.46,0.00,71.75,
+
+Losing Trades
+Losing closed trades,32,32,0,62,
+Losing open trades,0,0,0,0,
+% losing closed trades,60.38%,60.38 %,0.00 %,14.42 %,
+% losing open trades,0.00%,0.00 %,0.00 %,0.00 %,
+Average loss per losing pos,-377.71,-377.71,0.00,-23.13,
+
+Neutral Trades
+Neutral closed trades,0,0,0,0,
+Neutral open trades,0,0,0,0,
+% neutral closed trades,0.00%,0.00 %,0.00 %,0.00 %,
+% neutral open trades,0.00%,0.00 %,0.00 %,0.00 %,
+
+Slippage
+Average slippage per pos,0.39,0.39,0.00,0.00,
+
+Commission
+Average commission per pos,9.15,9.15,0.00,0.00,

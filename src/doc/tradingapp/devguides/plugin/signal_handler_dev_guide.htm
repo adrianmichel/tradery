@@ -1,0 +1,90 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Signal handler developer's guide</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF background="../../images/glabkgnd1.jpg" lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<p>Signal handlers are components that
+receive and process trading signals generated during the course of executing one
+or more trading systems. </p>
+
+<p>Besides implementing the plug-in API,
+a signal handler plug-in must implement the SignalHandler interface. </p>
+
+<p>Here are the SignalHandler class
+methods:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font size="2"><font face="Courier New"><font COLOR="#0000ff">class</font>
+  SIMLIB_API SignalHandler : <font COLOR="#0000ff">public</font> Info<br>
+  {</font><font face="Courier New" COLOR="#0000ff"><br>
+  public</font><font face="Courier New">:<br>
+  <font COLOR="#0000ff">&nbsp;
+  virtual</font> <font COLOR="#0000ff">void</font> startedRunSH() <font COLOR="#0000ff">throw</font>
+  ( SignalHandlerException );<br>
+  &nbsp; <font COLOR="#0000ff">virtual</font> <font COLOR="#0000ff">void</font>
+  endedRunSH() <font COLOR="#0000ff">throw</font> ( SignalHandlerException )<br>
+  <font color="#008000">&nbsp; </font><font COLOR="#0000ff">virtual</font>
+  <font COLOR="#0000ff">void</font> signal( <font COLOR="#0000ff">const</font>
+  Signal&amp; _signal ) = 0;<font COLOR="#0000ff"><br>
+  </font>
+  };</font></font>
+  </td>
+ </tr>
+</table>
+
+<p>The startedRunSH and endedRunSH are called when the
+scheduler is starting and ending respectively running the Runnables. In case of
+a dynamic data source, endedRunSH is called when the data source signals that
+there is no more data or if the session is stopped manually. </p>
+
+<p>These methods can be used for example to open/close
+a connection to an account for auto-trading, or in the case of the file signal
+handler sample, to open and close the file in which the signals are saved during
+a run. In case they are not defined in a SignalHandler derived class, the
+default implementation is called which does nothing.</p>
+
+<p>The signal method receives the actual trading
+signals. A Signal object contains information such as symbol, side of signal
+(buy, sell etc), type (limit, market etc), price and others.</p>
+
+</body>
+
+</html>

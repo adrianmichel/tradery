@@ -1,0 +1,78 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Overview</title>
+</head>
+
+<body>
+
+<p>One of the goals of the TradingApp Platform is to enable development and use 
+of component based trading system applications. The components used by the 
+Trading Platform are referred to as plug-ins.</p>
+<p>Each plug-in represents a class of components and it exposes the 
+functionality necessary for loading, unloading, creating instances of it etc. To 
+make use of the functionality a plug-in implements, instances of it must be 
+created. These instances are called plug-in configurations and they expose the 
+specific functionality of the plug-in in a form that is usable by other 
+components of the TradingApp platform.</p>
+<p>Plug-ins are the main extensibility mechanism provided by the TradingApp 
+Platform. A plug-in is a component that provides specific services and which can 
+be dynamically discovered and loaded at runtime. Currently supported plug-in 
+types are:</p>
+<ul>
+  <li>runnable (a generalization of the concept of a trading system)</li>
+  <li>data source</li>
+  <li>symbols source</li>
+  <li>signal handler</li>
+  <li>slippage</li>
+  <li>commission</li>
+</ul>
+<p>To make plug-ins known to the TradingApp platform, simply store them in a 
+location that is in the plug-in path, which can be set in the Setting dialog or 
+on the command line. The Integrated Visual Trading Environment (IVTE) will then 
+show the available plug-ins in the Plug-in Explorer bar.</p>
+<p><b>Note</b>: New types of plug-ins are under development and will be provided 
+as part of future releases.</p>
+<p>All plug-ins must implement a simple and generic protocol, by means of an 
+open C++ API to enable them to communicate with TradingApp at runtime. Plug-ins 
+are implemented as DLLs (dynamic link library). A DLL can contain several 
+plug-ins, although there can be at most one plug-in of each type in any one DLL.</p>
+<p>Although developing plug-ins is a straightforward process thanks to the 
+various plug-in helper classes, most users will be able to get the necessary 
+components in binary format either as part of the TradingApp platform package or 
+from third party developers. Data sources, symbols source, trading signal 
+handlers for automated trading, etc will be developed for various data providers 
+and online brokerage firms. Trading systems released as black boxes will also be 
+available, and this package will give the user the ability to back-test them and 
+verify the claims made by the developers before they use them in real trading, 
+as well as configure, optimize, combine them with other systems etc.&nbsp;</p>
+<p>Some users will also want to implement and test their own trading ideas. 
+Currently this can be achieved by writing trading systems in C++ using Visual 
+Studio .net 2003. Although this involves some programming, it should be a 
+relatively easy task for most users because:&nbsp;</p>
+<ul>
+  <li>a lot of the basic or even advanced functionality needed to develop 
+  trading systems is already implemented and presented as easy to use APIs and 
+  classes,</li>
+  <li>the level of the language needed to write trading systems is minimal, and 
+  comparable to other similar packages, although one could also use the full 
+  power of C++ to implement more advanced ideas</li>
+  <li>the trading system structure is very modular, which makes it easier to 
+  program, as the user only needs to focus on small tasks at various stages of 
+  the development process.</li>
+  <li>the pre-packaged sample projects provide an easy starting point for even 
+  the most inexperienced programmer.</li>
+</ul>
+<p>Future versions will provide more options, by means of other free C++ 
+development environments, or by creating special adapter plug-ins acting as 
+bridges between the TradingApp Platform and components developed using other 
+tools and/or languages.</p>
+<p>Note: various plug-in wizards which will make these tasks even easier will 
+also be provided in the future. </p>
+
+</body>
+
+</html>

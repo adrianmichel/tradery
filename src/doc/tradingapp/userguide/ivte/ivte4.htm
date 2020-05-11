@@ -1,0 +1,700 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>To create a new session select New from the file menu or click on the new 
+session on the application toolbar</title>
+<style>
+<!--
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	}
+p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p class="MsoNormal">To create a new session select
+New from the file menu or click on the new session on the application toolbar.
+To populate the session with plug-in configurations, select one or more plug-in and/or plug-in
+configurations of any type and combination desired in the plug-in explorer
+bar and drag and drop them on the new session’s configuration bar.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Session runtime parameters such as the time
+period for data,  number of threads for runnable execution or position sizing can be set in the
+session parameters bar.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><b>Note</b>: currently the only position sizing parameter 
+is the Initial Capital value. More options will be added in future releases.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Once the session has been
+configured, it can be run by clicking on the &gt; button on the session toolbar.
+If the default datasource is static, the session will run all the runnables once
+on all the symbols provided by the default symbols source and show the results
+in the various tab windows. The results are shown in real time except for trades, which
+are normally shown at the end of the session. If the default data source is
+dynamic, then the session will not stop after all the symbols have been
+exhausted, but instead will wait for a notification of new data from the data source,
+at which moment a new cycle will start.&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">An automated trading session can be
+defined by combining a dynamic data source and a
+signal handler configuration that can connect to a broker.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><b>Note</b>: all runnables in a session run simultaneously, in different threads, (and possibly on different CPUs), and they all send their output
+information (generated trades and trading signals, errors, output) to the same
+windows or components belonging to the session.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">A session can be saved using the Save command. The various 
+elements of the session are saved in a file with the default extension &quot;.tap&quot;, 
+in XML format.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">The TradingApp Platform comes
+with pre-configured data files and symbol sources, which can be selected in the
+plug-in explorer. There are also several pre-configured session files in the
+&quot;sessions&quot; directory.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Existing session files
+(.tap) can be opened using one or more options:</p>
+<ul style="margin-bottom: 0in">
+  <li>
+    <p class="MsoNormal">from the File/Open
+    menu or by clicking on the respective toolbar button</li>
+  <li>
+    <p class="MsoNormal">from the command
+    line (see command line options below) - one or more sessions</li>
+  <li>
+    <p class="MsoNormal">by dragging and
+    dropping one or more session files from a Windows file explorer window onto
+    the IVTE main window</li>
+  <li>
+    <p class="MsoNormal">by double clicking
+    on a session file in a Windows file explorer window - the installation
+    procedure associates .tap files with the IVTE application</li>
+</ul>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><b>Note: </b>all configurations
+of a session are dynamically loaded - i.e. the DLLs they reside in are loaded when the 
+session run starts and
+released when the session run ends. In case of dynamic data sources, they will stay loaded
+until the data source signals that there is no more data available and the 
+session ends. Thus, when
+testing various plug-ins, the corresponding DLLs can be re-build between runs, without having to
+shut down the GUI application. There is one exception though, in case the same 
+plug-in is used by more than one session, in which case the DLL may stay loaded 
+even if one of the session is stopped. </p>
+<h3>Command line</h3>
+
+
+<p>Several parameters can be passed to the
+IVTE on the command line.&nbsp;</p>
+
+
+<p>Any number of  session file names can be passed on the command line and, if 
+valid, they will be opened at startup. These session file names do not need to 
+be preceded by a parameter name.</p>
+
+
+<p>It is also possible to specify the plug-in
+discovery path on the command line using the optional parameter <b>-p</b> or(<b>--pluginpath</b>)
+followed by the plug-in discovery path. The other plug-in parameters (recursive
+or not, and extension) are taken from the
+application settings.</p>
+
+
+<p>The option <b>-?</b> or <b>--help</b> will
+bring up a dialog box with information about supported command line parameters.</p>
+
+
+<p>For both types of arguments, the file name
+or path must be a quoted string if it contains space characters.</p>
+
+
+<p>Example:</p>
+
+
+<table border=0 cellpadding=0 style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>tradingapp.exe -p
+  c:\plugins \session1.tap &quot;c:\new sessions\session2.tap&quot;</p>
+  <p class=MsoNormal>tradingapp.exe --pluginpath 
+  <a href="../../../../../../plugins" style="color: blue; text-decoration: underline; text-underline: single">c:\plugins</a></p>
+  </td>
+ </tr>
+</table>
+
+
+<p>The first example will set the plug-in discovery path to
+<a href="../../../../../../plugins" style="color: blue; text-decoration: underline; text-underline: single">c:\plugins</a> and it will open session1 and 
+session2 sessions. The second example only sets the plug-in discovery path.</p>
+
+
+<h3>Exporting data</h3>
+
+
+<p>Data generated during a session run can be exported to files (see menu
+File/Export). Trading Signals can be exported to CSV or Wealth-Lab 3.0 (R) alert
+file format, and generated trades can be exported to CSV format. See below for the
+exact contents of various exported files.&nbsp;</p>
+
+
+<h4 style='margin-top:0in'><span style="mso-ansi-language: FR" lang="FR">Trading
+signals files format</span></h4>
+
+<p style='margin-top:0in'>If saved in
+CSV format, trading signals will have the following structure</p>
+
+<table border=0 cellpadding=0 style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b>Shares</b></p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b>Symbol</b></p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b>Side</b></p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b>Type</b></p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><b>Price</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>150</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>msft</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Buy</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Market</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>0</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>50</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>GOOG</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Sell</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Limit</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>200</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>100</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>INTC</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Buy</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>Stop</p>
+  </td>
+  <td width="20%" style='width:20.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal>25</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>For the Wealth-Lab
+(R) 3.0 alerts file format, please refer to the Wealth-Lab Developer
+documentation.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<h4 style='margin-top:0in'><span lang=FR style='mso-ansi-language:FR'> Trades file format</span></h4>
+
+<p style='margin-top:0in'>The
+historical trades saved in a CSV file have the following structure</p>
+
+<table border=0 cellpadding=0 style='mso-cellspacing:1.5pt'>
+ <col width="64" span="14" style="width:48pt">
+ <tr style='height:12.75pt'>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Symbol</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Shares</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Entry time</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Entry bar</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Entry price</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Entry slippage</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Entry commission</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Entry name</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Exit time</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Exit bar</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Exit price</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Exit slippage</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Exit commission</b></p>
+  </td>
+  <td width=64 style='width:48.0pt;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;
+  height:12.75pt'>
+  <p class=MsoNormal><b>Exit name</b></p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>goog</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>27</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-24
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>53</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>182.75</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-26
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>55</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>179.27</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>Time Based</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>txn</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>214</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2004-Dec-09
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>23</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>23.31</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2004-Dec-13
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>25</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>23.85</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>Time Based</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>yhoo</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>147</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-24
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>53</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>33.95</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-26
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>55</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>34.71</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>Time Based</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>HPQ</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>252</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-11
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>45</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>19.82</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-13
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>47</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>20.06</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>Time Based</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>PG</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>94</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2005-Jan-28
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>57</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>52.15</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>a</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>1000</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2004-Nov-08
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>1</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>24.91</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2004-Nov-08
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>1</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>25</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>sell at limit</p>
+  </td>
+ </tr>
+ <tr style='height:12.75pt'>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>a</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>1000</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>2004-Nov-12
+  00:00:00</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>5</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>23.26</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'
+  u1:num>
+  <p class=MsoNormal align=right style='text-align:right'>0</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>buy at limit</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+  <td style='background:#C4DDD7;padding:.75pt .75pt .75pt .75pt;height:12.75pt'>
+  <p class=MsoNormal>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in'>&nbsp;</p>
+
+<p style='margin-top:0in'>The closing
+fields for trades that have not been closed are left empty.&nbsp;</p>
+
+
+</body>
+
+</html>

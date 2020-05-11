@@ -1,0 +1,227 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title></title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF background="../../images/glabkgnd1.jpg" lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h3><a name="_Toc95139566">The
+Runnable API</a></h3>
+
+<p>The Runnable interface is defined in the
+simlib.h header file.</p>
+
+<p>A Runnable represents
+&quot;something&quot; that can be run by the framework. The Runnable interface declares the
+basic methods that a specialized derived class will have to implement for it to
+be &quot;runnable&quot; by the framework.</p>
+
+<p>Although the purpose of this
+Framework is to run trading systems and other related types of Runnables,
+technically any class that implements the Runnable interface can be run,
+regardless of whether it is trading system related or not.</p>
+
+<p>Typically, a trading system class
+will not derive directly from Runnable, but from a more specialized class such
+as BarSystem or TickSystem, which are themselves derived from Runnable but also
+implement functionality specific to the type of data the Runnable must be able
+to manipulate.</p>
+
+<p>Here is an outline of the Runnable
+class with the methods that are relevant for trading system developer and which
+must be implemented in derived classes:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  class
+  Runnable : public Info<br>
+  {<br>
+  virtual bool init( const
+  t_string&amp; symbol ) = 0;<br>
+  virtual void run() = 0;<br>
+  <font size="2">virtual void
+  cleanup() = 0;<br>
+  };
+  </font>
+  </td>
+ </tr>
+</table>
+
+<p>During a run, these methods are called in a precise order: init,
+run, cleanup.&nbsp; </p>
+
+<p>The init
+ method gives the user the opportunity to do per symbol one time initialization
+and to eventually cancel the run on the current symbol, by returning false.&nbsp; </p>
+
+<p>The run method is where the bulk of the code
+should reside. This is where a trading system will implement its logic,
+traversing data collection, triggering signals, generating simulated trades etc.</p>
+
+<p>cleanup 
+gives the user code the opportunity to cleanup any resources that have been
+allocated and not yet discarded during calls to init or run.</p>
+
+<p>At runtime, a Runnable receives a default PositionManager along
+with a PositionsCollection where
+its positions will be generated and stored. But a trading system can create
+multiple PositionsManager instances, and use them as it wishes. This is very
+useful in the case of adaptive systems or an optimization or walk-forward type
+of Runnable. Such Runnables usually do multiple runs on the same data or on
+different portions of the data, and they need to create temporary positions, and
+only on the last run they do the actual simulation with parameters calculated in
+the previous runs.</p>
+
+<h3>Thread safety</h3>
+
+<p>Multiple Runnables are typically run
+in multiple threads, but from an individual Runnable's
+perspective there is only one thread and in most situations the user doesn't need to
+take any precautions in regards to other Runnables running concurrently.</p>
+
+<p>Writing thread safe code is a
+relatively complicated task and many precautions must be taken to preserve data
+integrity and to avoid undesired behavior such as deadlocks between different threads. The
+TradingApp platform relieves the user from this responsibility for the most part. Most APIs that are
+exposed to the user code are thread safe and all the details of running in a
+multithreaded environment are dealt with internally.&nbsp;</p>
+
+<p>There are some special cases however
+when the user must take some precautions, for example when sharing objects
+between different Runnables.</p>
+
+<p>For these cases, basic thread
+synchronization classes are provided as part of the API: Mutex and Lock.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  Mutex _mx;<br>
+  <br>
+  void f()<br>
+  {<br>
+  &nbsp; Lock lock( _mx );<br>
+  <br>
+  // from here on, the code inside f is executed by one
+  thread at any given time<br>
+  }
+  </td>
+ </tr>
+</table>
+
+<p>The previous example defines a Mutex
+object _mx. To serialize access to the code inside the function f, a local Lock
+object is created taking a reference to the _mx object as parameter.</p>
+
+<h3>Runtime error handling</h3>
+
+<p>Runtime errors in Runnables are
+handled by the TradingApp platform internally. Usually, these errors are detected internally by the
+framework which translates them in error events and relays them to the
+appropriate error receiver. A runtime error in one Runnable will not have any
+effect on any other Runnables in any way, and they will continue their execution
+normally. This is very important to insure stability and reliability of a
+real-time trading application. Even unknown or usually fatal errors like
+de-referencing of a null pointer in a Runnable, will be handled by the Framework
+and the execution of all the other Runnables or even the offending Runnable on
+the next symbol, will continue unperturbed.</p>
+
+<p>As mentioned above, the three
+methods init, run and cleanup are called in this order. If an error occurs
+during a run, the current Runnable will be stopped by the framework. A Runnable
+could also choose to throw a SimLibException or derived if it deems necessary.
+When an error occurs, the cleanup method will still be called giving the
+Runnable a chance
+to discard all its allocated resources for the current symbol. If an exception
+occurs in the cleanup method itself, the code will not get into an infinite loop
+but rather it will exit gracefully and stop the current Runnable on the current
+symbol, which may result in dangling pointers or resources, leading to memory
+and resource leaks. But the good news is that all this process&nbsp; happens in
+a controlled manner and it is limited to the offending Runnable - all other
+Runnables continue their run unaffected.&nbsp;Even if interrupted when running
+on a symbol, the Runnable will continue running on other symbols (although quite
+possibly triggering the same errors over all symbols).</p>
+
+<p>A good and easy way to avoid any
+resource leaks is to use &quot;smart pointers&quot; whenever possible, either
+the STL std::auto_ptr or some of the smart pointer classes defined in the
+utilities header misc.h. Resources served by the Framework, such as Series or
+DataCollections do not need to be freed by the user code, all the allocation and
+deallocation is dealt with internally.</p>
+
+<h3>Debugging and the OutputSink class</h3>
+
+<p>Although the Visual Studio .net may not be used to
+debug TradingApp plug-ins, for copy protection reasons, it is still possible to
+debug Runnables by sending data (strings or numeric values) to an&nbsp;
+OutputSink. Each Runnable receives an OutputSink, which sends its formatted
+output to the Output Bar component of the Session window.</p>
+
+<p>To get valid output in a multithreaded enviroment,
+the OutputSink class must be used in conjunction with the OutputBuffer. First a
+local instance of an OutputBuffer is populated with the data to be send to the
+OutputSink, using any of the &lt;&lt; operators, then the OutputSink printLine
+method is called with the buffer as argument. The &lt;&lt; operators can be
+chained in the same way they would be with a std::ostream class.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  OutputBuffer ob;<br>
+  <br>
+  outputSink().printLine( ob &lt;&lt; red &lt;&lt; name() &lt;&lt; _TT( &quot;
+  in init, on &quot; ) &lt;&lt; getSymbol() );
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p>The outputSink() method is available in the
+Runnable derived classes BarSystem and TickSystem. Other classes, directly
+derived from Runnable will need to store a reference to the outputSink when
+processing the init virtual virtual method.</p>
+<p>The output can be formatted by using control
+characters such as the various color constants and bold, italics, underlined.</p>
+
+</body>
+
+</html>

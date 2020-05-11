@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The File Signal Handler Plugin has a dual functional role</title>
+</head>
+
+<body>
+
+<p>The File Signal Handler Plugin has a dual functional role:</p>
+
+<ol>
+  <li>it is a signal handler plug-in that keeps track of generated trading 
+  signals and can save them to files</li>
+  <li>calculates and displays statistical information for the current session. 
+  </li>
+</ol>
+
+<p>It can be used as such or as a programming sample illustrating various 
+techniques for how to write plug-ins, how to write a signal handler plug-in and how to create a 
+plug-in with its own UI.</p>
+
+<p>The information necessary for statistical calculations is received by means 
+of various session notifications that are sent to all plug-ins.</p>
+
+<p><b>Note</b>: this plug-in started out as a simple trading signal tracking 
+plug-in, but has evolved into the much more complex component that it is 
+currently. As a consequence, the statistical functionality will be removed and 
+implemented as a stand-alone plug-in in a future release.</p>
+
+<p>Here we'll describe the File Signal Handler Plugin from a functional and user
+interface standpoint. For more details on the programming aspects, please refer
+to various Dev Guides.</p>
+
+<h3>Configuring the File Signal Handler</h3>
+
+<p>The File Signal Handler Plug-in (FSHP ) is  listed in the Plug-in Explorer under Signal Handler Plug-ins/File Signal
+Handler. A FSHP configuration will save trading signals generated during a
+session run to a file on disk.</p>
+
+<p>The FSHP supports all plug-in operations: creation,
+editing and removing of configurations. To create a new FSHP configuration right
+click over the plug-in name and select Create. This will bring up the following dialog box:</p>
+
+</body>
+
+</html>

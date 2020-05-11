@@ -1,0 +1,38 @@
+Symbol,Shares,Entry time,Entry bar,Entry price,Entry slippage,Entry commission,Entry name,Exit time,Exit bar,Exit price,Exit slippage,Exit commission,Exit name, Gain, System name
+DNR,6673,2016-Jan-29 00:00:00,12,1.50,0.00,5.00,Shorting at limit,2016-Feb-01 00:00:00,13,1.41,0.00,5.00,Profit target,589.97,FadeBump slow w/ volume filter
+KORS,212,2016-Feb-02 00:00:00,14,47.11,0.00,5.00,Shorting at limit,2016-Feb-04 00:00:00,16,51.20,0.10,5.00,Time based at market,-877.55,FadeBump slow w/ volume filter
+NE,1098,2016-Feb-05 00:00:00,17,9.11,0.00,5.00,Shorting at limit,2016-Feb-08 00:00:00,18,8.36,0.00,5.00,Profit target,805.95,FadeBump slow w/ volume filter
+PKI,251,2016-Feb-05 00:00:00,17,39.88,0.00,5.00,Buying at limit,2016-Feb-08 00:00:00,18,42.33,0.00,5.00,Profit target,606.16,FadeBump slow w/ volume filter
+CHK,3906,2016-Feb-08 00:00:00,18,2.56,0.00,5.00,Buying at limit,2016-Feb-10 00:00:00,20,1.99,0.00,5.00,Time based at market,-2251.97,FadeBump slow w/ volume filter
+HCP,416,2016-Feb-09 00:00:00,19,24.04,0.00,5.00,Buying at limit,2016-Feb-11 00:00:00,21,21.53,0.04,5.00,Time based at market,-1053.70,FadeBump slow w/ volume filter
+VIAB,294,2016-Feb-09 00:00:00,19,34.06,0.00,5.00,Buying at limit,2016-Feb-11 00:00:00,21,29.42,0.06,5.00,Time based at market,-1376.51,FadeBump slow w/ volume filter
+AVP,2589,2016-Feb-17 00:00:00,24,3.86,0.00,5.00,Shorting at limit,2016-Feb-18 00:00:00,25,3.63,0.00,5.00,Profit target,590.05,FadeBump slow w/ volume filter
+FCX,1412,2016-Feb-17 00:00:00,24,7.08,0.00,5.00,Shorting at limit,2016-Feb-19 00:00:00,26,6.99,0.01,5.00,Time based at market,114.03,FadeBump slow w/ volume filter
+FOSL,255,2016-Feb-17 00:00:00,24,39.25,0.00,5.00,Shorting at limit,2016-Feb-19 00:00:00,26,44.08,0.09,5.00,Time based at market,-1241.14,FadeBump slow w/ volume filter
+GRMN,273,2016-Feb-17 00:00:00,24,36.58,0.00,5.00,Shorting at limit,2016-Feb-19 00:00:00,26,36.84,0.07,5.00,Time based at market,-79.67,FadeBump slow w/ volume filter
+KMI,592,2016-Feb-17 00:00:00,24,16.90,0.00,5.00,Shorting at limit,2016-Feb-19 00:00:00,26,16.97,0.03,5.00,Time based at market,-51.08,FadeBump slow w/ volume filter
+NBR,1453,2016-Feb-17 00:00:00,24,6.88,0.00,5.00,Shorting at limit,2016-Feb-19 00:00:00,26,6.48,0.01,5.00,Time based at market,572.25,FadeBump slow w/ volume filter
+DNR,6389,2016-Mar-02 00:00:00,34,1.57,0.00,5.00,Shorting at limit,2016-Mar-04 00:00:00,36,2.28,0.00,5.00,Time based at market,-4606.63,FadeBump slow w/ volume filter
+GNW,3618,2016-Mar-03 00:00:00,35,2.76,0.00,5.00,Shorting at limit,2016-Mar-07 00:00:00,37,2.92,0.01,5.00,Time based at market,-559.65,FadeBump slow w/ volume filter
+NE,971,2016-Mar-03 00:00:00,35,10.30,0.00,5.00,Shorting at limit,2016-Mar-07 00:00:00,37,12.63,0.03,5.00,Time based at market,-2272.28,FadeBump slow w/ volume filter
+DNR,2747,2016-Mar-07 00:00:00,37,3.64,0.00,5.00,Shorting at limit,2016-Mar-08 00:00:00,38,3.42,0.00,5.00,Profit target,590.08,FadeBump slow w/ volume filter
+MUR,395,2016-Mar-07 00:00:00,37,25.29,0.00,5.00,Shorting at limit,2016-Mar-08 00:00:00,38,23.78,0.00,5.00,Profit target,589.48,FadeBump slow w/ volume filter
+CLF,2538,2016-Apr-12 00:00:00,62,3.94,0.00,5.00,Shorting at limit,2016-Apr-14 00:00:00,64,4.05,0.01,5.00,Time based at market,-283.04,FadeBump slow w/ volume filter
+ESV,921,2016-Apr-12 00:00:00,62,10.86,0.00,5.00,Shorting at limit,2016-Apr-14 00:00:00,64,11.21,0.02,5.00,Time based at market,-337.00,FadeBump slow w/ volume filter
+JOY,558,2016-Apr-13 00:00:00,63,17.93,0.00,5.00,Shorting at limit,2016-Apr-15 00:00:00,65,17.88,0.04,5.00,Time based at market,13.94,FadeBump slow w/ volume filter
+CLF,3284,2016-May-09 00:00:00,81,3.04,0.00,5.00,Buying at limit,2016-May-10 00:00:00,82,3.23,0.00,5.00,Profit target,589.99,FadeBump slow w/ volume filter
+CSC,213,2016-May-25 00:00:00,93,47.03,0.00,5.00,Shorting at limit,2016-May-27 00:00:00,95,47.84,0.10,5.00,Time based at market,-182.47,FadeBump slow w/ volume filter
+DLTR,114,2016-May-26 00:00:00,94,87.67,0.00,5.00,Shorting at limit,2016-May-31 00:00:00,96,89.57,0.18,5.00,Time based at market,-226.71,FadeBump slow w/ volume filter
+NBR,1009,2016-Jun-06 00:00:00,100,9.91,0.00,5.00,Shorting at limit,2016-Jun-08 00:00:00,102,10.69,0.02,5.00,Time based at market,-804.28,FadeBump slow w/ volume filter
+HOG,206,2016-Jul-01 00:00:00,119,48.65,0.00,5.00,Shorting at limit,2016-Jul-06 00:00:00,121,46.12,0.09,5.00,Time based at market,509.95,FadeBump slow w/ volume filter
+DHR,130,2016-Jul-05 00:00:00,120,76.79,0.00,5.00,Shorting at limit,2016-Jul-07 00:00:00,122,80.59,0.16,5.00,Time based at market,-504.15,FadeBump slow w/ volume filter
+ADS,42,2016-Jul-21 00:00:00,132,237.02,0.00,5.00,Shorting at limit,2016-Jul-25 00:00:00,134,229.56,0.46,5.00,Time based at market,303.41,FadeBump slow w/ volume filter
+SRCL,109,2016-Jul-29 00:00:00,138,91.67,0.00,5.00,Buying at limit,2016-Aug-02 00:00:00,140,88.64,0.18,5.00,Time based at market,-340.22,FadeBump slow w/ volume filter
+SE,254,2016-Sep-06 00:00:00,164,39.36,0.00,5.00,Shorting at limit,2016-Sep-08 00:00:00,166,41.46,0.08,5.00,Time based at market,-543.52,FadeBump slow w/ volume filter
+APA,176,2016-Sep-07 00:00:00,165,56.68,0.00,5.00,Shorting at limit,2016-Sep-09 00:00:00,167,57.55,0.11,5.00,Time based at market,-163.30,FadeBump slow w/ volume filter
+WDC,195,2016-Sep-07 00:00:00,165,51.23,0.00,5.00,Shorting at limit,2016-Sep-09 00:00:00,167,51.33,0.10,5.00,Time based at market,-30.55,FadeBump slow w/ volume filter
+RAI,179,2016-Oct-21 00:00:00,197,55.71,0.00,5.00,Shorting at limit,2016-Oct-25 00:00:00,199,54.44,0.11,5.00,Time based at market,217.00,FadeBump slow w/ volume filter
+AKAM,152,2016-Oct-26 00:00:00,200,65.71,0.00,5.00,Shorting at limit,2016-Oct-28 00:00:00,202,68.77,0.14,5.00,Time based at market,-474.40,FadeBump slow w/ volume filter
+EW,101,2016-Oct-26 00:00:00,200,98.75,0.00,5.00,Buying at limit,2016-Oct-28 00:00:00,202,92.18,0.18,5.00,Time based at market,-673.54,FadeBump slow w/ volume filter
+JNPR,385,2016-Oct-26 00:00:00,200,26.00,0.00,5.00,Shorting at limit,2016-Oct-28 00:00:00,202,25.95,0.05,5.00,Time based at market,9.38,FadeBump slow w/ volume filter
+GCI,1259,2016-Oct-27 00:00:00,201,7.94,0.00,5.00,Buying at limit,2016-Oct-31 00:00:00,203,7.29,0.01,5.00,Time based at market,-832.71,FadeBump slow w/ volume filter

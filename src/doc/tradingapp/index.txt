@@ -1,0 +1,187 @@
+/*! \mainpage TradingApp
+
+  
+This manual is divided in the following sections:
+- \subpage quickstart
+- \subpage usersguide
+- \subpage developersguide
+- \subpage knownissues
+- \subpage license
+- \subpage copyright
+*/
+
+/** \page quickstart Quick Start
+	- \subpage installation
+	- \subpage qsivte
+*/
+
+/** \page installation Installation
+	\htmlinclude installation.htm
+*/
+
+/** \page qsivte The Integrated Visual Trading Environment
+	\htmlinclude \quickstart\ivte.htm
+*/
+
+/** \page knownissues Known Issues
+	\htmlinclude known_issues.htm
+*/
+
+//-----------------------------------------------------------
+
+/** \page usersguide User's Guide 
+	- \subpage overviewuserguide
+	- \subpage ivte 
+	- \subpage plugin
+
+*/
+
+/** \page developersguide Developer's Guide
+	- \subpage plugindevguide
+	- \subpage tradingsystem
+	- \subpage miscellaneous
+*/
+
+/** \page plugindevguide Writing Plug-ins
+	- \subpage pluginapi
+	- \subpage pluginconfigurationapi
+	- \subpage pluginhelperclasses
+	- \subpage sessioneventapi
+	- \subpage runnabledevguide
+	- \subpage datasourcedevguide
+	- \subpage symbolsourcedevguide
+	- \subpage signalhandlerdevguide
+	- \subpage slippagedevguide
+	- \subpage commissiondevguide
+*/
+
+
+
+/** \page pluginapi Plug-in API
+	\htmlinclude pluginapi.htm
+*/
+
+/** \page pluginconfigurationapi Plug-in Configuration API
+	\htmlinclude pluginconfigurationapi.htm
+*/
+
+/** \page sessioneventapi Session Events API
+	\htmlinclude sessioneventapi.htm
+*/
+
+/** \page pluginhelperclasses Plug-in Helper Classes
+	\htmlinclude pluginhelperclasses.htm
+*/
+
+/** \page runnabledevguide Runnable
+	\htmlinclude runnable_dev_guide.htm
+*/
+
+/** \page datasourcedevguide Data Source
+	\htmlinclude datasource_dev_guide.htm
+*/
+
+/** \page symbolsourcedevguide Symbols Source
+	\htmlinclude symbol_source_dev_guide.htm
+*/
+
+/** \page signalhandlerdevguide Signal Handler
+	\htmlinclude signal_handler_dev_guide.htm
+*/
+
+/** \page slippagedevguide Slippage
+	\htmlinclude slippage.htm
+*/
+
+/** \page commissiondevguide Commission
+	\htmlinclude commission.htm
+*/
+
+/** \page tradingsystem Trading System
+	\subpage tradingsystemoverview
+	\subpage multisymboltradingsystem
+	\subpage simpletradingsystem
+*/
+
+/** \page tradingsystemoverview Overview
+	\htmlinclude trading_system_dev_guide_overview.htm
+*/
+
+/** \page multisymboltradingsystem Multi-symbol Trading Systems
+	\htmlinclude multi_symbol_system.htm
+*/
+
+/** \page simpletradingsystem A Simple Trading System
+	\htmlinclude simple_trading_system.htm
+*/
+
+/** \page miscellaneous Miscellaneous
+	\htmlinclude misc.htm
+*/
+
+/** \page license License Agreement
+	\htmlinclude license.htm
+*/
+
+/** \page copyright Copyright Notices and Acknowledgments
+	\htmlinclude acknowledgments.htm
+*/
+
+
+
+//-----------------------------------------------------------
+/** \page overviewuserguide Overview
+	\htmlinclude userguide\overview.htm
+*/
+
+/** \page ivte Integrated Visual Trading Environment
+	\htmlinclude "ivte\ivte1.htm"
+	\image html plugin_explorer.jpg
+	\htmlinclude ivte/ivte2.htm
+	\image html properties_bar.jpg
+	\htmlinclude ivte/ivte3.htm
+	\image html session_window.jpg
+	\htmlinclude ivte/ivte4.htm
+*/
+
+
+/** \page plugin Plug-ins
+	- \subpage pluginoverview
+	- \subpage pluginconfigurations
+	- \subpage typesofplugins
+	- \subpage filedatasourceplugin
+	- \subpage filesymbolssourceplugin
+	- \subpage filesignalhandlerplugin
+*/
+
+/** \page pluginoverview Overview
+	\htmlinclude .\plugins\overview.htm
+*/
+
+/** \page pluginconfigurations Plug-in Configurations
+	\htmlinclude .\plugins\pluginconfigurations.htm
+*/
+
+/** \page typesofplugins Types of plug-ins
+	\htmlinclude .\plugins\typesofplugins.htm
+*/
+
+/** \page filedatasourceplugin File DataSource Plug-in
+	\htmlinclude .\plugins\filedatasourceplugin\file_data_source_plugin1.htm
+	\image html filedatasourcedlg.jpg
+	\htmlinclude .\plugins\filedatasourceplugin\file_data_source_plugin2.htm
+*/
+
+/** \page filesymbolssourceplugin File Symbols Source Plug-in
+	\htmlinclude .\plugins\filesymbolssourceplugin\file_symbols_source_plugin1.htm
+	\image html filesymbolslistdlg.jpg	
+	\htmlinclude .\plugins\filesymbolssourceplugin\file_symbols_source_plugin2.htm
+*/
+
+/** \page filesignalhandlerplugin File Signal Handler and Statistics Plug-in
+	\htmlinclude .\plugins\filesignalhandlerplugin\file_signal_handler_plugin1.htm
+	\image html filesignalhandlerdlg.jpg	
+	\htmlinclude .\plugins\filesignalhandlerplugin\file_signal_handler_plugin2.htm
+	\image html filesignalhandlerui.jpg	
+	\htmlinclude .\plugins\filesignalhandlerplugin\file_signal_handler_plugin2.htm
+*/

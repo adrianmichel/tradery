@@ -1,0 +1,149 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The SessionEventHandler abstract class is the base for all classes that 
+are to handle session events</title>
+<style>
+<!--
+span.code    { font-family: Courier New; font-size: 10pt }
+-->
+</style>
+</head>
+
+<body>
+
+<p>The <span class="code">SessionEventHandler</span> abstract class is the base 
+for all classes that are to handle session events. <span class="code">
+SessionEventHandler</span> in turn is derived from <span class="code">
+RunEventHandler</span> which defines the events that a simple run (as opposed to 
+an entire session) will generate. Together they define all the events that a 
+session may generate. All plug-in configurations are derived from
+<span class="code">SessionEventHandler</span>, which ensures that they receive 
+all these session events.</p>
+<table border="0" cellpadding="0" width="100%" style="width: 100.0%">
+  <tr>
+    <td width="100%" style="width: 100.0%; padding: .75pt; background: #C4DDD7">
+    <font SIZE="1" COLOR="#0000ff"><font SIZE="1"><span class="code">}<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called when the run is about to start<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    runStarted() = 0;<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called after a cancel request has been received<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    runCanceled() = 0;<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called after a run has ended<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    runEnded() = 0;<br>
+    };</span></font><span class="code"><br>
+&nbsp;</span><p><span class="code">class</span></font><span class="code"> 
+    SessionEventHandler : <font COLOR="#0000ff">public</font></span><font SIZE="1"><span class="code"> 
+    RunEventHandler<br>
+    {</span></font><font SIZE="1" COLOR="#0000ff"><span class="code"><br>
+    public</span></font><font SIZE="1"><span class="code">:<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called right after the session has started<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    sessionStarted( SessionInfo&amp; si ) = 0;<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called after the session has ended<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    sessionEnded( PositionsContainer&amp; positions ) = 0;<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called after the canceled command has been received<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    sessionCanceled() = 0;<br>
+    </span></font><font SIZE="1" COLOR="#008000"><span class="code">/**<br>
+    * Called after the session has started a new run in case of a dynamic data 
+    source<br>
+    */<br>
+    </span></font><span class="code"><font COLOR="#0000ff">virtual</font>
+    <font COLOR="#0000ff">void</font></span><font SIZE="1"><span class="code"> 
+    sessionStartedWaitingForNextRun() = 0;<br>
+    };</span></font></td>
+  </tr>
+</table>
+
+<p>These events are triggered in a precise order during a session</p>
+
+<p><span class="code">sessionStarted</span> <span class="code"><br>
+runStarted<br>
+...<br>
+runStarted<br>
+[<br>
+&nbsp;&nbsp;&nbsp; sessionCanceled<br>
+&nbsp;&nbsp;&nbsp; runCanceled<br>
+&nbsp;&nbsp;&nbsp; ...<br>
+&nbsp;&nbsp;&nbsp; runCanceled<br>
+]<br>
+runEnded<br>
+...<br>
+runEnded</span> <span class="code"><br>
+[<br>
+&nbsp;&nbsp;&nbsp; </span><font SIZE="1"><span class="code">
+sessionStartedWaitingForNextRun<br>
+&nbsp;&nbsp;&nbsp; runStarted<br>
+&nbsp;&nbsp;&nbsp; ...<br>
+]</span></font><span class="code"><br>
+sessionStarted</span>.</p>
+
+<p>The <span class="code">sessionCanceled</span> and <span class="code">
+runCanceled</span> will only be triggered if the session is being canceled.
+<span class="code">sessionStatedWaitingForNextRun</span> will be called in case 
+the data source is dynamic and new data has been received. In this case, a new 
+sequence of <span class="code">runStarted</span> etc will be initiated</p>
+
+<p>All these methods can be used for informational purpose or to perform some 
+session state dependent processing. </p>
+
+<p>However, <span class="code">sessionStarted</span> and <span class="code">
+sessionEnded</span> are special in that they receive parameters which enable
+<span class="code">SessionEventHandler</span> derived classes to perform very 
+useful tasks.</p>
+
+<p><span class="code">SessionInfo</span>, which is passed to <span class="code">
+sessionStarted</span> contains information about the session runtime parameters, 
+data source, symbols source, output sink etc. <span class="code">while 
+sessionEnded</span> receives a reference to a <span class="code">
+PositionsContainer</span> object containing all the positions created by the 
+current session. For example, the <span class="code">DataRequester</span> member 
+of <span class="code">SessionInfo</span>, can be used in a <span class="code">
+Runnable</span> to create a system that makes trading decisions based on 
+multiple symbols. also, The <span class="code">DataSourceIterator</span> member 
+combined with the <span class="code">DataRequester</span> enables virtually any 
+statistical calculation on the result of a back-testing session, such as 
+performance, equity curve, drawdown etc. <span class="code">outputSink()</span>will 
+return a reference to the session output window so all <span class="code">
+SessionEventHandler</span> derived classes will be able to display diagnostic or 
+info formatted string to that window.</p>
+
+<p>For an example of how these events are utilized, see the statistics plug-in 
+project.</p>
+
+<p>During a session, each <span class="code">SessionEventHandler</span> receives 
+its own copy of a <span class="code">SessionInfo</span> object in the call to
+<span class="code">sessionStarted</span>. As a consequence, each
+<span class="code">SessionEventHandler</span> can store this object for later 
+use and call non-const methods, such as iterating through the list of symbols of 
+the session, without interfering with any other <span class="code">
+SessionEventHandler</span>.</p>
+
+</body>
+
+</html>

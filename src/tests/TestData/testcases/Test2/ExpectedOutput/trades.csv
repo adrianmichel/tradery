@@ -1,0 +1,110 @@
+Symbol,Shares,Entry time,Entry bar,Entry price,Entry slippage,Entry commission,Entry name,Exit time,Exit bar,Exit price,Exit slippage,Exit commission,Exit name, Gain, System name
+ATI,1294,2016-Jan-25 00:00:00,8,7.73,0.00,5.00,Buy at limit on dip,2016-Jan-26 00:00:00,9,8.12,0.00,5.00,Profit target,490.12,Simple Dip
+ATI,1412,2016-Jan-26 00:00:00,9,7.08,0.00,5.00,Buy at limit on dip,2016-Jan-27 00:00:00,10,7.63,0.00,5.00,Profit target,767.97,Simple Dip
+ABT,270,2016-Jan-28 00:00:00,11,37.03,0.00,5.00,Buy at limit on dip,2016-Feb-02 00:00:00,14,36.56,0.07,5.00,Time based at market,-136.50,Simple Dip
+ALXN,70,2016-Jan-28 00:00:00,11,143.56,0.00,5.00,Buy at limit on dip,2016-Feb-02 00:00:00,14,141.36,0.28,5.00,Time based at market,-164.51,Simple Dip
+ATI,1135,2016-Jan-29 00:00:00,12,8.81,0.00,5.00,Short at limit on jump,2016-Feb-02 00:00:00,14,8.37,0.00,5.00,Profit target,489.95,Simple Dip
+ATI,1141,2016-Feb-01 00:00:00,13,8.77,0.00,5.00,Buy at limit on dip,2016-Feb-04 00:00:00,16,9.01,0.02,5.00,Time based at market,271.37,Simple Dip
+AKAM,232,2016-Feb-02 00:00:00,14,43.03,0.00,5.00,Buy at limit on dip,2016-Feb-04 00:00:00,16,45.19,0.00,5.00,Profit target,489.21,Simple Dip
+ATI,1202,2016-Feb-02 00:00:00,14,8.32,0.00,5.00,Buy at limit on dip,2016-Feb-03 00:00:00,15,8.73,0.00,5.00,Profit target,489.95,Simple Dip
+AA,506,2016-Feb-04 00:00:00,16,19.76,0.00,5.00,Short at limit on jump,2016-Feb-08 00:00:00,18,18.40,0.00,5.00,Profit target,682.38,Simple Dip
+ATI,1026,2016-Feb-04 00:00:00,16,9.75,0.00,5.00,Short at limit on jump,2016-Feb-09 00:00:00,19,9.54,0.02,5.00,Time based at market,203.64,Simple Dip
+ABBV,196,2016-Feb-05 00:00:00,17,50.97,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,51.04,0.10,5.00,Time based at market,4.78,Simple Dip
+ADBE,122,2016-Feb-05 00:00:00,17,82.04,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,74.84,0.15,5.00,Time based at market,-888.64,Simple Dip
+ALLE,178,2016-Feb-05 00:00:00,17,56.05,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,53.97,0.11,5.00,Time based at market,-380.51,Simple Dip
+ACN,110,2016-Feb-08 00:00:00,18,91.21,0.00,5.00,Buy at limit on dip,2016-Feb-11 00:00:00,21,89.60,0.18,5.00,Time based at market,-187.85,Simple Dip
+ADBE,133,2016-Feb-08 00:00:00,18,75.24,0.00,5.00,Buy at limit on dip,2016-Feb-11 00:00:00,21,73.89,0.15,5.00,Time based at market,-189.29,Simple Dip
+AET,108,2016-Feb-08 00:00:00,18,92.78,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,97.42,0.00,5.00,Profit target,491.02,Simple Dip
+AKAM,244,2016-Feb-08 00:00:00,18,41.04,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,46.99,0.00,5.00,Profit target,1441.80,Simple Dip
+ALLE,190,2016-Feb-08 00:00:00,18,52.74,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,55.38,0.00,5.00,Profit target,491.07,Simple Dip
+ATI,1022,2016-Feb-08 00:00:00,18,9.79,0.00,5.00,Buy at limit on dip,2016-Feb-11 00:00:00,21,9.47,0.02,5.00,Time based at market,-337.58,Simple Dip
+ATI,1084,2016-Feb-09 00:00:00,19,9.23,0.00,5.00,Buy at limit on dip,2016-Feb-10 00:00:00,20,9.78,0.00,5.00,Profit target,590.99,Simple Dip
+AKAM,213,2016-Feb-10 00:00:00,20,46.99,0.00,5.00,Short at limit on jump,2016-Feb-16 00:00:00,23,51.37,0.10,5.00,Time based at market,-943.48,Simple Dip
+AA,587,2016-Feb-11 00:00:00,21,17.05,0.00,5.00,Buy at limit on dip,2016-Feb-12 00:00:00,22,17.92,0.00,5.00,Profit target,502.66,Simple Dip
+AES,1173,2016-Feb-11 00:00:00,21,8.53,0.00,5.00,Buy at limit on dip,2016-Feb-17 00:00:00,24,8.87,0.02,5.00,Time based at market,396.14,Simple Dip
+ATI,1092,2016-Feb-11 00:00:00,21,9.16,0.00,5.00,Buy at limit on dip,2016-Feb-12 00:00:00,22,9.62,0.00,5.00,Profit target,490.13,Simple Dip
+ATI,975,2016-Feb-12 00:00:00,22,10.26,0.00,5.00,Short at limit on jump,2016-Feb-18 00:00:00,25,12.09,0.02,5.00,Time based at market,-1796.18,Simple Dip
+A,289,2016-Feb-17 00:00:00,24,34.60,0.00,5.00,Buy at limit on dip,2016-Feb-18 00:00:00,25,37.07,0.00,5.00,Profit target,702.69,Simple Dip
+ATI,803,2016-Feb-17 00:00:00,24,12.46,0.00,5.00,Short at limit on jump,2016-Feb-18 00:00:00,25,11.83,0.00,5.00,Profit target,490.14,Simple Dip
+ATI,871,2016-Feb-18 00:00:00,25,11.49,0.00,5.00,Buy at limit on dip,2016-Feb-22 00:00:00,27,12.06,0.00,5.00,Profit target,490.27,Simple Dip
+ATI,925,2016-Feb-19 00:00:00,26,10.81,0.00,5.00,Buy at limit on dip,2016-Feb-22 00:00:00,27,11.54,0.00,5.00,Profit target,662.10,Simple Dip
+AA,485,2016-Feb-22 00:00:00,27,20.60,0.00,5.00,Short at limit on jump,2016-Feb-25 00:00:00,30,20.96,0.04,5.00,Time based at market,-183.79,Simple Dip
+ATI,815,2016-Feb-22 00:00:00,27,12.27,0.00,5.00,Short at limit on jump,2016-Feb-23 00:00:00,28,11.66,0.00,5.00,Profit target,490.12,Simple Dip
+ATI,896,2016-Feb-24 00:00:00,29,11.16,0.00,5.00,Buy at limit on dip,2016-Feb-25 00:00:00,30,11.72,0.00,5.00,Profit target,489.97,Simple Dip
+ATI,750,2016-Feb-29 00:00:00,32,13.33,0.00,5.00,Short at limit on jump,2016-Mar-03 00:00:00,35,15.05,0.03,5.00,Time based at market,-1300.26,Simple Dip
+ATI,675,2016-Mar-02 00:00:00,34,14.82,0.00,5.00,Short at limit on jump,2016-Mar-07 00:00:00,37,15.66,0.03,5.00,Time based at market,-576.33,Simple Dip
+AA,441,2016-Mar-08 00:00:00,38,22.70,0.00,5.00,Buy at limit on dip,2016-Mar-11 00:00:00,41,23.06,0.05,5.00,Time based at market,150.13,Simple Dip
+ALXN,70,2016-Mar-08 00:00:00,38,142.12,0.00,5.00,Buy at limit on dip,2016-Mar-11 00:00:00,41,137.94,0.28,5.00,Time based at market,-302.35,Simple Dip
+ATI,634,2016-Mar-08 00:00:00,38,15.78,0.00,5.00,Buy at limit on dip,2016-Mar-11 00:00:00,41,16.25,0.03,5.00,Time based at market,290.43,Simple Dip
+ATI,652,2016-Mar-09 00:00:00,39,15.33,0.00,5.00,Buy at limit on dip,2016-Mar-10 00:00:00,40,16.10,0.00,5.00,Profit target,489.72,Simple Dip
+ATI,663,2016-Mar-14 00:00:00,42,15.09,0.00,5.00,Buy at limit on dip,2016-Mar-16 00:00:00,44,15.85,0.00,5.00,Profit target,490.37,Simple Dip
+AA,457,2016-Mar-15 00:00:00,43,21.86,0.00,5.00,Buy at limit on dip,2016-Mar-16 00:00:00,44,22.95,0.00,5.00,Profit target,489.53,Simple Dip
+ATI,675,2016-Mar-15 00:00:00,43,14.81,0.00,5.00,Buy at limit on dip,2016-Mar-16 00:00:00,44,15.55,0.00,5.00,Profit target,489.91,Simple Dip
+AA,449,2016-Mar-23 00:00:00,49,22.27,0.00,5.00,Buy at limit on dip,2016-Mar-29 00:00:00,52,22.68,0.05,5.00,Time based at market,175.28,Simple Dip
+ATI,606,2016-Mar-23 00:00:00,49,16.50,0.00,5.00,Buy at limit on dip,2016-Mar-29 00:00:00,52,15.51,0.03,5.00,Time based at market,-610.91,Simple Dip
+ATI,657,2016-Mar-29 00:00:00,52,15.22,0.00,5.00,Buy at limit on dip,2016-Mar-30 00:00:00,53,16.23,0.00,5.00,Profit target,659.06,Simple Dip
+ATI,651,2016-Apr-04 00:00:00,56,15.36,0.00,5.00,Buy at limit on dip,2016-Apr-07 00:00:00,59,14.40,0.03,5.00,Time based at market,-640.24,Simple Dip
+ALXN,67,2016-Apr-07 00:00:00,59,149.17,0.00,5.00,Buy at limit on dip,2016-Apr-12 00:00:00,62,148.19,0.30,5.00,Time based at market,-75.39,Simple Dip
+AA,454,2016-Apr-12 00:00:00,62,22.02,0.00,5.00,Buy at limit on dip,2016-Apr-13 00:00:00,63,23.12,0.00,5.00,Profit target,489.84,Simple Dip
+ATI,605,2016-Apr-25 00:00:00,71,16.54,0.00,5.00,Buy at limit on dip,2016-Apr-28 00:00:00,74,16.43,0.03,5.00,Time based at market,-77.47,Simple Dip
+ATI,639,2016-Apr-26 00:00:00,72,15.65,0.00,5.00,Buy at limit on dip,2016-Apr-27 00:00:00,73,16.46,0.00,5.00,Profit target,508.06,Simple Dip
+ABBV,182,2016-Apr-28 00:00:00,74,55.03,0.00,5.00,Buy at limit on dip,2016-Apr-29 00:00:00,75,58.24,0.00,5.00,Profit target,574.43,Simple Dip
+ABT,257,2016-Apr-28 00:00:00,74,38.87,0.00,5.00,Buy at limit on dip,2016-May-03 00:00:00,77,37.56,0.08,5.00,Time based at market,-348.41,Simple Dip
+ALXN,70,2016-Apr-28 00:00:00,74,142.99,0.00,5.00,Buy at limit on dip,2016-May-03 00:00:00,77,141.43,0.28,5.00,Time based at market,-119.44,Simple Dip
+AA,404,2016-May-03 00:00:00,77,24.78,0.00,5.00,Buy at limit on dip,2016-May-06 00:00:00,80,23.84,0.05,5.00,Time based at market,-387.79,Simple Dip
+ATI,649,2016-May-03 00:00:00,77,15.41,0.00,5.00,Buy at limit on dip,2016-May-06 00:00:00,80,14.84,0.03,5.00,Time based at market,-381.90,Simple Dip
+AA,439,2016-May-09 00:00:00,81,22.76,0.00,5.00,Buy at limit on dip,2016-May-12 00:00:00,84,22.99,0.05,5.00,Time based at market,87.12,Simple Dip
+ATI,684,2016-May-09 00:00:00,81,14.61,0.00,5.00,Buy at limit on dip,2016-May-12 00:00:00,84,14.59,0.03,5.00,Time based at market,-24.59,Simple Dip
+ABBV,177,2016-May-17 00:00:00,87,56.61,0.00,5.00,Buy at limit on dip,2016-May-20 00:00:00,90,56.79,0.11,5.00,Time based at market,20.95,Simple Dip
+ATI,812,2016-May-18 00:00:00,88,12.31,0.00,5.00,Buy at limit on dip,2016-May-23 00:00:00,91,11.37,0.02,5.00,Time based at market,-775.12,Simple Dip
+ATI,921,2016-May-19 00:00:00,89,10.86,0.00,5.00,Buy at limit on dip,2016-May-23 00:00:00,91,11.40,0.00,5.00,Profit target,490.01,Simple Dip
+ALXN,71,2016-Jun-07 00:00:00,101,139.97,0.00,5.00,Buy at limit on dip,2016-Jun-10 00:00:00,104,136.43,0.27,5.00,Time based at market,-261.58,Simple Dip
+ATI,751,2016-Jun-09 00:00:00,103,13.31,0.00,5.00,Buy at limit on dip,2016-Jun-14 00:00:00,106,13.04,0.03,5.00,Time based at market,-213.92,Simple Dip
+ADBE,106,2016-Jun-22 00:00:00,112,94.73,0.00,5.00,Buy at limit on dip,2016-Jun-27 00:00:00,115,91.18,0.18,5.00,Time based at market,-387.01,Simple Dip
+A,229,2016-Jun-24 00:00:00,114,43.70,0.00,5.00,Buy at limit on dip,2016-Jun-29 00:00:00,117,42.83,0.09,5.00,Time based at market,-209.27,Simple Dip
+AA,438,2016-Jun-24 00:00:00,114,22.82,0.00,5.00,Buy at limit on dip,2016-Jun-29 00:00:00,117,22.65,0.05,5.00,Time based at market,-82.15,Simple Dip
+ACN,91,2016-Jun-24 00:00:00,114,110.46,0.00,5.00,Buy at limit on dip,2016-Jun-29 00:00:00,117,109.17,0.22,5.00,Time based at market,-127.96,Simple Dip
+AKAM,184,2016-Jun-24 00:00:00,114,54.31,0.00,5.00,Buy at limit on dip,2016-Jun-29 00:00:00,117,52.98,0.11,5.00,Time based at market,-254.29,Simple Dip
+ALXN,85,2016-Jun-24 00:00:00,114,117.39,0.00,5.00,Buy at limit on dip,2016-Jun-29 00:00:00,117,115.57,0.23,5.00,Time based at market,-164.96,Simple Dip
+ATI,756,2016-Jun-24 00:00:00,114,13.22,0.00,5.00,Buy at limit on dip,2016-Jun-29 00:00:00,117,12.21,0.02,5.00,Time based at market,-773.61,Simple Dip
+ATI,851,2016-Jun-27 00:00:00,115,11.76,0.00,5.00,Buy at limit on dip,2016-Jun-30 00:00:00,118,12.23,0.02,5.00,Time based at market,394.02,Simple Dip
+ATI,784,2016-Jul-05 00:00:00,120,12.75,0.00,5.00,Buy at limit on dip,2016-Jul-08 00:00:00,123,13.28,0.03,5.00,Time based at market,409.34,Simple Dip
+ATI,604,2016-Jul-26 00:00:00,135,16.57,0.00,5.00,Short at limit on jump,2016-Jul-29 00:00:00,138,17.83,0.04,5.00,Time based at market,-769.30,Simple Dip
+AKAM,195,2016-Jul-27 00:00:00,136,51.23,0.00,5.00,Buy at limit on dip,2016-Aug-01 00:00:00,139,50.46,0.10,5.00,Time based at market,-160.37,Simple Dip
+ATI,596,2016-Aug-24 00:00:00,156,16.78,0.00,5.00,Buy at limit on dip,2016-Aug-29 00:00:00,159,17.08,0.03,5.00,Time based at market,168.07,Simple Dip
+ATI,546,2016-Aug-29 00:00:00,159,18.32,0.00,5.00,Short at limit on jump,2016-Aug-31 00:00:00,161,17.32,0.00,5.00,Profit target,533.27,Simple Dip
+ATI,569,2016-Aug-30 00:00:00,160,17.57,0.00,5.00,Buy at limit on dip,2016-Sep-02 00:00:00,163,17.14,0.03,5.00,Time based at market,-259.98,Simple Dip
+AA,435,2016-Sep-09 00:00:00,167,23.01,0.00,5.00,Buy at limit on dip,2016-Sep-14 00:00:00,170,23.15,0.05,5.00,Time based at market,48.95,Simple Dip
+ATI,586,2016-Sep-09 00:00:00,167,17.05,0.00,5.00,Buy at limit on dip,2016-Sep-14 00:00:00,170,15.67,0.03,5.00,Time based at market,-820.97,Simple Dip
+ATI,630,2016-Sep-13 00:00:00,169,15.87,0.00,5.00,Buy at limit on dip,2016-Sep-16 00:00:00,172,15.75,0.03,5.00,Time based at market,-83.43,Simple Dip
+AA,422,2016-Oct-11 00:00:00,189,23.72,0.00,5.00,Buy at limit on dip,2016-Oct-14 00:00:00,192,21.46,0.04,5.00,Time based at market,-964.17,Simple Dip
+ABT,248,2016-Oct-11 00:00:00,189,40.33,0.00,5.00,Buy at limit on dip,2016-Oct-14 00:00:00,192,40.35,0.08,5.00,Time based at market,-4.23,Simple Dip
+ATI,613,2016-Oct-13 00:00:00,191,16.31,0.00,5.00,Buy at limit on dip,2016-Oct-18 00:00:00,194,17.22,0.03,5.00,Time based at market,544.15,Simple Dip
+AA,470,2016-Oct-20 00:00:00,196,21.29,0.00,5.00,Buy at limit on dip,2016-Oct-25 00:00:00,199,22.03,0.04,5.00,Time based at market,336.76,Simple Dip
+A,232,2016-Oct-25 00:00:00,199,43.14,0.00,5.00,Buy at limit on dip,2016-Oct-28 00:00:00,202,42.88,0.09,5.00,Time based at market,-70.72,Simple Dip
+ATI,596,2016-Oct-25 00:00:00,199,16.77,0.00,5.00,Buy at limit on dip,2016-Oct-28 00:00:00,202,13.35,0.03,5.00,Time based at market,-2048.32,Simple Dip
+AA,497,2016-Oct-26 00:00:00,200,20.11,0.00,5.00,Buy at limit on dip,2016-Oct-27 00:00:00,201,21.11,0.00,5.00,Profit target,489.70,Simple Dip
+AKAM,154,2016-Oct-26 00:00:00,200,64.98,0.00,5.00,Short at limit on jump,2016-Oct-31 00:00:00,203,69.90,0.14,5.00,Time based at market,-768.07,Simple Dip
+ATI,696,2016-Oct-26 00:00:00,200,14.36,0.00,5.00,Buy at limit on dip,2016-Oct-31 00:00:00,203,13.61,0.03,5.00,Time based at market,-532.89,Simple Dip
+ALLE,162,2016-Oct-27 00:00:00,201,61.82,0.00,5.00,Buy at limit on dip,2016-Nov-01 00:00:00,204,63.28,0.13,5.00,Time based at market,226.52,Simple Dip
+ATI,738,2016-Oct-27 00:00:00,201,13.56,0.00,5.00,Buy at limit on dip,2016-Nov-01 00:00:00,204,13.74,0.03,5.00,Time based at market,127.24,Simple Dip
+ABBV,179,2016-Oct-28 00:00:00,202,55.91,0.00,5.00,Buy at limit on dip,2016-Nov-02 00:00:00,205,54.79,0.11,5.00,Time based at market,-209.99,Simple Dip
+ALXN,71,2016-Nov-04 00:00:00,207,140.27,0.00,5.00,Short at limit on jump,2016-Nov-07 00:00:00,208,130.57,0.00,5.00,Profit target,678.84,Simple Dip
+ALXN,82,2016-Nov-07 00:00:00,208,122.55,0.00,5.00,Buy at limit on dip,2016-Nov-09 00:00:00,210,128.68,0.00,5.00,Profit target,492.45,Simple Dip
+AA,344,2016-Nov-09 00:00:00,210,29.04,0.00,5.00,Short at limit on jump,2016-Nov-14 00:00:00,213,29.56,0.06,5.00,Time based at market,-188.54,Simple Dip
+ALXN,76,2016-Nov-09 00:00:00,210,131.28,0.00,5.00,Short at limit on jump,2016-Nov-11 00:00:00,212,124.72,0.00,5.00,Profit target,488.88,Simple Dip
+ATI,622,2016-Nov-09 00:00:00,210,16.08,0.00,5.00,Short at limit on jump,2016-Nov-14 00:00:00,213,17.28,0.03,5.00,Time based at market,-757.95,Simple Dip
+ADBE,98,2016-Nov-10 00:00:00,211,102.47,0.00,5.00,Buy at limit on dip,2016-Nov-15 00:00:00,214,102.93,0.21,5.00,Time based at market,35.74,Simple Dip
+ALXN,83,2016-Nov-11 00:00:00,212,120.54,0.00,5.00,Buy at limit on dip,2016-Nov-16 00:00:00,215,119.64,0.24,5.00,Time based at market,-84.35,Simple Dip
+ATI,603,2016-Nov-16 00:00:00,215,16.60,0.00,5.00,Buy at limit on dip,2016-Nov-21 00:00:00,218,16.37,0.03,5.00,Time based at market,-148.27,Simple Dip
+AA,330,2016-Nov-18 00:00:00,217,30.26,0.00,5.00,Buy at limit on dip,2016-Nov-22 00:00:00,219,31.77,0.00,5.00,Profit target,489.25,Simple Dip
+ATI,596,2016-Nov-29 00:00:00,223,16.79,0.00,5.00,Buy at limit on dip,2016-Dec-01 00:00:00,225,17.63,0.00,5.00,Profit target,490.24,Simple Dip
+ATI,593,2016-Dec-02 00:00:00,226,16.87,0.00,5.00,Buy at limit on dip,2016-Dec-05 00:00:00,227,17.72,0.00,5.00,Profit target,490.25,Simple Dip
+ALXN,84,2016-Dec-12 00:00:00,232,118.61,0.00,5.00,Buy at limit on dip,2016-Dec-15 00:00:00,235,113.43,0.23,5.00,Time based at market,-444.89,Simple Dip
+ATI,556,2016-Dec-12 00:00:00,232,17.99,0.00,5.00,Buy at limit on dip,2016-Dec-15 00:00:00,235,16.47,0.03,5.00,Time based at market,-858.46,Simple Dip
+ATI,602,2016-Dec-13 00:00:00,233,16.63,0.00,5.00,Buy at limit on dip,2016-Dec-16 00:00:00,236,16.83,0.03,5.00,Time based at market,111.17,Simple Dip
+ALXN,88,2016-Dec-19 00:00:00,237,114.04,0.00,5.00,Buy at limit on dip,2016-Dec-20 00:00:00,238,119.74,0.00,5.00,Profit target,491.77,Simple Dip
+ACN,86,2016-Dec-21 00:00:00,239,116.68,0.00,5.00,Buy at limit on dip,2016-Dec-27 00:00:00,242,116.01,0.23,5.00,Time based at market,-68.31,Simple Dip
+ALXN,72,2017-Jan-05 00:00:00,248,139.82,0.00,5.00,Short at limit on jump,2017-Jan-10 00:00:00,251,145.00,0.29,5.00,Time based at market,-382.89,Simple Dip
+ATI,608,2017-Jan-05 00:00:00,248,16.45,0.00,5.00,Buy at limit on dip,2017-Jan-10 00:00:00,251,16.49,0.03,5.00,Time based at market,10.04,Simple Dip
+ALXN,73,2017-Jan-11 00:00:00,252,136.49,0.00,5.00,Buy at limit on dip,,,,,,,,Simple Dip

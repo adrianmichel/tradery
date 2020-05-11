@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{56860C3B-866D-4AEB-A7A2-3F37B0FC9A31}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(PlatformTarget)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="charthandler.h" />
+    <ClInclude Include="collections.h" />
+    <ClInclude Include="colors.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="datacollection.h" />
+    <ClInclude Include="datasource.h" />
+    <ClInclude Include="dataunit.h" />
+    <ClInclude Include="datetime.h" />
+    <ClInclude Include="datetimerange.h" />
+    <ClInclude Include="defaults.h" />
+    <ClInclude Include="enum.h" />
+    <ClInclude Include="exceptions.h" />
+    <ClInclude Include="explicittrades.h" />
+    <ClInclude Include="filesymbols.h" />
+    <ClInclude Include="path.h" />
+    <ClInclude Include="hinstance.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="logfilemaintainer.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="loggers.h" />
+    <ClInclude Include="macros.h" />
+    <ClInclude Include="misc.h" />
+    <ClInclude Include="miscfile.h" />
+    <ClInclude Include="miscwin.h" />
+    <ClInclude Include="moremiscwin.h" />
+    <ClInclude Include="objcounter.h" />
+    <ClInclude Include="optimizer.h" />
+    <ClInclude Include="positionsizingparams.h" />
+    <ClInclude Include="plugin.h" />
+    <ClInclude Include="pluginconfig.h" />
+    <ClInclude Include="pluginhelper1.h" />
+    <ClInclude Include="propertyfiledir.h" />
+    <ClInclude Include="resourcewrapper.h" />
+    <ClInclude Include="runtimeparams.h" />
+    <ClInclude Include="series.h" />
+    <ClInclude Include="stringconv.h" />
+    <ClInclude Include="switch.h" />
+    <ClInclude Include="symbolsiterator.h" />
+    <ClInclude Include="traderytypes.h" />
+    <ClInclude Include="sharedptr.h" />
+    <ClInclude Include="core.h" />
+    <ClInclude Include="simlibplugin.h" />
+    <ClInclude Include="stats.h" />
+    <ClInclude Include="statsdefines.h" />
+    <ClInclude Include="stringformat.h" />
+    <ClInclude Include="strings.h" />
+    <ClInclude Include="synchronizer.h" />
+    <ClInclude Include="system.h" />
+    <ClInclude Include="thread.h" />
+    <ClInclude Include="tokenizer.h" />
+    <ClInclude Include="traderyapi.h" />
+    <ClInclude Include="traderyconnection.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="versionno.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

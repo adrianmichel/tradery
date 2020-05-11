@@ -1,0 +1,84 @@
+/*
+   Copyright (C) 2018-2020 Adrian Michel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+/*
+IMPORTANT DISCLAIMER
+
+These sample trading systems are included for illustrative purpose only.
+
+Using them with real money can lead to substantial financial losses.
+
+DO NOT USE FOR REAL MONEY TRADING OR INVESTMENT DECISIONS.
+*/
+
+ #define SYSTEM_NAME "FadeBump slow w/ volume filter"
+
+#define SYSTEM_DESCRIPTION "This is pretty much a copy of DipBuyer slow w/ volume filter, but I added short sales and allowed long \"dip\" percentage to be different from short \"dip\" percentage.\r\n\r\nThis is based on a Wealth Lab system published by \"geol\".\r\n\r\nIt is low frequency system, but it is also low risk, so it's a good choice for those just starting out.\r\n\r\nI personally traded a very similar variant for about a year with reasonable profit.\r\n\r\nThis version includes a volume filter: a signal will only be considered if the target entry price x SMA( 10 ) of volume is higher than a certain threshold, which ensures only liquid stocks will be traded.\r\n\r\nPossible areas of experimentation: the holding period, profit target, threshold, the 0.87 factor."
+
+void run()
+{
+  double longGapRange = 0.13;
+  double shortGapRange = 0.11;
+  double profitTarget = 6;
+  int holdingPeriod = 2;
+  int volumePeriod = 10;
+  // traded value threshold
+  double th = 1200000;
+
+  installProfitTarget( profitTarget );
+  installTimeBasedExit( holdingPeriod );
+
+  Series low1 = lowSeries() * (1 - longGapRange);
+  Series high1 = highSeries() * (1 + shortGapRange);
+
+  // delay close and open 1 bar
+  Series dClose = closeSeries().shiftRight( 1 );
+  Series dOpen = openSeries().shiftRight( 1 );
+  Series smaVol = volumeSeries().SMA( volumePeriod  );
+
+  for( Index bar = 3; bar < barsCount(); bar++ )
+  {
+    applyAutoStops( bar );
+
+    // only enter if there are no other open positions
+    if( !hasOpenPositions() )
+    {
+      double shortLimitPrice = high1[bar];
+      double buyLimitPrice = low1[ bar ];
+
+      if( dClose[ bar ] < dOpen[ bar ] AND
+          close( bar ) < open( bar ) AND
+          close( bar ) < dClose[ bar ] AND
+          open( bar ) < dClose[ bar ] AND
+          buyLimitPrice < close( bar ) )
+      {
+        // only enter a trade if the liquidity condition is met
+        if( buyLimitPrice * smaVol[ bar ] > th )
+          buyAtLimit( bar + 1, buyLimitPrice, 1000, "Buying at limit" );
+      }
+      else if( dClose[ bar ] > dOpen[ bar ] AND
+          close( bar ) > open( bar ) AND
+          close( bar ) > dClose[ bar ] AND
+          open( bar ) > dClose[ bar ] AND
+          shortLimitPrice > close( bar ) )
+      {
+        // only enter a trade if the liquidity condition is met
+        if( shortLimitPrice * smaVol[ bar ] > th )
+          shortAtLimit( bar + 1, shortLimitPrice, 1000, "Shorting at limit" );
+      }
+    }
+  }
+}

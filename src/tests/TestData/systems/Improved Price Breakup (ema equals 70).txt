@@ -1,0 +1,114 @@
+/*
+   Copyright (C) 2018-2020 Adrian Michel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+/*
+IMPORTANT DISCLAIMER
+
+These sample trading systems are included for illustrative purpose only.
+
+Using them with real money can lead to substantial financial losses.
+
+DO NOT USE FOR REAL MONEY TRADING OR INVESTMENT DECISIONS.
+*/
+
+#define SYSTEM_NAME "Improved Price Breakup (ema = 70)"
+
+#define SYSTEM_DESCRIPTION "Enter trade when:\r\n1) Price break up and\r\n2) Volume is a vol_factor above previous volume and\r\n3) EMA is a rate_factor positive and\r\n4) Price is above EMA and\r\n5) Price is not greater than a stretch_factor above EMA\r\n\r\nExit when\r\n1) Price is less than EMA or\r\n2) Price is greater than a stretch_factor above EMA or\r\n3) Price hit trailing limit\r\n\r\n"
+
+
+Series ema;
+Series max;
+Series min;
+Series vol;
+unsigned int period;
+unsigned int ema_period;
+unsigned int series_period;
+unsigned int position;
+int vol_period;
+double max_price;
+double vol_factor;
+double ema_rate;
+double buy_price_stretch;
+double sell_price_stretch;
+double trailing_limit;
+
+bool init()
+{
+   position = 1000;
+   ema_period = 70;
+   vol_period = 30;
+   series_period = 5;
+   vol_factor = 0.8;
+   ema_rate = 0.1;
+   buy_price_stretch = 1.07;
+   sell_price_stretch = 1.16;
+   trailing_limit = 0.15;
+   max_price = 0;
+
+   ema = CLOSE_SERIES.EMA( ema_period );
+   max = HIGH_SERIES.Max( series_period );
+   min = LOW_SERIES.Min( series_period);
+   vol = VOLUME_SERIES.SMA ( vol_period );
+
+   Pane defPane = getDefaultPane();
+
+   defPane.drawSeries( "ema", ema );
+   defPane.drawSeries( "max", max );
+
+   return true;
+}
+
+void run()
+{
+    period = 68;
+    FOR_EACH_BAR( period );
+}
+
+// bar is the current bar which is being processed
+void onBar( INDEX bar)
+{
+
+    // do per open position processing 
+    // such as close position or other
+    FOR_EACH_OPEN_POSITION( bar );
+
+    if( openPositionsCount() == 0 )
+    {
+        if( close( bar ) > max[bar-1] )
+          if( volume(bar) > vol_factor * vol[bar-1])
+            if( ema[bar] > (ema[bar-3] + ema_rate))
+              if(close(bar) > ema[bar])
+                if(close(bar) < ema[bar] * buy_price_stretch)
+                  {
+                    BUY_AT_MARKET( bar + 1, position, "buy" );
+                    max_price = close ( bar );
+                  }
+    }
+
+}
+
+// pos is the current open position being processed
+// and bar is the current bar
+bool onOpenPosition(Position pos, INDEX bar )
+{
+    if(close( bar ) > max_price) max_price = close( bar);
+
+    if( close(bar) < ema[bar] || 
+        close(bar) > ema[bar] * sell_price_stretch ||
+        close(bar) < max_price * (1- trailing_limit))
+        SELL_AT_MARKET( bar + 1, pos, "exiting at market" );
+    return true;
+}

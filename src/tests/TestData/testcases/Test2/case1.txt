@@ -1,0 +1,9 @@
+possizingFile=possizing1.txt
+slippage=0.2
+commission=5
+symbolsFile=symbols1.txt
+start=1/12/2016
+end=1/12/2017
+expectedresultsDir=ExpectedOutput
+system=Simple Dip.txt
+threads=1

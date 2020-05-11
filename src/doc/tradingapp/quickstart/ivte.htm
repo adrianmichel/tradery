@@ -1,0 +1,180 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The Integrated Visual Trading Environment</title>
+<style>
+<!--
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	}
+p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span
+style='mso-bidi-font-size: 10.0pt'>The
+Integrated Visual Trading Environment (IVTE) can be launched immediately
+after installation.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+initial splash window displays the plug-in discovery process.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt"><b>Note</b>:
+By default, the application searches the website for updates at startup. If desired,
+this feature can be turned off in the Settings/General Settings dialog. Please
+note that no information is ever sent out by any of the TradingApp Platform
+components. The auto-update functionality only reads the contents of the
+file 
+<a href="http://www.amichel.com/tradingapp/update/update.xml" style="color: blue; text-decoration: underline; text-underline: single">http://www.amichel.com/tradingapp/update/update.xml</a> 
+to determine if the current version if up to date. If the version on the server 
+is more recent, it offers the user the option to download the new
+version.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+main window contains various UI elements
+such as the plug-in explorer, the properties bar and one or more session 
+windows. If running it after the installation, it will contain a pre-loaded 
+sample session.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+plug-in explorer displays the  available plug-in types, plug-ins and their
+configurations in a tree form. </span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">
+The session window shows the elements of the session: its plug-in 
+configurations, parameters and the various views.&nbsp;</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt"><b>Note:
+TradingApp </b>sessions are similar to documents in a word
+processor, in that they can be created, modified, saved and loaded. But
+similarities end here as a TradingApp session file holds a session configuration
+data for
+back-testing, automated real-time trading system execution or other such tasks.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+IVTE is a
+Multi Document Interface (MDI) application - multiple sessions can be opened and run simultaneously. By default, no sessions
+are displayed when starting the IVTE, but a
+start-up session can be specified on the command line using the parameter
+&quot;-l&quot;.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+preloaded session is configured to receive data and symbols from pre-installed,
+file based historical data and symbols sources, and to run all the
+available trading systems found in the two systems samples plug-ins
+(systemplugin1 and systemplugin2).
+The trading signals generated during the session execution will be sent to the
+file signal handler plug-in which will optionally save them to files, in real time.
+The file signal handler plug-in has its own window displayed in the &quot;File
+Signal Handler&quot; tab in the session window. This window presents various
+signal and trade statistics (the latter upon session termination). In addition, the session will apply commission and slippage algorithms also
+found in the demo plug-ins. All these session elements are displayed in the
+&quot;Configuration&quot; bar. The &quot;defaults&quot; sub-tree contains all non-runnable
+elements (data and symbols sources etc) of the session. The runnables for the
+session are under the &quot;runnables&quot; root. Other session parameters include the
+number of threads to run all the runnables on, and the period of time on which
+to run them.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt"><b>Note</b>:
+A Runnable is a generalization of the notion of a trading system, in the sense
+that it is &quot;something&quot; that can be run. The purpose of using
+a general concept such as runnable is to provide a higher level of flexibility: anything that has certain general properties that
+make it a runnable can be run, not just trading systems. This can include
+optimizers, walk-forward components etc. This technique of using general
+concepts rather than specific instances is employed throughout the TradingApp
+Platform.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+sample session runnables are all trading systems, some very simple, and some
+more elaborate.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+session can now be started by clicking on the &quot;&gt;&quot; button on the
+application toolbar.
+The preloaded session is primarily a back-testing session, so it will run all
+runnables exactly once, on the specified data for each symbol. Various types
+of information are presented during the session run and after its completion,
+such as info about the runnables that are being run, trading signals, runtime errors, or
+output strings from the runnables themselves. Because of the potentially large number of
+historical trades that may be generated during a session, they are shown at the end of the session.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">
+Once a session has ended, trades and trading signals can be exported for further 
+processing and statistics can be saved for later analysis.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">The
+session configuration can be modified by using drag &amp; drop  between the
+plug-in explorer bar and the configuration bar. Also, elements can be removed from the configuration
+bar by right clicking
+
+and selecting &quot;delete&quot;. Multiple selection is supported for
+all operations.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">New
+configurations of existing plug-ins can be created by right clicking on a
+plug-in and selecting create and existing configurations can be edited or deleted from the
+plug-in, if these
+operations are supported by the plug-in.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">For
+more information on how to use the IVTE please refer to the User's Guide.</span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'>&nbsp;</p>
+
+
+<p class=MsoNormal style='mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0'><span style="mso-bidi-font-size: 10.0pt">For
+more information on how to develop specialized plug-ins of various types, please refer to 
+the Developer's
+Guides and the API documentation.</span></p>
+
+
+<p class="MsoNormal" style="mso-margin-top-alt: auto; mso-margin-bottom-alt: auto; margin-top: 0">&nbsp;</p>
+
+
+</body>
+
+</html>

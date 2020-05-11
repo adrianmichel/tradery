@@ -1,0 +1,80 @@
+/*
+   Copyright (C) 2018-2020 Adrian Michel
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+
+/*
+IMPORTANT DISCLAIMER
+
+These sample trading systems are included for illustrative purpose only.
+
+Using them with real money can lead to substantial financial losses.
+
+DO NOT USE FOR REAL MONEY TRADING OR INVESTMENT DECISIONS.
+*/
+
+#define SYSTEM_NAME "SMA System with Pullback" 
+
+#define SYSTEM_DESCRIPTION "Inspired by OscillatorPullBack by .toe in Wealthlab."
+
+void run()
+{
+   installTimeBasedExit(2);
+
+   Series SMAclose2 = closeSeries().SMA(2); 
+   Series SMAclose5 = closeSeries().SMA(5); 
+   Series SMAclose30 = closeSeries().SMA(30);
+   double lc = 0.93;
+   double sc = 0.93;
+
+   for ( Index bar = 1; bar < barsCount(); bar++ )
+   {
+      applyAutoStops(bar);	
+
+for( Position pos = getFirstOpenPosition(); pos; pos = getNextOpenPosition()) 
+     {   
+       double posPrice =  pos.getEntryPrice();
+
+       if ( open(bar+1) > posPrice AND
+            pos.isLong())
+          sellAtMarket( bar + 1, pos, "Sell at Market" );       
+    
+       if ( open(bar+1) < posPrice AND
+            pos.isShort())
+          coverAtMarket( bar + 1, pos,  "Cover at Market" );       
+      }
+
+	    
+      if ( SMAclose5[bar] < lc*SMAclose30[bar] )
+           {
+             for (Index j=1; j<31; j++ ) 
+             {
+                  double lf = 0.75 - ( j * 0.005);
+                  double lp = SMAclose2[bar]*lf; 
+                  buyAtLimit( bar + 1, lp, 1000, "BuyAtLimit");
+              }
+             }
+
+       if ( SMAclose5[bar] > sc*SMAclose30[bar] )
+            {  
+              for (Index j=1; j<31; j++ )  
+                {
+                   double sf = 1.25 + ( j * 0.005); 
+                   double sp = SMAclose2[bar]*sf;
+                   shortAtLimit (bar + 1, sp, 1000, "ShortAtLimit"); 
+                 }
+              }
+
+   }
+}

@@ -1,0 +1,3010 @@
+MMM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ABT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ABBV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ACN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ADBE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AES
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AET
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AFL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+A
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+APD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AKAM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ALXN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ATI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ALLE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AGN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ADS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ALL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AMZN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AEE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AEP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AXP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AIG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AMT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AMP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ABC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AME
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AMGN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+APH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+APC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ADI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AON
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+APA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AIV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AAPL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AMAT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ADM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AIZ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+T
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ADSK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ADP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AZO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AVB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+AVY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BHI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BLL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BAC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BCR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BAX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BBT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BDX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BBBY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BMS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BIIB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BLK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HRB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BWA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BSX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BMY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+COG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CPB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+COF
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CAH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KMX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CCL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CAT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CBG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CBS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CELG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CNP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CTL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CERN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CF
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CHRW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CHK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CVX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CMG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CINF
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CTAS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CSCO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+C
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CTXS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CLF
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CLX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CME
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CMS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+COH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CCE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CTSH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CMCSA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CMA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CSC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CAG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CNX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ED
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+STZ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GLW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+COST
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CCI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CSX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CMI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CVS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DHR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DRI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DVA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DLPH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DAL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DNR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XRAY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DVN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DFS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DISCA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DLTR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+D
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DOV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DPS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DTE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DUK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DNB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ETFC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EMN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ETN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EBAY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ECL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EIX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EMC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EMR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ESV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ETR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EOG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EQT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EFX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EQR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EXC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EXPE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+EXPD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XOM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FFIV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FAST
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FDX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FIS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FITB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FSLR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FISV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FLIR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FLS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FLR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FMC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FTI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+F
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FOSL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BEN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FCX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FTR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GME
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GCI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GPS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GRMN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GIS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GPC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GILD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GOOG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+GHC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HAL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HOG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HAR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HRS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HIG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HAS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HCP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HCN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HSY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HES
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HPQ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HON
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HRL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HST
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HUM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+HBAN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ITW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+INTC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ICE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IPG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IBM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IFF
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IGT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ISRG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IVZ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+IRM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JBL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JEC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JNJ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JCI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JOY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JNPR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+K
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KEY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KMB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KIM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KMI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KLAC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LLL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LEG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LEN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LUK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LLY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LNC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LMT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+L
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LOW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LSI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LYB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MTB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MAC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+M
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MRO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MPC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MAR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MMC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MAS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MAT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MKC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MCD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MCK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MDT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MRK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MET
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+KORS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MCHP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MU
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MSFT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MHK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TAP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MDLZ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MON
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MNST
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MOS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MSI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MUR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+MYL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NBR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NDAQ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NOV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NTAP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NFLX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NWL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NFX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NEM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NWSA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NEE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NKE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NBL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+JWN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NSC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NTRS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NOC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NRG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NUE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+NVDA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ORLY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+OXY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+OMC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+OKE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ORCL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+OI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PCAR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PDCO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PAYX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PNR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PBCT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PEP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PKI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PRGO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PFE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PCG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PSX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PNW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PXD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PBI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PNC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PPG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PPL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PCLN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PFG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PGR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PLD
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PRU
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PEG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PSA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PHM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PVH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+QEP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+QCOM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+PWR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DGX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RRC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RTN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RHT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+REGN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RF
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RSG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RAI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RHI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ROK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+COL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ROP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ROST
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RDC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+R
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+CRM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SCG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SLB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SCHW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+STX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SEE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SRE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SHW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SLM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SJM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SNA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+LUV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SWN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SE
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+STJ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SWK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SBUX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+STT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SRCL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SYK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+STI
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SYMC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+SYY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TROW
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TGT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TEL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+THC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TDC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TSO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TXN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TXT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+BK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WMB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TMO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TWX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TJX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TMK
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TSS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TSCO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+RIG
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TRV
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TRIP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+FOXA
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TYC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+TSN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+UNP
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+UPS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+X
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+UTX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+UNH
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+UNM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+URBN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+USB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VLO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VTR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VRSN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VZ
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VRTX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VFC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VIAB
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+V
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VNO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+VMC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WMT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+DIS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WAT
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WFC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WDC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WU
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WY
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WHR
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WIN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WEC
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WYN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+WYNN
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XEL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XRX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XLNX
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+XYL
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+YHOO
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+YUM
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ZION
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end
+ZTS
+tend init
+trun start
+run 1
+run 2
+run 3
+trun end

@@ -1,0 +1,63 @@
+,Total stats,Long stats,Short stats,Buy & Hold stats
+Date Range,2016-Jan-12,2017-Jan-12
+
+Overall performance
+Tradery score,-22.51,-6.66,-11.72,3.22,
+
+Performance
+Total % gain/loss,-13.66%,-5.33 %,-8.33 %,24.97 %,
+Total gain/loss,-13664.40,-5332.49,-8331.91,24968.36,
+Annualized pct gain,-13.63%,-5.32 %,-8.31 %,24.89 %,
+Starting capital,100000.00,100000.00,100000.00,100000.00,
+Ending capital,86335.60,94667.51,91668.09,124968.36,
+Closed pos gain/loss,-13664.40,-5332.49,-8331.91,24968.36,
+Open pos gain/loss,0.00,0.00,0.00,0.00,
+Max gain per pos,805.95,606.16,805.95,1242.78,
+Max loss per pos,-4606.63,-2251.97,-4606.63,-93.33,
+Average gain/loss per pos,-369.31,-666.56,-287.31,58.07,
+Average % gain/loss per pos,-3.69%,-6.66 %,-2.87 %,28.41 %,
+Max % gain per pos,8.06%,6.05 %,8.06 %,552.74 %,
+Max % loss per pos,-46.09%,-22.51 %,-46.09 %,-47.15 %,
+
+Risk etc...
+Exposure,2.66%,0.58 %,2.08 %,85.67 %,
+Expectancy,-369.31,-666.56,-287.31,58.07,
+Ulcer index,12.18,4.92,7.63,1.96,
+
+Drawdown
+Max drawdown,-14842.26,-6107.23,-9036.58,-7292.62,
+Max drawdown date,2016-Oct-28,2016-Oct-28,2016-Jul-01,2016-Jun-27,
+Max drawdown %,-14.67%,-6.06 %,-8.98 %,-6.33 %,
+Max drawdown % date,2016-Oct-28,2016-Oct-28,2016-Jul-01,2016-Jun-27,
+Max drawdown duration,339,339,345,81,
+
+All Trades
+Total Trades,37,8,29,430,
+Closed trades,37,8,29,430,
+Open trades,0,0,0,0,
+
+Winning Trades
+Winning closed trades,14,2,12,368,
+Winning open trades,0,0,0,0,
+% winning closed trades,37.84%,25.00 %,41.38 %,85.58 %,
+% winning open trades,0.00%,0.00 %,0.00 %,0.00 %,
+Average gain per winning pos,435.83,598.08,408.79,71.75,
+
+Losing Trades
+Losing closed trades,23,6,17,62,
+Losing open trades,0,0,0,0,
+% losing closed trades,62.16%,75.00 %,58.62 %,14.42 %,
+% losing open trades,0.00%,0.00 %,0.00 %,0.00 %,
+Average loss per losing pos,-859.39,-1088.11,-778.67,-23.13,
+
+Neutral Trades
+Neutral closed trades,0,0,0,0,
+Neutral open trades,0,0,0,0,
+% neutral closed trades,0.00%,0.00 %,0.00 %,0.00 %,
+% neutral open trades,0.00%,0.00 %,0.00 %,0.00 %,
+
+Slippage
+Average slippage per pos,0.07,0.06,0.07,0.00,
+
+Commission
+Average commission per pos,10.00,10.00,10.00,0.00,

@@ -1,0 +1,69 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Types of plug</title>
+</head>
+
+<body>
+
+<h2>Types of plug-ins</h2>
+<p><b>Runnables</b> implement the very general concept of “something that can be 
+run”. The most common type of a runnable is a plain trading system.</p>
+<p>For a runnable to be run, various other components must be associated with 
+it, some mandatory (data source and symbols source) and others optional 
+(slippage, commission, signal handlers).<br>
+Data Sources can be static or real-time (dynamic). Static data sources are 
+normally used in back-testing or in sessions where data is not processed for 
+real-time use (optimization, walk-forward analysis etc), while dynamic data 
+sources are primarily intended for real-time use, such as in an automated 
+trading application.</p>
+<p><b>Symbols Sources</b> are a generalization of the concept of symbols lists – 
+the only requirement for a symbols source is to be able to provide the “next” 
+symbol and to signal when there are no more symbols available. This allows 
+symbols to come from any physical source and to have more complex behavior than 
+just a static list of symbols - they could even be designed to actually change 
+at runtime based on various conditions, thus effectively becoming part of the 
+trading system.</p>
+<p><b>Note</b>: A dynamic symbols source could of course be implemented in the 
+trading system itself (and in many other tools this is how it is done, because 
+there are no other easy ways), but that makes re-using that logic in other 
+trading setups difficult. Implementing it in a separate component that handles 
+the symbols makes much more sense and makes it easily reusable. This philosophy 
+applies to all other types of plug-ins.</p>
+<p><b>Signal handlers</b> receive trading signals generated at runtime, which 
+they can process in various ways: submit them for execution, calculate 
+statistics, store them for later use etc.</p>
+<p><b>Slippage </b>plug-ins implement slippage algorithms for use in 
+back-testing. Slippage plug-in configurations are provided with information such 
+as type of order, size etc, and they return a slippage value, which is then used 
+by the trading engine to generate simulated positions.</p>
+<p><b>Note</b>: Obviously, real slippage values are unpredictable, but a number 
+of assumptions can usually be made to model an approximation of the real 
+slippage. For instance, there is a somewhat reverse relationship (not 
+necessarily linear though) between volume and slippage. By using the appropriate 
+slippage plug-in configuration and parameters to the right markets in 
+back-testing, simulated trading becomes much more realistic, which leads to a 
+higher level of confidence that the system will perform as expected in real 
+trading.&nbsp;</p>
+<p><b>Commission</b> plug-ins implement commission algorithms for use in 
+back-testing. They are also used to make the back-testing more realistic and to 
+show the effect of commission on a system's performance.</p>
+<p>Other types of plug-ins are under development and will be added in the 
+future: position handler plug-in, system loop handler plug-in, open position 
+handler plug-in etc., the final goal is to encourage sharing of pre-built 
+trading components, thus enabling users to define most trading system and setups 
+by visually combining a multitude of these existing components, with little or 
+no coding.</p>
+<p>Besides their declared functionality, all plug-in configuration associated 
+with a session receive various notification about the session status and 
+parameters. These can be used to implement virtually any type of functionality 
+in plug-ins, such as statistics (with or without graphic UI), charting of data 
+or of the generate trades, optimizers etc. These notification are described in 
+Pgrammer's Guide and in the API documentation.</p>
+
+</body>
+
+</html>

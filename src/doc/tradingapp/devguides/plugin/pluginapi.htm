@@ -1,0 +1,185 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Plug</title>
+<style>
+<!--
+span.code    { font-family: Courier New; font-size: 10pt }
+-->
+</style>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<p>Plug-in APIs are declared in <span class="code">plugin.h</span>.</p>
+
+<p>Plug-in helper APIs, which deal mainly with plug-in configurations that 
+require registry persistence, are declared in <span class="code">pluginhelper.h</span></p>
+
+<p>Plug-in helper APIs, which deal with plug-in configurations that don't 
+require persistence are declared in <span class="code">pluginhelper1.h</span>.</p>
+
+<h3>Plug-in API</h3>
+
+<p>The <span class="code">Plugin</span> abstract class is the base for all 
+concrete types of plug-in classes.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+<code>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span class="code"><font COLOR="#0000ff">template</font> &lt; <font COLOR="#0000ff">
+  class</font> Type &gt; <font COLOR="#0000ff">class</font> PLUGIN_API Plugin : <font COLOR="#0000ff">
+  public</font> PluginInfo<br>
+  {<font COLOR="#0000ff">virtual</font> InfoPtr first() <font COLOR="#0000ff">
+  const</font>
+  <font COLOR="#0000ff">throw</font> ( PluginException ) = 0;<br>
+  &nbsp;
+  <font COLOR="#0000ff">virtual</font> InfoPtr next() <font COLOR="#0000ff">
+  const</font>
+  <font COLOR="#0000ff">throw</font> ( PluginException ) = 0 ;<br>
+  &nbsp;
+  <font COLOR="#0000ff">virtual</font> ManagedPtr&lt; Type &gt; get( <font COLOR="#0000ff">
+  const</font> UniqueId&amp; id ) <font COLOR="#0000ff">throw</font> ( 
+  PluginException ) = 0;<br>
+  &nbsp;
+  <font COLOR="#0000ff">virtual</font> <font COLOR="#0000ff">bool</font> 
+  canCreate() <font COLOR="#0000ff">const</font> = 0;<br>
+  &nbsp;
+  <font COLOR="#0000ff">virtual</font> ManagedPtr&lt; Type &gt; create() <font COLOR="#0000ff">
+  throw</font> ( PluginException ) = 0;<br>
+  &nbsp;
+  <font COLOR="#0000ff">virtual</font> <font COLOR="#0000ff">bool</font> canEdit(
+  <font COLOR="#0000ff">const</font> UniqueId&amp; id ) = 0;<br>
+  &nbsp;
+  <font COLOR="#0000ff">virtual</font> ManagedPtr&lt; <br>; type }<br>
+  }</span></p>
+  </td>
+ </code>
+ </tr>
+</table>
+
+<p>The <span class="code"> first</span> and <span class="code">next</span> 
+methods iterate through available plug-in configurations. It is recommended, 
+although not mandatory, that a plug-in have a way to persist and load various 
+configurations. The plug-in helper APIs provide an easy way to implement the 
+persistence functionality.</p>
+<p>Some plug-ins may only need to implement just one configuration with 
+hardcoded parameters. The Dynamic Data Source sample is an example of such a 
+plug-in. In this case, no configuration persistence is necessary.</p>
+
+<p>The <span class="code">canCreate</span>, <span class="code">canEdit</span>, 
+<span class="code">canDelete</span> methods request information about the 
+plug-in capabilities, such as whether configurations can be created, edited or 
+removed.&nbsp;</p>
+
+<p>The <span class="code">hasWindow</span> method indicates whether a specific 
+plug-in configuration can provide its own UI to be displayed by the TradingApp. 
+The default implementation returns <span class="code">false</span>.</p>
+
+<p>The template argument <span class="code">Type</span> will be replaced with 
+actual plug-in type when creating specific plug-in types, for example <span class="code">
+DataSource</span>, 
+<span class="code">SymbolsSource</span>, <span class="code">Runnable</span> etc</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><span class="code"><font COLOR="#0000ff">typedef</font> 
+  Plugin&lt; DataSource &gt; DataSourcePlugin;<font COLOR="#0000ff"><br>
+  typedef</font> Plugin&lt; Runnable &gt; RunnablePlugin;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p>All types of supported plug-ins are defined using
+<span class="code">typedef</span> statements.</p>
+
+<p>All methods that return configurations (<span class="code">get</span>,
+<span class="code">create</span>, <span class="code">edit</span>) return them as 
+so called managed pointers (<span class="code">ManagedPtr</span>) which are, in 
+the context of the TradingApp, smart pointers with reference counting. A 
+<span class="code">ManagedPtr</span> contains the payload pointer (the actual 
+value it is pointing to) and a reference counter. The same pointer can be 
+referred to by multiple 
+<span class="code">ManagedPtr</span>, which is reflected in the value of the 
+internal reference counter. Each time a <span class="code">ManagedPtr</span> 
+goes out of scope or is deleted, the reference counter is decremented. When the 
+reference counter becomes 0, the contained pointer is deleted. This makes the 
+task of configuration pointer management easier for plug-ins, which can either 
+maintain a copy of the pointer internally and share it among different 
+requesters (with the caveat that this implies the object pointed to is thread 
+safe) or simply create as many instances of the requested configurations and 
+pass them around without worrying where or when they will be deleted.</p>
+
+<h4>Get/Release non-member functions</h4>
+
+<p>Besides implementing a specific plug-in class, a plug-in must implement and 
+export the non-member <span class="code">get...</span> and, optionally, 
+<span class="code">release...</span> methods. The <span class="code">get</span>... 
+methods are used in the plug-in discovery process as well as to request an 
+instance of a plug-in. The <span class="code">release</span> methods, if 
+implemented, are called by the platform whenever the plug-in is to be released, 
+giving the plug-in a chance to cleanup its allocated resources.</p>
+
+<p><b>Note</b>: plug-ins DLLs are loaded on demand only, and released as soon as 
+they are no longer necessary. For example, a plug-in may be loaded when a 
+contextual menu is displayed, in order to get the information about what 
+commands are supported, or when a session is started, but it will be released as 
+soon as the menu disappears or when the session is stopped. The benefit of this 
+behavior is that a plug-in can be changed even if the platform is running, for 
+example during the development and testing process, without having to restart 
+the GUI application and disrupt other tasks that the platform may be performing. 
+A plug-in DLL may still remain loaded if it is referred to by multiple session 
+or if the DLL contains multiple plug-ins, and more than one are referred to by 
+the same or other sessions.</p>
+
+<p>The prototypes for these methods are the following:</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <span class="code">
+  <font size="2"><font COLOR="#0000ff">extern</font><font face="Courier New"> 
+  &quot;C&quot;</font></font><font><br>
+  {</font><font COLOR="#008000"><br>
+  // the only non member function that a Plugin must implement - it's the entry 
+  point in the plugin</font><font ><br>
+  PLUGIN_API simlib::DataSourcePlugin* getDataSourcePlugin();<br>
+  PLUGIN_API simlib::SymbolsSourcePlugin* getSymbolsSourcePlugin();<br>
+  PLUGIN_API simlib::RunnablePlugin* getRunnablePlugin();<br>
+  PLUGIN_API simlib::SlippagePlugin* getSlippagePlugin();<br>
+  PLUGIN_API simlib::CommissionPlugin* getCommissionPlugin();<br>
+  PLUGIN_API simlib::SignalHandlerPlugin* getSignalHandlerPlugin();<br>
+  </font></span>
+  <p><span class="code"><font COLOR="#008000">// these methods are optional<br>
+  // if implemented, they are called right before releasing the plugin and<br>
+  // give the plugin code a chance to cleanup<br>
+  // If implemented, it may need to do reference counting, as a plugin may be 
+  loaded or released multiple<br>
+  // times</font></span></p>
+  <p><span class="code"><font >PLUGIN_API <font COLOR="#0000ff">void</font> 
+  releaseDataSourcePlugin();<br>
+  PLUGIN_API <font COLOR="#0000ff" >void</font> releaseSymbolsSourcePlugin();<br>
+  PLUGIN_API <font COLOR="#0000ff" >void</font> releaseRunnablePlugin();<br>
+  PLUGIN_API <font COLOR="#0000ff" >void</font> releaseSlippagePlugin();<br>
+  PLUGIN_API <font COLOR="#0000ff" >void</font> releaseCommissionPlugin();<br>
+  PLUGIN_API <font COLOR="#0000ff" >void</font> releaseSignalHandlerPlugin();<br>
+  }</font> </span>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</body>
+
+</html>

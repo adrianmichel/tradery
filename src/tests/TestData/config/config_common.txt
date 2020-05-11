@@ -1,0 +1,39 @@
+#-a  "C:\dev\tradery_service\service\src\tests\TestData\data" 
+-x "dll" 
+-o "E32C975A-ECE1-4e7f-BB49-A604F2EE8083" 
+-d "3F8D0DAA-C11E-452c-A097-20127C0673E0" 
+-i "${IncludePath}" 
+-i "${BoostIncludePath}"
+-i "${VcpkgPath}\packages\nlohmann-json_x64-windows\include"
+-j "${SessionPath}"
+-r "${RuntimeProjPath}"
+ 
+-h "4B6632DE-CD7B-43c6-932B-13D098E1E287" 
+--cpucount  "2" 
+
+# threads are now set in the test case file as test results 
+# may depend on the number of threads
+#--threads "1"
+
+--threadalg  "3" 
+-m  "600000" 
+#-A 
+-B "60" 
+-D "60" 
+-J "30" 
+-Y "2000" 
+--maxtotalbarcount "30000000" 
+--sysnamekword "#systemName" 
+--classnamekword "#className" 
+-W "6B4C1ADB-3C98-416a-A026-78494EE08729" 
+-X "56EF85F7-2F49-4a8b-8F67-35292E67AA84" 
+--maxlines "200" 
+--ospath "c:\windows" 
+--dataerrorhandling  "1" 
+
+
+-p "${BinPath}" 
+-l "${LibPath}" 
+-l "${BinPath}"
+
+--enablerunasuser  "0" 

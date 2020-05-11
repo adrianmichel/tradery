@@ -1,0 +1,122 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Session</title>
+<style>
+<!--
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	}
+p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<h4>Session</h4>
+<p class="MsoNormal">A session is the equivalent of a
+document in word processing application. A session is a combination of
+plug-in configurations and other parameters. Sessions can be created, saved, loaded, modified, removed.&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">
+A session provides
+functionality that is defined and implemented by its various plug-in
+configurations. A session can perform back-testing, real-time automated trading,
+optimization, walk-forward analysis and optimization, etc. by simply adding the appropriate component using drag &amp;
+drop operations.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">A session enables users to
+combine available configurations into a meaningful trading setup. The IVTE allows manipulation and use of multiple independent sessions simultaneously.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Session information is saved in
+files with the default extension *.tap, in XML format.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">In back testing, trading systems
+generate a list of simulated trades that can be exported for further analysis. Also, using
+the appropriate plug-in configurations, session statistics and charts can be
+generated.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">When used for end of day trading, a
+session can be run each day on the most recent data, after market close.
+Trading signals generated during the run can then be saved, or manually or 
+automatically submitted to a broker, by using the right signal handler plug-in</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">When used for real-time trading, a dynamic data
+source and a signal handler that can submit orders directly to a broker must be
+used. In theory, any bar duration is supported. Although the TradingApp
+platform is very responsive and can run very efficiently, in case of very
+
+bars of very short duration (and high frequency trading), it is very important that all the
+elements of the chain, including the data source, symbols source as well as the
+connection to the broker be capable of handling high frequency data.</p>
+
+<h3>The session window</h3>
+<p class="MsoNormal">A typical session window
+contains:</p>
+<ul style="margin-bottom: 0in">
+  <li>
+    <p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in">A configurations bar, which shows the plug-in configurations associated with
+the current
+session, i.e. all the elements that make up the session such as data
+    source, symbols source, signal handler, runnables etc.</li>
+  <li>
+    <p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in">Session parameters bar, which shows the various runtime parameters for the
+session</li>
+  <li>
+    <p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in">The output bar, which is where different configurations can send
+diagnostic or information messages at runtime</li>
+  <li>
+    <p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in">A tabbed window showing various types of information generated at
+runtime, such as status info, triggered signals, generated
+trades, runtime errors. This tabbed window will also hold tabs that are
+    dynamically created by UI enabled plug-in configurations</li>
+  <li>
+    <p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in">A status bar showing the current session status and various statistics at
+runtime</li>
+  <li>
+    <p class="MsoNormal" style="margin-left:.5in;text-indent:-.25in;mso-list:l1 level1 lfo2;
+tab-stops:list .5in">&nbsp;</li>
+</ul>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">The Configuration bar shows
+all the  elements in a tree with two roots: default and runnables. Under the Runnables root there can be
+one or more runnables, from any number and combination of runnable plug-ins. Runnables 
+can also be duplicated.</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">Under the default root (called default because elements under it apply to all runnables in the
+session) there are all the configurations that runnables
+need in order to perform their actions, such as data source, symbols
+source, slippage, commission, signal handler. There must be exactly one data
+source and one symbols source under the default root. All the others are
+optional.</p>
+
+</body>
+
+</html>

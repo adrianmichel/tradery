@@ -1,0 +1,96 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Miscellanous classes</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF background="../images/glabkgnd1.jpg" lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<p>Most classes in this category can be found in the
+header file &quot;misc.h&quot;. Please refer to the API documentation for more
+information on these classes.</p>
+
+<p><b>The Info class</b></p>
+
+<p>A very important class that
+constitutes a base class for all plug-ins, plug-in configurations and others is
+the Info class.&nbsp;</p>
+
+<p>This stores the basic information about any object that is to be
+recognized by the platform: Name, Description and UniqueId.&nbsp;</p>
+
+<p>Name and Description
+are regular strings that can contain any characters, and they provide descriptive information about the
+object that is normally presented to the user.</p>
+
+<p>&nbsp;UniqueId which is a UUID value and
+is unique for each plug-in,
+configuration, runnable etc. is used to identify each component within the system.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font size="2"><font face="Courier New" COLOR="#0000ff">class</font><font face="Courier New">
+  Info<br>
+  {<font COLOR="#0000ff"><br>
+  public</font>:<br>
+  &nbsp;&nbsp;&nbsp; <font COLOR="#008000">// constructor</font><br>
+  &nbsp; Info( <font COLOR="#0000ff">const</font> UniqueId&amp; id, <font COLOR="#0000ff">const</font>
+  t_string&amp; name, <font COLOR="#0000ff">const</font> t_string&amp;
+  description );<br>
+  &nbsp;&nbsp;&nbsp; <font COLOR="#008000">// copy constructor<br>
+  </font>&nbsp; Info( <font COLOR="#0000ff">const</font> Info&amp; info );<br>
+  &nbsp;&nbsp;&nbsp; <font COLOR="#008000">// default constructor - generates a
+  new unique id</font><br>
+  &nbsp; Info();<font COLOR="#0000ff"><br>
+  <br>
+  &nbsp; const</font> UniqueId&amp; id() <font COLOR="#0000ff">const;<br>
+  &nbsp; const</font> t_string&amp; name() <font COLOR="#0000ff">const;<br>
+  &nbsp; const</font> t_string&amp; description() <font COLOR="#0000ff">const;</font></font><font face="Courier New" size="2" COLOR="#008000"><br>
+  </font><font face="Courier New" size="2">
+  }</font>
+  </font>
+  </td>
+ </tr>
+</table>
+
+<p><b>Note: </b>when developing a new
+plug-in or configuration, a new UniqueId can be generated using the UUID tool
+provided with Visual Studio .net, or the default constructor of the class
+UniqueId.</p>
+
+</body>
+
+</html>

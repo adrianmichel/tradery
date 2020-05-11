@@ -1,0 +1,428 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The dissection of a typical simple trading system</title>
+</head>
+
+<body>
+
+<div class=Section1>
+
+<h2><a name="_Toc95139575">A Simple Trading System</a></h2>
+
+<hr color="#C4DDD7">
+
+<p>We'll analyze the class System1 that
+can be found in the Sample project. For the complete source code please refer to
+the file System1.h in the Sample project.</p>
+
+<p>The class System1 is supposed to run
+on bar type data, so it is derived from BarSystem. It also needs to process open
+positions, so it is derived from OpenPositionHandler too. It is also derived
+from BarHandler, as it will implement its per bar processing insde a bar
+handler. To do per order processing it needs to be an OrderFilter as well.</p>
+
+<p>Any Runnable receives a set of
+default parameters at runtime:&nbsp;</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'>the input data (a collection of bars, ticks or anything
+  else) for the current symbol</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l1 level1 lfo3;tab-stops:list .5in'>a PositionsManager object, where the Runnable can and
+  usually does store all generated positions</li>
+</ul>
+
+<p>In general the system will use the
+default input data and create positions in the default positions manager, but in
+some cases a system may choose to load data for different symbols, or of a
+different type, for example if it must process multiple symbols. Also, in the
+case of an adaptive system, or for an optimization or walk-forward analysis
+Runnable, it may also create any number of temporary PositionsManager objects.</p>
+
+<p>To receive various notifications,
+System1 must register itself as a handler as it will be seen below.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier New; color: blue'>class</span><span style='font-family: Courier New'>
+  System1 : <span style='color:blue'>public</span>  BarSystem,
+  OpenPositionHandler, BarHandler, OrderFilter</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>Here are the private data members:</p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo4;tab-stops:list .5in'><b>_days and _profitTarget </b>are defined once and keep their value for the lifetime of
+  the class. They will be used by the system to set position exit conditions.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo4;tab-stops:list .5in'><b>series</b>
+     is&nbsp; a constant pointer to a Series object. SeriesConstPtr is a special
+     type of smart pointer class and all Series are referred to through
+     SeriesPtr or SeriesConstPtr instances. The advantage of using these instead
+     of straight pointers is that they handle automatic garbage collection, so
+     one series can be assigned to multiple pointers and it is guaranteed that
+     as long as there is still a reference, the series will not be destroyed.
+     When all the references go out of scope, meaning there are no more
+     references to the series, then the framework may decide to discard the
+     series or keep it for further use in case it is ever referred to again. It
+     is also safe to assign one pointer to another, even if the asignee already
+     points to its own series.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l0 level1 lfo4;tab-stops:list .5in'><b>sma</b>  is
+  also a pointer to a Series, and it will be set to point to the Simple Moving
+  Average of some other series.</li>
+</ul>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier New; color: green; background-color: #C4DDD7; background-repeat: repeat; background-attachment: scroll; background-position: 0%'>// time based holding period, indicates how
+  many bars a position will be held - it will be used with installTimeBasedExit<br>
+  </span><span style='font-size:10.0pt;font-family:"Courier New";color:blue;
+  background:#C4DDD7'>const</span><span style='font-size:10.0pt;font-family:
+  "Courier New";background:#C4DDD7'> <span style='color:blue'>unsigned</span> <span
+  style='color:blue'>int</span>  _days;</span> </font> </p>
+  <p><font size="2"><span style='font-family: Courier New; color: green; background-color: #C4DDD7; background-repeat: repeat; background-attachment: scroll; background-position: 0%'>// profit target - indicates what level of profit needs to
+  be reached before closing a position - will be used with installProfitTarget<br>
+  </span><span style='font-size:10.0pt;font-family:"Courier New";color:blue;
+  background:#C4DDD7'>const</span><span style='font-size:10.0pt;font-family:
+  "Courier New";background:#C4DDD7'> <span style='color:blue'>double</span>
+  _profitTarget;</span></font></p>
+  <p><font size="2"><span style='font-family: Courier New; color: green; background-color: #C4DDD7; background-repeat: repeat; background-attachment: scroll; background-position: 0%'>// this is pointer to a user defined series. The user
+  still needs to create it in init or elsewhere by calling Series::create( size
+  )<br>
+  // The user doesn't need to delete or deallocate this or any other series -
+  the framework takes care of it</span><span style='font-size:10.0pt;
+  font-family:"Courier New";background:#C4DDD7'><br>
+  SeriesConstPtr series;</span></font></p>
+  <p><font size="2"><span style='font-family: Courier New; color: green; background-color: #C4DDD7; background-repeat: repeat; background-attachment: scroll; background-position: 0%'>// series containing the simple moving average, will be
+  initialized in the init method</span><span style='font-size:10.0pt;
+  font-family:"Courier New";background:#C4DDD7'><br>
+  SeriesConstPtr sma;</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>onOpenPosition is a virtual method
+declared in the OpenPositionHandler class, which System1 is derived from.
+Whenever the method forEachOpenPosition is called on a PositionsManager object,
+onOpenPosition is called repeatedly on all open positions. </p>
+
+<p>In the case of System1, this method
+doesn't do anything, but a &quot;real&quot; trading system could decide to close
+some or all open positions, or do other useful things.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier New; color: green'>// this method is declared in OpenPositionHandler class.<br>
+  // it will be called for each open position when the method
+  forEachOpenPosition is called further down<br>
+  // in this case it doesn't do anything, but positions can be closed for
+  example, or used in any other way in the logic of the system</span> <o:p></o:p></font></p>
+  <p><font size="2"><span style='font-family: Courier New; color: blue'>virtual</span><span
+  style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:blue'>void</span>
+  onOpenPosition(Position *pos, <span style='color:blue'>const</span>  Bars&amp;
+  bars, size_t bar )<br>
+  {<span style='color:green'><br>
+  // do something here with the position</span><br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>The default constructor initializes
+an instance of System1 with a number of parameters: the name, the description
+(an empty string here), the time based exit strategy parameter and the
+percentage based profit target. These will stay unchanged for the lifetime of
+the system, although in other cases some of these parameters may change.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier New; color: green'>// constructor of the System1 class<br>
+  // does one time initialization of the class, which whill hold for the life of
+  the class, indicated by the &quot;const&quot; qualifier associated with the
+  variables.<br>
+  // Per run intialization should be done in the method &quot;init&quot;.</span><span
+  style='font-size:10.0pt;font-family:"Courier New"'><br>
+  System1()<span style='color:green'><br>
+  // set the system name and the holding period to 2 days, profit target to 5%</span><br>
+  : BarSystem( _TT( &quot;System 1&quot; ), _TT( &quot;&quot; ) ), _days( 2 ), _profitTarget(
+  5 )<br>
+  {<br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>init is
+the System1 implementation of the virtual method init declared in Runnable. This
+is called by the framework once per symbol, and System1 can perform per symbol
+initialization in its body. The comments in the body describe all initialization
+steps.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier New; color: green'>// this is called by the framework before running the system.<br>
+  // used to do initializations for each run on a symbol<br>
+  </span><span style='font-size:10.0pt;font-family:"Courier New";color:blue'>virtual</span><span
+  style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:blue'>bool</span>
+  init(<span style='color:blue'>const</span>  t_string &amp;symbol){<span
+  style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // registers itself as an order filter with the default
+  positions<br>
+  &nbsp;&nbsp;&nbsp; // an order filter could have been implemented as a
+  separate class,<br>
+  &nbsp;&nbsp;&nbsp; // which would have allowed it to be used by other systems
+  as well<br>
+  &nbsp;&nbsp;&nbsp; // onBuyAtLimit will be called for every buyAtLimit call</span><br>
+  &nbsp;&nbsp;&nbsp; getDefPositions()-&gt;registerOrderFilter( <span
+  style='color:blue'>this</span>  );<span style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // calculates the 10 bars SMA series. this will be
+  calculated on each run</span><br>
+  &nbsp;&nbsp;&nbsp; sma = getDefVolumeSeries().SMA( 10 );<span
+  style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // create two temporary series</span><br>
+  &nbsp;&nbsp;&nbsp; SeriesPtr tr = Series::create( getDefBars() -&gt;size() );<br>
+  &nbsp;&nbsp;&nbsp; SeriesPtr atr = Series::create( getDefBars() -&gt;size() );<span style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // the true range series are not useful in this case,<br>
+  &nbsp;&nbsp;&nbsp; // they are just calculated to show it can be done, and
+  how to<br>
+  &nbsp;&nbsp;&nbsp; // calculate the true range series values<br>
+  </span><span style='color:blue'>&nbsp;&nbsp;&nbsp;</span><span
+  style='color:green'> </span><span style='color:blue'>for</span>  ( <span
+  style='color:blue'>unsigned</span> <span style='color:blue'>int</span>  bar =
+  1; bar &lt; getDefBars()-&gt;size(); bar++ )<br>
+  &nbsp;&nbsp;&nbsp; {<span style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double</span>  h = getDefHigh( bar
+  );<span style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double</span>  l = getDefLow( bar
+  );<span style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double</span>  c = getDefClose( bar
+  );<span style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double</span>  pc = getDefClose(
+  bar - 1 );<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tr-&gt;setValue( bar, max3&lt; <span
+  style='color:blue'>double</span>  &gt;( h - l, abs( pc - h ), abs( pc - l )
+  )/c );<br>
+  &nbsp;&nbsp;&nbsp; }<span style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // create a new series trsma - 3 bars SMA of the true
+  range</span><br>
+  &nbsp;&nbsp;&nbsp; SeriesConstPtr trsma = tr-&gt;SMA( 3 );<span
+  style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // calculates the average true range</span><br>
+  &nbsp;&nbsp;&nbsp; atr-&gt;setValue( 3, trsma -&gt; getValue( 3 ) );<span
+  style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp; for</span>  ( bar = 3; bar &lt; getDefBars()-&gt;size();
+  bar++ )<br>
+  &nbsp;&nbsp;&nbsp; {<span style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double</span>  x = tr-&gt;getValue(
+  bar );<span style='color:blue'><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double</span>  prev = atr-&gt;getValue(
+  bar - 1 );<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; atr-&gt;setValue( bar, ( prev * ( 3
+  - 1 ) + x ) / 3 );<br>
+  &nbsp;&nbsp;&nbsp; }<span style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // get the EMA of the close with period 4 bars<br>
+  &nbsp;&nbsp;&nbsp; // the series of limit prices will be the close_ema * 0.95</span><br>
+  &nbsp;&nbsp;&nbsp; SeriesConstPtr close_ema = getDefCloseSeries().EMA( 4 );<span
+  style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // calculate a new series - each value is 95% of the
+  close_ema calculated above</span><br>
+  &nbsp;&nbsp;&nbsp; series = close_ema -&gt; multiply( 0.95 );<span
+  style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // install the exit condtions:<br>
+  &nbsp;&nbsp;&nbsp; // 5% profit target</span><br>
+  &nbsp;&nbsp;&nbsp; getDefPositions()-&gt;installProfitTarget( _profitTarget );<br>
+  &nbsp;&nbsp;&nbsp; getDefPositions()-&gt;installTimeBasedExit( _days );<span
+  style='color:green'><br>
+  &nbsp;&nbsp;&nbsp; // signal that init was performed succesfully<br>
+  &nbsp;&nbsp;&nbsp; // a false return would signal some error and would stop
+  the run<br>
+  </span><span style='color:blue'>&nbsp;&nbsp;&nbsp;</span><span
+  style='color:green'> </span><span style='color:blue'>return</span> <span
+  style='color:blue'>true</span>;<br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>The virtual method run is declared
+in the Runnable class and implemented in the System1 class. It is called by the
+framework after init and it is where the system is actually doing the
+processing. In this case the implementation is quite simple - it simply calls
+the method forEachBar which in turns calls the dataHandler method once for each
+bar starting at bar index 10. Passing a reference to the current object
+indicates what object will be receiving the calls to the dataHandler method.
+System1 is derived from BarHandler and it is able to receive such notifications.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier; color: green'>// the run method - this is called by the framework after a
+  succesful initialization<br>
+  // it just does forEachBar which in turn calls dataHandler for all the
+  available bars<br>
+  </span><span style='font-size:10.0pt;font-family:Courier;color:blue'>virtual</span><span
+  style='font-size:10.0pt;font-family:Courier'> <span style='color:blue'>void</span>
+  run()<br>
+  {<br>
+  &nbsp;&nbsp;&nbsp; forEachBar( *<span style='color:blue'>this</span>, 10 );<br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>The virtual method cleanup is
+declared in the Runnable class an implemented in the System1 class. This method
+is called once per symbol, after the run has completed. In general this is where
+variables allocated in init or throughout the code can be safely deallocated.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier; color: green'>// cleanup for the current run on the current symbol<br>
+  // in this case nothing needs to be done, all variables are cleaned up
+  automatically by the framework<br>
+  </span><span style='font-size:10.0pt;font-family:Courier;color:blue'>virtual</span><span
+  style='font-size:10.0pt;font-family:Courier'> <span style='color:blue'>void</span>
+  cleanup()<br>
+  {<br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>This virtual method is declared in
+the TradeFilter class and implemented in the System class for trade filtering.
+It is called by the framework whenever a trade is about to be
+&quot;submitted&quot;. This gives the System a chance to change the size of the
+order or even cancel it altogether. In this case the system only enters the
+trade if a number of conditions are met. If all the conditions are met, then the
+size is changed based on the return of getShares helper method which calculates
+the number of shares to keep the position value a constant $5000. If the
+conditions are not met, the function returns 0 which signals that the order must
+not be submitted.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier New; color: green'>// this is the buy at limit dataHandler - it is called before buy
+  at limit is submitted<br>
+  // and gives the system a last chance to change it or even not submit it at
+  all<br>
+  // the return will indicate how many shares this order should be actually
+  placed for. If 0, no order will be submitted<br>
+  </span><span style='font-size:10.0pt;font-family:"Courier New";color:blue'>unsigned</span><span
+  style='font-size:10.0pt;font-family:"Courier New"'> <span style='color:blue'>int</span>
+  onBuyAtLimit(size_t bar, <span style='color:blue'>unsigned</span> <span
+  style='color:blue'>int</span>  shares, <span style='color:blue'>double</span>
+  price ) <span style='color:blue'>const</span><br>
+  {<br>
+  <span style='color:green'>// in this case we are just doing some money
+  maanagemt as well as some filtering based on<br>
+  // previous close prices<br>
+  // if it closed lower the previous two bars<br>
+  // and the total value traded was higher than $1.2mil<br>
+  // and the price of the order is lower than the last close<br>
+  // then buy at limit the number of shares calculated by getShares<br>
+  // IMPORTANT: since buyAtLimit is called on bar + 1 (see below), we have to
+  look at the last bar prior to that, so<br>
+  // we use bar - 1, otherwise this will trigger a bar out of range error for
+  the last bar available<br>
+  // so instead bar, we use bar - 1 (which is the last bar before the bar on
+  which the buy would happen) etc.<br>
+  </span><span style='color:blue'>if</span>( ( getDefClose( bar - 1 ) &lt;
+  getDefClose( bar - 2 ) ) &amp;&amp;<br>
+  &nbsp; ( getDefClose( bar - 2 ) &lt; getDefClose( bar - 3 ) ) &amp;&amp;<br>
+  &nbsp; ( price * sma-&gt;getValue( bar - 1 ) &gt; 1200000 ) &amp;&amp;<br>
+  &nbsp; ( price &lt; getDefClose( bar - 1) ) )<br>
+  &nbsp; <span style='color:blue'>return</span>  getShares( bar - 1, price );<br>
+  <span style='color:blue'>else<br>
+  </span><span style='color:green'>// otherwise don't place the order<br>
+  &nbsp; </span><span style='color:blue'>return</span>  0;<br>
+  }<br>
+  <br>
+  <span style='color:green'>// this implements a simple money management scheme
+  and calculates the number of shares by making sure the the position value is
+  alwyas $5000<br>
+  </span><span style='color:blue'>unsigned</span> <span style='color:blue'>int</span>
+  getShares( size_t bar, <span style='color:blue'>double</span>  price ) <span
+  style='color:blue'>const</span><br>
+  {<br>
+  <span style='color:blue'>return</span>( <span style='color:blue'>unsigned</span>
+  <span style='color:blue'>int</span>)( 5000 / price );<br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+<p>Finally, the method dataHandler
+implements the processing that needs to be one on each bar. The system will
+create positions in the default PositionsManager instance, but it could also
+create one or more temporary PositionsManger instances for example in the case
+of a self-tuning (adaptive) system.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal><font size="2"><span style='font-family: Courier; color: green'>// called for each bar<br>
+  </span><span style='font-size:10.0pt;font-family:Courier;color:blue'>virtual</span><span
+  style='font-size:10.0pt;font-family:Courier'> <span style='color:blue'>void</span>
+  dataHandler( <span style='color:blue'>const</span>  Bars&amp; bars, size_t
+  bar)<br>
+  {<br>
+  <span style='color:green'>&nbsp;&nbsp; // get the default positions manager
+  associated with the system</span><br>
+  &nbsp;&nbsp;&nbsp; PositionsManager* pos = getDefPositions();<br>
+  <br>
+  <span style='color:green'>&nbsp;&nbsp; // apply auto stops - so check for
+  profit target and holding period in our case</span><br>
+  &nbsp;&nbsp;&nbsp; pos-&gt;applyAutoStops( *getDefBars(),bar );<br>
+  <br>
+  <span style='color:green'>&nbsp;&nbsp; // get the limit price for the current
+  bar<br>
+  </span><span style='color:blue'>&nbsp;&nbsp; double</span>  buyLimitPrice =
+  series-&gt;getValue( bar );<br>
+  <br>
+  <span style='color:green'>&nbsp;&nbsp; // buy at limit on the next bar (it
+  should always be next bar or the system would be peeking into the future!)<br>
+  &nbsp;&nbsp;&nbsp; // use a default value of 1000 shares - it will be
+  re-calculated by onBuyAtLimit</span><br>
+  &nbsp;&nbsp;&nbsp; pos -&gt; buyAtLimit( *getDefBars(), bar + 1, buyLimitPrice,
+  1000, _TT( &quot;buy at limit&quot; ) );<br>
+  <br>
+  <span style='color:green'>&nbsp;&nbsp; // call this method just to show how
+  it's done - the onOpenPosition will be called for each open position</span><br>
+  &nbsp;&nbsp;&nbsp; pos-&gt;forEachOpenPosition( *<span style='color:blue'>this</span>,
+  *getDefBars(), bar );<br>
+  }</span></font></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</body>
+
+</html>

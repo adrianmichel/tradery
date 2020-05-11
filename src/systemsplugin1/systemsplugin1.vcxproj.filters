@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="systemsplugin1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdaptiveBBands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BollingerBandSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CalendarSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DipBuyer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="extTradesSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IBCommission.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lindqlongshort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mama.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mfi.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleSlippage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Screener1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleTradingSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StockFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System11.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="System8.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="systemsplugin1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="systemTemplate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="systemsplugin1.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="systemsplugin1.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

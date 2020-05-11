@@ -1,0 +1,71 @@
+Symbol,Shares,Entry time,Entry bar,Entry price,Entry slippage,Entry commission,Entry name,Exit time,Exit bar,Exit price,Exit slippage,Exit commission,Exit name, Gain, System name
+LUV,135,2016-Jul-21 00:00:00,13,36.95,0.00,10.00,buy at limit,2016-Jul-25 00:00:00,15,37.31,0.11,10.00,Time based at market,29.11,DipBuyer fast with volume filter
+BMY,83,2016-Aug-05 00:00:00,24,59.94,0.00,10.00,buy at limit,2016-Aug-09 00:00:00,26,58.56,0.18,10.00,Time based at market,-134.75,DipBuyer fast with volume filter
+MYL,114,2016-Aug-24 00:00:00,37,43.71,0.00,10.00,buy at limit,2016-Aug-26 00:00:00,39,42.98,0.13,10.00,Time based at market,-102.86,DipBuyer fast with volume filter
+NEM,124,2016-Aug-24 00:00:00,37,40.15,0.00,10.00,buy at limit,2016-Aug-26 00:00:00,39,40.37,0.12,10.00,Time based at market,7.87,DipBuyer fast with volume filter
+STJ,66,2016-Aug-25 00:00:00,38,76.13,0.00,10.00,buy at limit,2016-Aug-29 00:00:00,40,77.73,0.23,10.00,Time based at market,85.55,DipBuyer fast with volume filter
+TSCO,73,2016-Sep-08 00:00:00,47,68.41,0.00,10.00,buy at limit,2016-Sep-12 00:00:00,49,66.89,0.20,10.00,Time based at market,-130.59,DipBuyer fast with volume filter
+CNX,311,2016-Sep-13 00:00:00,50,16.04,0.00,10.00,buy at limit,2016-Sep-15 00:00:00,52,15.60,0.05,10.00,Time based at market,-156.06,DipBuyer fast with volume filter
+APA,88,2016-Sep-15 00:00:00,52,56.35,0.17,10.00,buy at limit,2016-Nov-04 00:00:00,88,54.26,0.16,10.00,take profit,-203.84,Moving Average 3
+CHK,691,2016-Sep-15 00:00:00,52,7.22,0.02,10.00,buy at limit,2016-Oct-31 00:00:00,84,5.72,0.02,10.00,take profit,-1055.68,Moving Average 3
+SE,121,2016-Sep-15 00:00:00,52,41.21,0.12,10.00,buy at limit,2016-Nov-04 00:00:00,88,38.71,0.12,10.00,take profit,-322.90,Moving Average 3
+WDC,99,2016-Sep-15 00:00:00,52,50.57,0.15,10.00,buy at limit,,,,,,,,Moving Average 3
+WYNN,47,2016-Sep-15 00:00:00,52,105.18,0.31,10.00,buy at limit,2016-Oct-13 00:00:00,72,93.66,0.28,10.00,take profit,-561.29,Moving Average 3
+CHK,826,2016-Sep-27 00:00:00,60,6.01,0.00,10.00,buy at limit,2016-Sep-28 00:00:00,61,6.31,0.00,10.00,Profit target,228.36,DipBuyer fast with volume filter
+RDC,333,2016-Oct-03 00:00:00,64,15.01,0.04,10.00,buy at limit,2017-Feb-08 00:00:00,152,17.29,0.05,10.00,take profit,736.93,Moving Average 3
+ESV,591,2016-Oct-10 00:00:00,69,8.49,0.03,10.00,buy at limit,2017-Mar-03 00:00:00,168,9.66,0.03,10.00,take profit,676.28,Moving Average 3
+NE,788,2016-Oct-11 00:00:00,70,6.32,0.02,10.00,buy at limit,2016-Nov-03 00:00:00,87,4.68,0.01,10.00,take profit,-1311.45,Moving Average 3
+THC,213,2016-Oct-26 00:00:00,81,23.11,0.07,10.00,buy at limit,2016-Nov-11 00:00:00,93,14.76,0.04,10.00,take profit,-1799.49,Moving Average 3
+EW,50,2016-Oct-26 00:00:00,81,97.90,0.00,10.00,buy at limit,2016-Oct-28 00:00:00,83,92.08,0.28,10.00,Time based at market,-310.74,DipBuyer fast with volume filter
+LH,39,2016-Oct-26 00:00:00,81,125.62,0.00,10.00,buy at limit,2016-Oct-28 00:00:00,83,122.93,0.37,10.00,Time based at market,-124.93,DipBuyer fast with volume filter
+GCI,621,2016-Oct-27 00:00:00,82,7.87,0.00,10.00,buy at limit,2016-Oct-31 00:00:00,84,7.28,0.02,10.00,Time based at market,-387.25,DipBuyer fast with volume filter
+X,248,2016-Oct-28 00:00:00,83,19.44,0.06,10.00,buy at limit,2017-Mar-22 00:00:00,181,33.73,0.10,10.00,take profit,3524.43,Moving Average 3
+MCK,37,2016-Oct-28 00:00:00,83,128.79,0.00,10.00,buy at limit,2016-Nov-01 00:00:00,85,125.80,0.38,10.00,Time based at market,-130.55,DipBuyer fast with volume filter
+FCX,426,2016-Nov-02 00:00:00,86,11.02,0.03,10.00,buy at limit,2016-Dec-27 00:00:00,123,13.91,0.04,10.00,take profit,1209.09,Moving Average 3
+X,275,2016-Nov-02 00:00:00,86,17.06,0.00,10.00,buy at limit,2016-Nov-03 00:00:00,87,17.91,0.00,10.00,Profit target,214.53,DipBuyer fast with volume filter
+FLR,108,2016-Nov-04 00:00:00,88,43.40,0.00,10.00,buy at limit,2016-Nov-08 00:00:00,90,43.43,0.13,10.00,Time based at market,-16.08,DipBuyer fast with volume filter
+FAST,110,2016-Nov-11 00:00:00,93,43.97,0.13,10.00,buy at limit,2017-Apr-13 00:00:00,197,45.69,0.14,10.00,take profit,168.91,Moving Average 3
+ADM,116,2016-Nov-11 00:00:00,93,41.52,0.00,10.00,buy at limit,2016-Nov-15 00:00:00,95,41.90,0.13,10.00,Time based at market,23.40,DipBuyer fast with volume filter
+MOS,183,2016-Nov-14 00:00:00,94,26.64,0.08,10.00,buy at limit,2017-Mar-06 00:00:00,169,29.50,0.09,10.00,take profit,503.58,Moving Average 3
+DVN,110,2016-Nov-16 00:00:00,96,44.63,0.13,10.00,buy at limit,2017-Feb-27 00:00:00,164,42.72,0.13,10.00,take profit,-229.85,Moving Average 3
+HST,299,2016-Nov-16 00:00:00,96,16.34,0.05,10.00,buy at limit,2017-May-15 00:00:00,218,17.17,0.05,10.00,take profit,225.90,Moving Average 3
+TSCO,69,2016-Nov-16 00:00:00,96,70.54,0.21,10.00,buy at limit,2017-Feb-17 00:00:00,159,69.67,0.21,10.00,take profit,-79.67,Moving Average 3
+VRTX,53,2016-Nov-16 00:00:00,96,92.86,0.28,10.00,buy at limit,2016-Dec-05 00:00:00,108,75.90,0.23,10.00,take profit,-918.68,Moving Average 3
+MRO,311,2016-Nov-17 00:00:00,97,15.68,0.05,10.00,buy at limit,2017-Jan-31 00:00:00,146,16.32,0.05,10.00,take profit,180.90,Moving Average 3
+BBBY,111,2016-Nov-18 00:00:00,98,44.09,0.13,10.00,buy at limit,2016-Dec-23 00:00:00,122,40.67,0.12,10.00,take profit,-399.38,Moving Average 3
+KMX,88,2016-Nov-18 00:00:00,98,55.83,0.17,10.00,buy at limit,2017-Mar-15 00:00:00,176,62.79,0.19,10.00,take profit,592.84,Moving Average 3
+MHK,24,2016-Nov-18 00:00:00,98,200.40,0.60,10.00,buy at limit,,,,,,,,Moving Average 3
+DNR,1579,2016-Nov-21 00:00:00,99,3.14,0.01,10.00,buy at limit,2017-Jan-31 00:00:00,146,3.39,0.01,10.00,take profit,375.40,Moving Average 3
+IP,106,2016-Nov-21 00:00:00,99,46.86,0.14,10.00,buy at limit,2017-Feb-07 00:00:00,151,50.39,0.15,10.00,take profit,354.69,Moving Average 3
+TSN,90,2016-Nov-21 00:00:00,99,55.21,0.00,10.00,buy at limit,2016-Nov-22 00:00:00,100,57.97,0.00,10.00,Profit target,228.46,DipBuyer fast with volume filter
+ATI,298,2016-Nov-22 00:00:00,100,16.88,0.05,10.00,buy at limit,2017-Jan-03 00:00:00,127,16.20,0.05,10.00,take profit,-222.41,Moving Average 3
+BIIB,17,2016-Nov-23 00:00:00,101,293.82,0.00,10.00,buy at limit,2016-Nov-28 00:00:00,103,303.45,0.91,10.00,Time based at market,143.66,DipBuyer fast with volume filter
+MRO,337,2016-Nov-29 00:00:00,104,14.61,0.00,10.00,buy at limit,2016-Nov-30 00:00:00,105,16.21,0.00,10.00,Profit target,517.56,DipBuyer fast with volume filter
+DG,73,2016-Dec-01 00:00:00,106,71.49,0.00,10.00,buy at limit,2016-Dec-05 00:00:00,108,73.68,0.22,10.00,Time based at market,140.20,DipBuyer fast with volume filter
+SWN,436,2016-Dec-07 00:00:00,110,12.61,0.04,10.00,buy at limit,2017-Jan-04 00:00:00,128,9.81,0.03,10.00,take profit,-1239.80,Moving Average 3
+AGN,25,2017-Jan-05 00:00:00,129,215.22,0.64,10.00,buy at limit,2017-Mar-22 00:00:00,181,232.09,0.70,10.00,take profit,401.75,Moving Average 3
+NEM,148,2017-Jan-09 00:00:00,131,35.98,0.11,10.00,buy at limit,2017-Mar-07 00:00:00,170,32.48,0.10,10.00,take profit,-538.18,Moving Average 3
+FTR,108,2017-Jan-10 00:00:00,132,49.40,0.15,10.00,buy at limit,2017-Mar-01 00:00:00,166,39.26,0.12,10.00,take profit,-1115.43,Moving Average 3
+THC,294,2017-Jan-12 00:00:00,134,18.07,0.05,10.00,buy at limit,2017-Mar-17 00:00:00,178,17.85,0.05,10.00,take profit,-86.96,Moving Average 3
+CNX,327,2017-Jan-31 00:00:00,146,16.19,0.00,10.00,buy at limit,2017-Feb-01 00:00:00,147,17.10,0.00,10.00,Profit target,277.34,DipBuyer fast with volume filter
+PBI,405,2017-Feb-01 00:00:00,147,13.05,0.00,10.00,buy at limit,2017-Feb-03 00:00:00,149,12.47,0.04,10.00,Time based at market,-251.79,DipBuyer fast with volume filter
+ETFC,156,2017-Feb-02 00:00:00,148,34.03,0.00,10.00,buy at limit,2017-Feb-06 00:00:00,150,34.41,0.10,10.00,Time based at market,38.26,DipBuyer fast with volume filter
+DNB,51,2017-Feb-09 00:00:00,153,105.32,0.00,10.00,buy at limit,2017-Feb-13 00:00:00,155,99.68,0.30,10.00,Time based at market,-307.81,DipBuyer fast with volume filter
+FOSL,285,2017-Feb-15 00:00:00,157,18.97,0.00,10.00,buy at limit,2017-Feb-16 00:00:00,158,19.92,0.00,10.00,Profit target,250.32,DipBuyer fast with volume filter
+NUE,86,2017-Feb-21 00:00:00,160,63.43,0.19,10.00,buy at limit,2017-Apr-17 00:00:00,198,56.23,0.17,10.00,take profit,-638.44,Moving Average 3
+BSX,228,2017-Feb-23 00:00:00,162,23.37,0.00,10.00,buy at limit,2017-Feb-24 00:00:00,163,24.54,0.00,10.00,Profit target,246.42,DipBuyer fast with volume filter
+IGT,223,2017-Mar-09 00:00:00,172,23.21,0.00,10.00,buy at limit,2017-Mar-13 00:00:00,174,22.74,0.07,10.00,Time based at market,-125.79,DipBuyer fast with volume filter
+FTR,185,2017-Mar-22 00:00:00,181,27.68,0.00,10.00,buy at limit,2017-Mar-24 00:00:00,183,26.73,0.08,10.00,Time based at market,-195.63,DipBuyer fast with volume filter
+CHK,823,2017-Apr-10 00:00:00,194,6.27,0.02,10.00,buy at limit,2017-May-31 00:00:00,229,5.04,0.02,10.00,take profit,-1027.29,Moving Average 3
+MRO,314,2017-Apr-11 00:00:00,195,16.48,0.05,10.00,buy at limit,2017-May-03 00:00:00,210,14.41,0.04,10.00,take profit,-671.17,Moving Average 3
+SWN,619,2017-Apr-11 00:00:00,195,8.35,0.02,10.00,buy at limit,2017-May-25 00:00:00,226,6.75,0.02,10.00,take profit,-1010.59,Moving Average 3
+PRGO,69,2017-May-04 00:00:00,211,72.36,0.22,10.00,buy at limit,,,,,,,,Moving Average 3
+DNR,2678,2017-May-04 00:00:00,211,1.88,0.00,10.00,buy at limit,2017-May-05 00:00:00,212,1.97,0.00,10.00,Profit target,231.20,DipBuyer fast with volume filter
+FSLR,146,2017-May-08 00:00:00,213,34.64,0.10,10.00,buy at limit,,,,,,,,Moving Average 3
+THC,279,2017-May-15 00:00:00,218,18.20,0.05,10.00,buy at limit,,,,,,,,Moving Average 3
+IGT,296,2017-May-25 00:00:00,226,17.04,0.00,10.00,buy at limit,2017-May-26 00:00:00,227,17.90,0.00,10.00,Profit target,232.27,DipBuyer fast with volume filter
+DNR,3412,2017-May-31 00:00:00,229,1.48,0.00,10.00,buy at limit,2017-Jun-01 00:00:00,230,1.59,0.00,10.00,Profit target,362.10,DipBuyer fast with volume filter
+TAP,57,2017-Jun-07 00:00:00,234,88.93,0.00,10.00,buy at limit,2017-Jun-09 00:00:00,236,86.14,0.26,10.00,Time based at market,-178.87,DipBuyer fast with volume filter
+GT,142,2017-Jun-14 00:00:00,239,35.60,0.11,10.00,buy at limit,,,,,,,,Moving Average 3
+KR,189,2017-Jun-15 00:00:00,240,26.63,0.00,10.00,buy at limit,2017-Jun-19 00:00:00,242,22.78,0.07,10.00,Time based at market,-747.35,DipBuyer fast with volume filter
+TGT,100,2017-Jun-16 00:00:00,241,50.01,0.00,10.00,buy at limit,2017-Jun-20 00:00:00,243,51.08,0.15,10.00,Time based at market,86.59,DipBuyer fast with volume filter

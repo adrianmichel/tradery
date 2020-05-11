@@ -1,0 +1,144 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 9">
+<title>Trading system developer's guide</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Adrian Michel</o:Author>
+  <o:LastAuthor>Adrian Michel</o:LastAuthor>
+  <o:Revision>35</o:Revision>
+  <o:TotalTime>461</o:TotalTime>
+  <o:Created>2004-07-25T18:44:00Z</o:Created>
+  <o:LastSaved>2005-02-03T04:30:00Z</o:LastSaved>
+  <o:Pages>8</o:Pages>
+  <o:Words>3906</o:Words>
+  <o:Characters>22266</o:Characters>
+  <o:Company>TT</o:Company>
+  <o:Lines>185</o:Lines>
+  <o:Paragraphs>44</o:Paragraphs>
+  <o:CharactersWithSpaces>27344</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<base target="_self">
+</head>
+
+<body bgcolor=#FFFFFF lang=EN-US
+link=#0000FF vlink=#800080 style='tab-interval:.5in'>
+
+<p>The TradingApp platform provides
+developers with a rich set of classes and APIs that the can be used to write
+trading systems, from the simplest to the most complex. Technical indicators,
+series management, position management are just some of the available classes</p>
+
+<p>The<b> Series class </b>represents a
+series of doubles (high precision floating point values) and has many methods for creation of, and operations on
+series, technical indicators applied to series etc. Series instances are
+normally not accessed directly, but through special pointer classes that do
+reference counting and garbage collection, so the user will need not worry about
+their lifetime and destruction.</p>
+
+<p>The Series class is defined in the
+Series.h header file.</p>
+
+<p>The<b> PositionsManager class </b>is
+the implementation implements the rules for managing simulated positions for bar
+based trading systems.</p>
+
+<p>There are two main components of a
+PositionsManager: the various parameters associated with the current set of
+positions, such as
+various auto exit values (profit target, break even, stop loss etc), commission,
+slippage and others. The second component is the collection of the actual
+positions implemented in the class <b>PositionsCollection</b>. The collection can be used
+independently of the PositionsManager and it can be traversed, sorted (with any
+arbitrary, user defined criteria), multiple collections can be joined etc.&nbsp;</p>
+
+<p>Unlike other classes in the
+framework, positions related classes are not thread safe, as they are not
+generally shared, and also for performance
+reasons. If for some reason a PositionsCollection or PositionsManger object must
+be shared between different threads, the user must do the thread synchronization explicitly.</p>
+
+<p>A system can define various <b>handler
+classes </b>and/or methods: </p>
+
+<ul type=disc>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo2;tab-stops:list .5in'>position handlers - notified when certain forEach...
+  methods are called. </li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo2;tab-stops:list .5in'>trade handlers - notified whenever a trade is about to be
+  entered</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo2;tab-stops:list .5in'>slippage and commission handlers - notified when a slippage
+  or commission value needs to be calculated. These can be implemented as
+  plug-ins to make them available to the GUI application.</li>
+ <li class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+     mso-list:l2 level1 lfo2;tab-stops:list .5in'>data
+  handlers - notified when the forEach method is called on a data collection.</li>
+</ul>
+
+<p>These handlers enable and encourage a cleaner,
+more modular and shareable implementation.</p>
+
+<p>Handler classes are defined in the
+simlib.h header file.</p>
+
+<p>The methods of the class <b>TradeFilter
+</b>and derived (onBuy..., onSell... etc) are called whenever a trade method
+(such as buyAtMarket etc) is about to executed. The value returned by the
+TradeFilter method is used to determine the actual size of the order or if the
+order is to be canceled altogether. TradeFilter classes can be used for money
+management for example, or for some other type of position filtering.</p>
+
+<p><b>Trading signals. </b>For bar
+systems, a trading
+signal is triggered when a trade would be initiated one bar past the last
+available data bar.</p>
+
+<p>The classes <b>OutputSink</b> and <b>OutputBuffer</b>
+can be used for diagnostic of Runnables, or simply to output status or other
+strings, in a thread safe manner. Each Runnable is passed a reference to an
+instance of an OutputSink, which is in fact the output bar in the session window
+(see the User's guide). The user code can get a hold of this reference by
+calling the <b>ouputSink()</b> method. The output can be formatted using any of
+the Control enumeration values, such as various colors, italics, bold,
+underlined.&nbsp;</p>
+
+<p>First all the output information is
+stored in an OutputBuffer object, then it is printed to the OutputSink.</p>
+
+<table border=0 cellpadding=0 width="100%" style='width:100.0%;mso-cellspacing:
+ 1.5pt'>
+ <tr>
+  <td width="100%" style='width:100.0%;background:#C4DDD7;padding:.75pt .75pt .75pt .75pt'>
+  <font face="Courier New" size="2">OutputBuffer ob;<br>
+  <br>
+  outputSink().printLine( ob &lt;&lt; red &lt;&lt; name() &lt;&lt; _TT( &quot;
+  in init&quot; ) &lt;&lt; _TT( &quot;, this pointer: &quot; ) );</font>
+  </td>
+ </tr>
+</table>
+
+<p>The 2 projects systemsplugin1 and systemsplugin2 are Runnable plug-ins which 
+implement several sample trading systems. These projects illustrate some of the 
+techniques used to implement the Runnable plug-ins as
+well as the trading system implemented as Runnable. Please note that these 
+sample trading systems are included only for illustrative purpose are not 
+intended for use in real trading with real money.</p>
+
+</body>
+
+</html>

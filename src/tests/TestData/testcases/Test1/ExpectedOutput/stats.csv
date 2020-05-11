@@ -1,0 +1,63 @@
+,Total stats,Long stats,Short stats,Buy & Hold stats
+Date Range,2016-Jan-12,2016-Jun-12
+
+Overall performance
+Tradery score,0.00,0.00,0.00,4.90,
+
+Performance
+Total % gain/loss,0.00%,0.00 %,0.00 %,12.69 %,
+Total gain/loss,0.00,0.00,0.00,12689.57,
+Annualized pct gain,0.00%,0.00 %,0.00 %,33.23 %,
+Starting capital,100000.00,100000.00,100000.00,100000.00,
+Ending capital,100000.00,100000.00,100000.00,112689.57,
+Closed pos gain/loss,0.00,0.00,0.00,12689.57,
+Open pos gain/loss,0.00,0.00,0.00,0.00,
+Max gain per pos,0.00,0.00,0.00,2499.16,
+Max loss per pos,0.00,0.00,0.00,-876.16,
+Average gain/loss per pos,0.00,0.00,0.00,793.10,
+Average % gain/loss per pos,0.00%,0.00 %,0.00 %,15.14 %,
+Max % gain per pos,0.00%,0.00 %,0.00 %,47.50 %,
+Max % loss per pos,0.00%,0.00 %,0.00 %,-16.80 %,
+
+Risk etc...
+Exposure,0.00%,0.00 %,0.00 %,83.23 %,
+Expectancy,0.00,0.00,0.00,793.10,
+Ulcer index,0.00,0.00,0.00,2.42,
+
+Drawdown
+Max drawdown,0.00,0.00,0.00,-6760.67,
+Max drawdown date,,,,2016-May-19,
+Max drawdown %,0.00%,0.00 %,0.00 %,-5.83 %,
+Max drawdown % date,,,,2016-May-19,
+Max drawdown duration,0,0,0,45,
+
+All Trades
+Total Trades,0,0,0,16,
+Closed trades,0,0,0,16,
+Open trades,0,0,0,0,
+
+Winning Trades
+Winning closed trades,0,0,0,14,
+Winning open trades,0,0,0,0,
+% winning closed trades,0.00%,0.00 %,0.00 %,87.50 %,
+% winning open trades,0.00%,0.00 %,0.00 %,0.00 %,
+Average gain per winning pos,0.00,0.00,0.00,988.34,
+
+Losing Trades
+Losing closed trades,0,0,0,2,
+Losing open trades,0,0,0,0,
+% losing closed trades,0.00%,0.00 %,0.00 %,12.50 %,
+% losing open trades,0.00%,0.00 %,0.00 %,0.00 %,
+Average loss per losing pos,0.00,0.00,0.00,-573.61,
+
+Neutral Trades
+Neutral closed trades,0,0,0,0,
+Neutral open trades,0,0,0,0,
+% neutral closed trades,0.00%,0.00 %,0.00 %,0.00 %,
+% neutral open trades,0.00%,0.00 %,0.00 %,0.00 %,
+
+Slippage
+Average slippage per pos,0.00,0.00,0.00,0.00,
+
+Commission
+Average commission per pos,0.00,0.00,0.00,0.00,
