@@ -79,13 +79,13 @@ In order to build an online trading simulation platform, issues like performance
 |2| Realistic simulation| support for predefined or user-definable parameters such as slippage, commission algorithms, position size, account size, position size limits etc|
 |3| Support for trading systems from the most trivial to the most complex| C++ based system definition language<br>with many trading specific constructs|
 |4| Support for various types of market data (e.g. bar, tick)| internal abstraction of data type|
-|5| Support for multi-symbol runs (diversification by asset)| |
-|6| Support for multi-system runs (diversification by system)| |
+|5| Diversification by asset|Support for multi-symbol runs |
+|6| Diversification by system |Support for multi-system runs |
 |7| Ability to handle large datasets| efficient data and memory management|
 |8| Easy to learn and use script-like language| abstraction of complex trading functions | |
 |9| Support for a variety of common or less common statistical and technical indicators| use of TALib technical indicators library|
-|10| Ability to generate trading signals| |
-|11| Ability to generate statistics used to objectively assess the performance and risk of a trading system||
+|10| Potential real trading use|Support for multi-system runs  |
+|11| Ability to objectively assess the performance and risk of a trading system|Generation of a variety of simulation statistical information|
 
 While there are many other programming languages available, C++ was chosen for its flexibility, large number of third party 
 libraries available for any conceivable functionality, and not least, its ability to generate some 
