@@ -30,103 +30,103 @@ LPCSTR HELP[] = { "help,?", "shows this help message" };
 #define _TEST
 
 // low case
-LPCSTR DATASOURCEPATH[] = {"datasourcepath,a", "the datasource path"};
-LPCSTR SESSION_PARENT_PATH[] = { "sessionparentpath,b", "path to session parent directory"};
-LPCSTR CONFIGFILEPATH[] = { "configfilepath,c", "the config file path" };
-LPCSTR DATASOURCEID[] = { "datasourceid,d", "the id of the data source plugin for the session" };
-LPCSTR TRADES_FILE[] = {"tradesfile,e", "the file that will contain the simulated historical trades generated during the run, absolute or relative to the session path"};
-LPCSTR DEFINE_MACRO[] = { "define,f", "defines a macro that can be used in other command line parameters. Format is \"MACRO_NAME:VALUE\"" };
+constexpr char* DATASOURCEPATH[] = {"datasourcepath,a", "the datasource path"};
+constexpr char* SESSION_PARENT_PATH[] = { "sessionparentpath,b", "path to session parent directory"};
+constexpr char* CONFIGFILEPATH[] = { "configfilepath,c", "the config file path" };
+constexpr char* DATASOURCEID[] = { "datasourceid,d", "the id of the data source plugin for the session" };
+constexpr char* TRADES_FILE[] = {"tradesfile,e", "the file that will contain the simulated historical trades generated during the run, absolute or relative to the session path"};
+constexpr char* DEFINE_MACRO[] = { "define,f", "defines a macro that can be used in other command line parameters. Format is \"MACRO_NAME:VALUE\"" };
 //g
-LPCSTR STATSHANDLERID[] = { "statshandlerid,h", "the stats handler for the session - will calculate statistics and save them to a file" };
-LPCSTR INCLUDEPATH[] = {"includepath,i", "the path to include files, can appear multiple times"};
-LPCSTR OUTPUTPATH[] = { "outputpath,j", "the runnable plug-in project path" };
+constexpr char* STATSHANDLERID[] = { "statshandlerid,h", "the stats handler for the session - will calculate statistics and save them to a file" };
+constexpr char* INCLUDEPATH[] = {"includepath,i", "the path to include files, can appear multiple times"};
+constexpr char* OUTPUTPATH[] = { "outputpath,j", "the runnable plug-in project path" };
 //k
-LPCSTR LIBPATH[] = { "libpath,l", "sets path to the simlib lib files, can appear multiple times" };
-LPCSTR TIMEOUT[] = { "timeout,m", "timeout in miliseconds, after which the run stops"};
-LPCSTR SESSIONID[] = { "sessionid,n", "the session unique id" };
-LPCSTR SYMBOLSSOURCEID[] = { "symbolssourceid,o", "the symbols source for the session" };
-LPCSTR PLUGIN_PATH[] = { "pluginpath,p", "the path for the built-in plug-ins (datasource, symbolssource etc)" };
-LPCSTR UNIQUE_ID[] = { "uniqueid,q", "generates and unique id on the command line"};
-LPCSTR PROJECT_PATH[] = {"projectpath,r", "path to the project that will build the plug-ins"};
-LPCSTR STATS_FILE[] = { "statsfile,s", "the file that will contain the back-test statistics for all the trades generated during the run"};
-LPCSTR TOOLSPATH[] = {"toolspath,t", "sets the path for MS tools, such as nmake, cl etc"};
-LPCSTR SYSTEM_FILE[] = {"systemfile,u", "trading system file name"};
-LPCSTR RUNSIMULATOR[] = {"runsimulator,v", "run just the simulation part. If this option is not on the command line, then build first then call itself with this option"};
+constexpr char* LIBPATH[] = { "libpath,l", "sets path to the simlib lib files, can appear multiple times" };
+constexpr char* TIMEOUT[] = { "timeout,m", "timeout in miliseconds, after which the run stops"};
+constexpr char* SESSIONID[] = { "sessionid,n", "the session unique id" };
+constexpr char* SYMBOLSSOURCEID[] = { "symbolssourceid,o", "the symbols source for the session" };
+constexpr char* PLUGIN_PATH[] = { "pluginpath,p", "the path for the built-in plug-ins (datasource, symbolssource etc)" };
+constexpr char* UNIQUE_ID[] = { "uniqueid,q", "generates and unique id on the command line"};
+constexpr char* PROJECT_PATH[] = {"projectpath,r", "path to the project that will build the plug-ins"};
+constexpr char* STATS_FILE[] = { "statsfile,s", "the file that will contain the back-test statistics for all the trades generated during the run"};
+constexpr char* TOOLSPATH[] = {"toolspath,t", "sets the path for MS tools, such as nmake, cl etc"};
+constexpr char* SYSTEM_FILE[] = {"systemfile,u", "trading system file name"};
+constexpr char* RUNSIMULATOR[] = {"runsimulator,v", "run just the simulation part. If this option is not on the command line, then build first then call itself with this option"};
 //w
-LPCSTR PLUGIN_EXT[] = { "pluginext,x", "sets the plugin file extesion"};
-LPCSTR SYMBOLSSOURCEFILE[] = { "symbolssourcefile,y", "the file containing the symbols for the session" };
-LPCSTR ERRORSFILE[] = { "errorsfile,z", "the file containing the build errors, if any, to be reported to the user"};
+constexpr char* PLUGIN_EXT[] = { "pluginext,x", "sets the plugin file extesion"};
+constexpr char* SYMBOLSSOURCEFILE[] = { "symbolssourcefile,y", "the file containing the symbols for the session" };
+constexpr char* ERRORSFILE[] = { "errorsfile,z", "the file containing the build errors, if any, to be reported to the user"};
 
 // caps
-LPCSTR ASYNCHRONOUS_RUN[] = { "asyncrun,A", "when present on the command line, it indicates that the run will be asynchronous - the call will return immediately, while the processing is still going on"};
-LPCSTR SYMBOL_TIMEOUT[] = { "symboltimeout,B", "symbol timeout in seconds - if a symbol processing takes longer than this amount, the processing will be canceled"};
-LPCSTR CANCELFILE[] = { "cancelfile,C", "file that will be created as a result of the client requesting that the server cancels the processing"};
-LPCSTR HEARTBEAT_TIMEOUT[]= { "heartbeattimeout,D", "heartbeat timeout in seconds - used to keep the server processing a session alive, if a heartbeat signal is not received within this number of seconds, the processing is canceled"};
-LPCSTR TRADES_CSV_FILE[] = { "tradescsvfile,E", "file containing trades in csv format"};
-LPCSTR SIGNALS_CSV_FILE[] = { "signalscsvfile,F", "file containing signals in csv format"};
-LPCSTR RAW_SIGNALS_CSV_FILE[] = { "rawsignalscsvfile,G", "file containing the raw signals (before applying signal sizing) in csv format" };
-LPCSTR TRADES_DESCRIPTION_FILE[] = { "tradesdescfile", "The file where the trades description will be stored"};
-LPCSTR SIGNALS_DESCRIPTION_FILE[] = { "signalsdescfile", "The file where the signals description will be stored"};
-LPCSTR LINES_PER_PAGE[] = { "linesperpage", "The number of lines per page - used to store info about line positions in the file for faster access" };
-LPCSTR HEARTBEATFILE[] = { "heartbeatfile,H", "file that will signal to the running process that the client is still waiting for the result. If the file doesn't exist for a specified amount of time, the process will be terminated" };
-LPCSTR ZIPFILE[] = {"zipfile,I", "zip file containing the result of the run (all cvs files"};
-LPCSTR REVERSE_HEARTBEAT_PERIOD[] = {"reverseheartbeatperiod,J", "the period of the hearbeat signal generated during processing, it will be used to keep the client alive"};
-LPCSTR RUNTIME_STATS_FILE[] = { "runtimestatsfile,K", "file that will contain runtime stats such elapsed time, number of errors, of trades etc"};
+constexpr char* ASYNCHRONOUS_RUN[] = { "asyncrun,A", "when present on the command line, it indicates that the run will be asynchronous - the call will return immediately, while the processing is still going on"};
+constexpr char* SYMBOL_TIMEOUT[] = { "symboltimeout,B", "symbol timeout in seconds - if a symbol processing takes longer than this amount, the processing will be canceled"};
+constexpr char* CANCELFILE[] = { "cancelfile,C", "file that will be created as a result of the client requesting that the server cancels the processing"};
+constexpr char* HEARTBEAT_TIMEOUT[]= { "heartbeattimeout,D", "heartbeat timeout in seconds - used to keep the server processing a session alive, if a heartbeat signal is not received within this number of seconds, the processing is canceled"};
+constexpr char* TRADES_CSV_FILE[] = { "tradescsvfile,E", "file containing trades in csv format"};
+constexpr char* SIGNALS_CSV_FILE[] = { "signalscsvfile,F", "file containing signals in csv format"};
+constexpr char* RAW_SIGNALS_CSV_FILE[] = { "rawsignalscsvfile,G", "file containing the raw signals (before applying signal sizing) in csv format" };
+constexpr char* TRADES_DESCRIPTION_FILE[] = { "tradesdescfile", "The file where the trades description will be stored"};
+constexpr char* SIGNALS_DESCRIPTION_FILE[] = { "signalsdescfile", "The file where the signals description will be stored"};
+constexpr char* LINES_PER_PAGE[] = { "linesperpage", "The number of lines per page - used to store info about line positions in the file for faster access" };
+constexpr char* HEARTBEATFILE[] = { "heartbeatfile,H", "file that will signal to the running process that the client is still waiting for the result. If the file doesn't exist for a specified amount of time, the process will be terminated" };
+constexpr char* ZIPFILE[] = {"zipfile,I", "zip file containing the result of the run (all cvs files"};
+constexpr char* REVERSE_HEARTBEAT_PERIOD[] = {"reverseheartbeatperiod,J", "the period of the hearbeat signal generated during processing, it will be used to keep the client alive"};
+constexpr char* RUNTIME_STATS_FILE[] = { "runtimestatsfile,K", "file that will contain runtime stats such elapsed time, number of errors, of trades etc"};
 //LPCSTR LOGFILE[] = { "logfile,L", "log file name" };
-LPCSTR DEFCOMMISSIONVALUE[] = { "defcommissionvalue,M", "the default commission value", };
-LPCSTR ENDRUNSIGNALFILE[] = { "endrunsignalfile,N", "if this is present on the command line, the end of a run will be signaled by creating this file - used in case of an asynchronous run" };
-LPCSTR OUTPUT_FILE[] = { "outputfile,O", "the file that will contain the formatted text output by the system" };
-LPCSTR DLLPATH[] = { "dllpath,P", "indicates where additional dlls may be located when loading plugins that depend on other dll" };
-LPCSTR DEFSLIPPAGEVALUE[] = { "defslippagevalue,Q", "the default slippage value" };
-LPCSTR FROM_DATETIME[] = { "fromdatetime,R", "time range starting date/time in iso format. If absent, it will mean Negative Infinity" };
-LPCSTR STATS_CSV_FILE[] = { "statscsvfile,S", "file containing stats in csv format" };
-LPCSTR TO_DATETIME[] = { "todatetime,T", "time range ending date/time in iso format. If absent, it will mean Positive Infinity" };
+constexpr char* DEFCOMMISSIONVALUE[] = { "defcommissionvalue,M", "the default commission value", };
+constexpr char* ENDRUNSIGNALFILE[] = { "endrunsignalfile,N", "if this is present on the command line, the end of a run will be signaled by creating this file - used in case of an asynchronous run" };
+constexpr char* OUTPUT_FILE[] = { "outputfile,O", "the file that will contain the formatted text output by the system" };
+constexpr char* DLLPATH[] = { "dllpath,P", "indicates where additional dlls may be located when loading plugins that depend on other dll" };
+constexpr char* DEFSLIPPAGEVALUE[] = { "defslippagevalue,Q", "the default slippage value" };
+constexpr char* FROM_DATETIME[] = { "fromdatetime,R", "time range starting date/time in iso format. If absent, it will mean Negative Infinity" };
+constexpr char* STATS_CSV_FILE[] = { "statscsvfile,S", "file containing stats in csv format" };
+constexpr char* TO_DATETIME[] = { "todatetime,T", "time range ending date/time in iso format. If absent, it will mean Positive Infinity" };
 //U
-LPCSTR REVERSEHEARTBEATFILE[] = { "reverseheartbeatfile,V", "file generated with a certain period, that indicates that the process is still running. If the file is not generated for a speicified amount of time, the client can assume that the server process is not running any more" };
-LPCSTR DEFSLIPPAGEID[] = { "defslippageid,W", "the default slippage plugin config id" };
-LPCSTR DEFCOMMISSIONID[] = { "defcommissionid,X", "the default commission plugin config id" };
-LPCSTR CACHESIZE[] = { "cachesize,Y", "the internal simlib cache max number of items, currently used only because symbol info is needed to calculate stats" };
-LPCSTR RAW_TRADES_CSV_FILE[] = { "rawtradescsvfile,Z", "the list of raw trades before applying position sizing" };
+constexpr char* REVERSEHEARTBEATFILE[] = { "reverseheartbeatfile,V", "file generated with a certain period, that indicates that the process is still running. If the file is not generated for a speicified amount of time, the client can assume that the server process is not running any more" };
+constexpr char* DEFSLIPPAGEID[] = { "defslippageid,W", "the default slippage plugin config id" };
+constexpr char* DEFCOMMISSIONID[] = { "defcommissionid,X", "the default commission plugin config id" };
+constexpr char* CACHESIZE[] = { "cachesize,Y", "the internal simlib cache max number of items, currently used only because symbol info is needed to calculate stats" };
+constexpr char* RAW_TRADES_CSV_FILE[] = { "rawtradescsvfile,Z", "the list of raw trades before applying position sizing" };
 //Z
 
 // no one character shortcut options
-LPCSTR MAX_LINES[] = { "maxlines", "max number of lines in file such as trades, etc. If this file exceeded, show a message" };
-LPCSTR MAX_TOTAL_BAR_COUNT[] = { "maxtotalbarcount", "max total number of bars per session - used to limit the the usage to a max number of total bars, this may translate in a lot of symbols, few bars, or few symbols, many bars" };
-LPCSTR FLAT_DATA[] = { "flatdata", "" };
-LPCSTR EQUITY_CURVE_FILE[] = { "equitycurvefile", "the base name for files containing equity curve data: csv, htm, jpg" };
-LPCSTR SYMBOLS_TO_CHART_FILE[] = { "symchartfile", "The file containing a list of symbols for which the trading engine will generate charting data. The trading engine will ignore the charting statements when running on any other symbol" };
-LPCSTR CHART_DESCRIPTION_FILE[] = { "chartdescriptionfile", "The file containing the description of all charting info generated during the run. Will be used by the php script to generate the actual charts" };
-LPCSTR CHART_PARENT_PATH[] = { "chartrootpath", "The directory where all the chart info will be stored - description files, data, images" };
+constexpr char* MAX_LINES[] = { "maxlines", "max number of lines in file such as trades, etc. If this file exceeded, show a message" };
+constexpr char* MAX_TOTAL_BAR_COUNT[] = { "maxtotalbarcount", "max total number of bars per session - used to limit the the usage to a max number of total bars, this may translate in a lot of symbols, few bars, or few symbols, many bars" };
+constexpr char* FLAT_DATA[] = { "flatdata", "" };
+constexpr char* EQUITY_CURVE_FILE[] = { "equitycurvefile", "the base name for files containing equity curve data: csv, htm, jpg" };
+constexpr char* SYMBOLS_TO_CHART_FILE[] = { "symchartfile", "The file containing a list of symbols for which the trading engine will generate charting data. The trading engine will ignore the charting statements when running on any other symbol" };
+constexpr char* CHART_DESCRIPTION_FILE[] = { "chartdescriptionfile", "The file containing the description of all charting info generated during the run. Will be used by the php script to generate the actual charts" };
+constexpr char* CHART_PARENT_PATH[] = { "chartrootpath", "The directory where all the chart info will be stored - description files, data, images" };
 
 // position sizing options
-LPCSTR INITIAL_CAPITAL[] = { "initialcapital", "the intial capital value used in simulation" };
-LPCSTR MAX_OPEN_POS[] = { "maxopenpos", "the maximum position open at any one time during simulation" };
-LPCSTR POS_SIZE_TYPE[] = { "possizetype", "position size type: 0-4 (system, shares, value, pct eq, pct cash" };
-LPCSTR POS_SIZE[] = { "possize", "position size actual value" };
-LPCSTR POS_SIZE_LIMIT_TYPE[] = { "possizelimittype", "position size type: 0-2 (none, pct volume, value" };
-LPCSTR POS_SIZE_LIMIT[] = { "possizelimit", "position size limit value" };
-LPCSTR OS_PATH[] = { "ospath", "The OS path" };
-LPCSTR SYSTEM_NAME_KEYWORD[] = { "sysnamekword", "The system name keyword" };
-LPCSTR CLASS_NAME_KEYWORD[] = { "classnamekword", "The class name keyword" };
+constexpr char* INITIAL_CAPITAL[] = { "initialcapital", "the intial capital value used in simulation" };
+constexpr char* MAX_OPEN_POS[] = { "maxopenpos", "the maximum position open at any one time during simulation" };
+constexpr char* POS_SIZE_TYPE[] = { "possizetype", "position size type: 0-4 (system, shares, value, pct eq, pct cash" };
+constexpr char* POS_SIZE[] = { "possize", "position size actual value" };
+constexpr char* POS_SIZE_LIMIT_TYPE[] = { "possizelimittype", "position size type: 0-2 (none, pct volume, value" };
+constexpr char* POS_SIZE_LIMIT[] = { "possizelimit", "position size limit value" };
+constexpr char* OS_PATH[] = { "ospath", "The OS path" };
+constexpr char* SYSTEM_NAME_KEYWORD[] = { "sysnamekword", "The system name keyword" };
+constexpr char* CLASS_NAME_KEYWORD[] = { "classnamekword", "The class name keyword" };
 
-LPCSTR CPU_COUNT[] = { "cpucount", "number of cpus" };
-LPCSTR THREADS[] = { "threads", "number of threads" };
-LPCSTR THREAD_ALG[] = { "threadalg", "threading algorithm" };
+constexpr char* CPU_COUNT[] = { "cpucount", "number of cpus" };
+constexpr char* THREADS[] = { "threads", "number of threads" };
+constexpr char* THREAD_ALG[] = { "threadalg", "threading algorithm" };
 
-LPCSTR EXT_TRIGGERS_FILE[] = { "exttriggersfile", "if this option is present, this will be interpreted as a file containing a list of triggers that the simulator will use to generate trades" };
+constexpr char* EXT_TRIGGERS_FILE[] = { "exttriggersfile", "if this option is present, this will be interpreted as a file containing a list of triggers that the simulator will use to generate trades" };
 
-LPCSTR EXPLICIT_TRADES_EXT[] = { "explicittradesext", "Explicit trades files extension" };
-LPCSTR DATA_ERROR_HANDLING_MODE[] = { "dataerrorhandling", "Data error handling mode - 0: fatal, 1: warning, 2: ignore" };
+constexpr char* EXPLICIT_TRADES_EXT[] = { "explicittradesext", "Explicit trades files extension" };
+constexpr char* DATA_ERROR_HANDLING_MODE[] = { "dataerrorhandling", "Data error handling mode - 0: fatal, 1: warning, 2: ignore" };
 
-LPCSTR START_TRADES_DATE[] = { "starttradesdate", "cutoff date for trades (no trades before this date, used for automated trading)" };
+constexpr char* START_TRADES_DATE[] = { "starttradesdate", "cutoff date for trades (no trades before this date, used for automated trading)" };
 
-LPCSTR ENV_PATH[] = { "envpath", "environment variable PATH" };
-LPCSTR ENV_INCLUDE[] = { "envinclude", "environment variable include" };
-LPCSTR ENV_LIB[] = { "envlib", "enviroment variable lib" };
+constexpr char* ENV_PATH[] = { "envpath", "environment variable PATH" };
+constexpr char* ENV_INCLUDE[] = { "envinclude", "environment variable include" };
+constexpr char* ENV_LIB[] = { "envlib", "enviroment variable lib" };
 
-LPCSTR ENABLE_RUN_AS_USER[] = { "enablerunasuser", "enable/disable running as user" };
+constexpr char* ENABLE_RUN_AS_USER[] = { "enablerunasuser", "enable/disable running as user" };
 
-LPCSTR CONFIG_FILE[] = { "configfile", "configuration file(s) name" };
+constexpr char* CONFIG_FILE[] = { "configfile", "configuration file(s) name" };
 
 std::string longName(const LPCSTR* option) {
   Tokenizer tok(option[0], ",");
@@ -187,7 +187,7 @@ std::string parse_config_file(const std::string& configFile) {
 
 #define PO_BOOL( a ) \
   ( a[0], a[1] )
-
+ 
 #define PO_MULTI( a ) \
   ( a[0], po::value< std::vector<std::string >>()->composing(), a[1] )
 
