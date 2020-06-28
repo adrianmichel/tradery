@@ -501,7 +501,7 @@ class PluginTree : public tree<NodePtr>, public PluginExplorer {
       throw e;
     }
 
-  	LOG( log_debug, _T( "plugin added: "), path );
+  	LOG( log_debug, "plugin added: ", path );
 }
 
   // returns the id of the plugin whose parameter id is a configuration
